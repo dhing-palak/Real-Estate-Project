@@ -42,9 +42,9 @@ router.post("/login", async (req, res) => {
 
 //Register route
 router.post("/register", async (req, res) => {
-  const { name, email, phone, password, cpassword } = req.body;
+  const { name, email, person, phone, password, cpassword } = req.body;
 
-  if (!name || !email || !phone ||  !password || !cpassword) {
+  if (!name || !email || !person || !phone ||  !password || !cpassword) {
     return res.status(422).json({ error: "Plz fill the fields properly" });
   }
 
@@ -58,6 +58,7 @@ router.post("/register", async (req, res) => {
       const user = new User({
         name,
         email,
+        person,
         phone,
         password,
         cpassword,

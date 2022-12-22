@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import "../../styles/Login.css";
+import { login } from "../../api/api";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,19 +21,11 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     const { email, password } = user;
+    
+    //calling login api
+    const res = await login (email, password);
 
-    const res = await fetch("/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
-
-    const data = await res.json();
+    const data =  res.json();
     if (res.status === 400 || !data) {
       window.alert("invalid credientials");
     } else {

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Register.css";
+import "../../styles/Register.css";
+import { register } from "../../api/api";
 
 const Register = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
+    person:"",
     phone: "",
     password: "",
     cpassword: "",
@@ -28,22 +30,12 @@ const Register = () => {
     setFormErrors(validate(user));
     setIsSubmit(true);
 
-    const { name, phone, email, password, cpassword } = user;
+    const { name, phone,person, email, password, cpassword } = user;
 
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      const res = await fetch("/user/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          phone,
-          email,
-          password,
-          cpassword,
-        }),
-      });
+
+      //calling register api
+      const res = await register(name, phone, email, person, password, cpassword)
 
       const data = await res.json();
 
@@ -119,6 +111,44 @@ const Register = () => {
               <div className="register_heading">Sign Up</div>
               <div className="register_wrapper">
                 <form className="register-form-wrapper">
+                  <div className="register_person_details">
+                    <input
+                      type="radio"
+                      name="person"
+                      value="buyer/owner"
+                      id="dot-1"
+                      onChange={handleInput}
+                    />
+                    <input
+                      type="radio"
+                      name="person"
+                      value="agent"
+                      id="dot-2"
+                      onChange={handleInput}
+                    />
+                    <input
+                      type="radio"
+                      name="person"
+                      value="builder"
+                      id="dot-3"
+                      onChange={handleInput}
+                    />
+                    <span className="register_person_title">I am</span>
+                    <div className="register_category">
+                      <label for="dot-1">
+                        <span className="dot one"></span>
+                        <span className="register_personN">Buyer/Owner</span>
+                      </label>
+                      <label for="dot-2">
+                        <span className="dot two"></span>
+                        <span className="register_personN">Agent</span>
+                      </label>
+                      <label for="dot-3">
+                        <span className="dot three"></span>
+                        <span className="register_personN">Builder</span>
+                      </label>
+                    </div>
+                  </div>
                   <div className="register-input-name">
                     <input
                       className="register-input"

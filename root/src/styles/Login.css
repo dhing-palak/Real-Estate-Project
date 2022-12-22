@@ -1,91 +1,3 @@
-/* .login-container {
-  background-color: rgb(237, 236, 236);
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-app-wrapper {
-  background-color: #fff;
-  width: 350px;
-  height: 280px;
-  padding: 30px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border: 2px solid #dddfe2;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 20%);
-}
-
-.login-title {
-  color: black;
-  text-align: left;
-  padding: 5px;
-}
-
-.login-input-email,
-.login-input-password {
-  margin: 2px;
-  color: #969292;
-  font-size: 16px;
-  padding: 5px;
-}
-
-.login-input {
-  height: 20px;
-  font-size: 15px;
-  outline: none;
-  width: 100%;
-  border-top-style: none;
-  border-left-style: none;
-  border-right-style: none;
-  border-bottom-style: 1px solid black;
-  margin-bottom: 10px;
-}
-
-.login-form-submit {
-  display: flex;
-  font-size: 15px;
-  padding: 10px;
-  width: 100%;
-  justify-content: center;
-  background-color: #d8282a;
-  color: white;
-  margin: auto;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transform: all 0.1s;
-}
-
-.login-submit-button {
-  margin-top: 10px;
-}
-
-.login-signup-text {
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-}
-
-.login-signup-btn {
-  padding: 5px;
-  color: #d8282a;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 450px) {
-  .login-app-wrapper {
-    width: 300px;
-  }
-} */
-
-
 .login_main_header {
   height: 50px;
   background-color: #d8232a;
@@ -133,8 +45,7 @@
   width: 100%;
   min-height: 700px;
   height: auto;
-  background: url('../../images/login bg2.jpg')
-    no-repeat 0 0;
+  background: url("../images/login bg2.jpg") no-repeat 0 0;
   background-size: cover;
   background-color: rgb(147, 136, 136);
   padding: 49px 50px 50px;
@@ -179,8 +90,7 @@
   position: absolute;
   right: 0;
   z-index: 0;
-  background: url('../../images/login bg1.png') repeat 25px top
-    #f2f2f2;
+  background: url("../images/login bg1.png") repeat 25px top #f2f2f2;
   background-attachment: fixed;
   transition: all 0.5s ease;
 }
@@ -380,4 +290,72 @@
   color: hsla(0, 0%, 100%, 0.8);
   margin: 0 6px;
   position: relative;
+}
+
+/* media queries */
+
+@media (max-width: 750px) {
+  .login_webpage {
+    min-height: 600px;
+  }
+
+  .login_left {
+    width: 45%;
+  }
+
+  .login_left_data {
+    padding: 20px;
+  }
+
+  .login_right {
+    width: 55%;
+    background: #fff;
+    min-height: 600px;
+    overflow-y: auto;
+  }
+
+  .login_container {
+    padding: 10;
+  }
+
+  .login_wrapper {
+    width: 95%;
+  }
+
+  .login_signup {
+    bottom: -20px;
+  }
+
+  .login_main_header,
+  .login_footer {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .login_webpage {
+    min-height: 550px;
+  }
+
+  .login_left {
+    display: none;
+  }
+
+  .login_right {
+    width: 100%;
+  }
+
+  .login_right_login {
+    height: 480px;
+  }
+
+  .login_signup {
+    background: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .login_right {
+    width: 100%;
+  }
 }
