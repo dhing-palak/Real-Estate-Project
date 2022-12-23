@@ -7,11 +7,10 @@ app.use(cors());
 dotenv.config({ path: "./config.env" });
 require("./db/conn");
 const User = require("./model/userSchema");
-const userApi = require('./router/user')
+const userApi = require("./router/user");
 
 app.use(express.json());
-app.use('/user',userApi)
-
+app.use("/user", userApi);
 
 const PORT = 5000;
 
