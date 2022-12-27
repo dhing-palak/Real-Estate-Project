@@ -1,10 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const cookieParser = require("cookie-parser");
 // const jwt = require("jsonwebtoken");
 
 require("../db/conn");
 const User = require("../model/userSchema");
+
+router.use(cookieParser());
+
+const Authenticate = require("../middleware/authenticate");
 
 //Login route
 router.post("/login", async (req, res) => {
@@ -68,6 +73,17 @@ router.post("/register", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+//Profile route
+router.get("/profile", Authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+
+//Logout route
+router.get("/logout", (req, res) => {
+  res.clearCookie("jwtoken");
+  res.status(200).send("User logout");
 });
 
 module.exports = router;
