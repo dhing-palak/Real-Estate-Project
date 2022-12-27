@@ -38,21 +38,17 @@ h6 {
 
 body {
   /* Margin bottom by footer height */
-   margin-bottom: 60px; 
-   
-   
-  
+  margin-bottom: 60px;
 }
 footer {
   padding-top: 2em;
-  position:relative;
+  position: relative;
   /* height: 270px; */
   bottom: 0;
   width: 100%;
   background-color: rgba(243, 243, 247, 0.701);
   margin-bottom: 0%;
   padding-bottom: 0%;
-  
 }
 
 footer h2 {

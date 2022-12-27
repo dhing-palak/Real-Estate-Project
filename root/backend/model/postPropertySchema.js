@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const postPropertySchema = new mongoose.Schema({
-    iam: {
-        type: String,
-        required: true, 
-    },
+  iam: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -12,7 +12,7 @@ const postPropertySchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: false,
+   
   },
   phone: {
     type: Number,
@@ -22,7 +22,7 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-    city: {
+  city: {
     type: String,
     required: true,
   },
@@ -58,7 +58,6 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
- 
 });
 
 const Property = new mongoose.model("postProperties", postPropertySchema);

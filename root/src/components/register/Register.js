@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Register.css";
@@ -8,7 +10,7 @@ const Register = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    person:"",
+    person: "",
     phone: "",
     password: "",
     cpassword: "",
@@ -30,12 +32,11 @@ const Register = () => {
     setFormErrors(validate(user));
     setIsSubmit(true);
 
-    const { name, phone,person, email, password, cpassword } = user;
+    const { name, phone, person, email, password, cpassword } = user;
 
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-
       //calling register api
-      const res = await register(name, phone, email, person, password, cpassword)
+      const res = await register(name, phone, email, person, password, cpassword);
 
       const data = await res.json();
 
@@ -135,15 +136,15 @@ const Register = () => {
                     />
                     <span className="register_person_title">I am</span>
                     <div className="register_category">
-                      <label for="dot-1">
+                      <label htmlFor="dot-1">
                         <span className="dot one"></span>
                         <span className="register_personN">Buyer/Owner</span>
                       </label>
-                      <label for="dot-2">
+                      <label htmlFor="dot-2">
                         <span className="dot two"></span>
                         <span className="register_personN">Agent</span>
                       </label>
-                      <label for="dot-3">
+                      <label htmlFor="dot-3">
                         <span className="dot three"></span>
                         <span className="register_personN">Builder</span>
                       </label>
@@ -173,9 +174,7 @@ const Register = () => {
                       value={user.phone}
                       onChange={handleInput}
                     ></input>
-                    <span className="register-error-data">
-                      {formErrors.phone}
-                    </span>
+                    <span className="register-error-data">{formErrors.phone}</span>
                   </div>
 
                   <div className="register-input-email">
@@ -188,9 +187,7 @@ const Register = () => {
                       value={user.email}
                       onChange={handleInput}
                     ></input>
-                    <span className="register-error-data">
-                      {formErrors.email}
-                    </span>
+                    <span className="register-error-data">{formErrors.email}</span>
                   </div>
 
                   <div className="register-input-password">
