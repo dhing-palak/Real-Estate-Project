@@ -70,6 +70,9 @@ router.post("/register", async (req, res) => {
     console.log(error);
   }
 });
+router.get("/location", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
 
 module.exports = router
 

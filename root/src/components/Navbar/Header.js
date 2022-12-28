@@ -1,9 +1,5 @@
 import React from 'react';
-import "../../style/Header.css";
-// import Button from 'react-bootstrap/Button';
-// // import Container from 'react-bootstrap/Container';
-// import Form from 'react-bootstrap/Form';
-// import Dropdown from 'react-bootstrap/Dropdown';
+import "../../styles/Header.css";
 import 'font-awesome/css/font-awesome.min.css';
 
 
@@ -15,57 +11,15 @@ NavMenu,
 NavBtn,
 NavBtnLink,
 } from './NavbarElements';
+import {request} from '../../api/api';
 
-
-// const cititesList = [
-// 	{
-// 		id: 1,
-// 		value: 'Hyderabad'
-// 	}, {
-// 		id: 2,
-// 		value: 'Kolkata'
-// 	}, {
-// 		id: 3,
-// 		value: 'Chennai'
-// 	}, {
-// 		id: 4,
-// 		value: 'Pune'
-// 	},{
-// 		id: 5,
-// 		value: 'Gujarat'
-// 	},{
-// 		id: 6,
-// 		value: 'Noida'
-// 	},{
-// 		id: 7,
-// 		value: 'Kerala'
-// 	},{
-// 		id: 8,
-// 		value: 'Goa'
-// 	},{
-// 		id: 9,
-// 		value: 'Bangalore'
-// 	},{
-// 		id: 10,
-// 		value: 'Mumbai'
-// 	}
-// 	];
-	
-	// function Options({ options }) {
-	// 	return (
-	// 		options.map(option => 
-	// 					<option key={option.id} value={option.value}>                                   
-	// 					{option.value}
-	// 					</option>)
-						
-	// 				   );
-					   
-	// };
 	
 const Navbar = () => {
 	
 
-  
+    const city = ['Mumbai', 'Kolkata', 'Hyderabad','Pune','Chennai','Patna','Bangalore','Lucknow','Noida','Kerala']
+
+   
 
 return (
 	<>
@@ -90,46 +44,25 @@ return (
 		
 		<div>
 		<div className="dropdown">
-		{/* <select
-		name="Cities" className='dropbtn2'>
+		
 
-		<Options  options={cititesList} />
-
-
-		</select> */}
-
-     <button class="dropbtn"> Cities <i class="fa fa-angle-down"></i>
+     <button className="dropbtn"> Cities <i className="fa fa-angle-down"></i>
     </button>
 
     <div class="dropdown-content">
 	
-       <a href="/location/city">Mumbai</a>
-      <a href="/location/city">Kolkata</a>
-	  <a href="/location/city">Delhi</a>
-	  <a href="/location/city">Pune</a>
-	  <a href="/location/city">Bangalore</a>
-	  <a href="/location/city">Hyderbad</a>
-	  <a href="/location/city">Pune</a>
-	  <a href="/location/city">Bangalore</a>
-	  <a href="/location/city">Hyderbad</a>  
+    {city.map((data, i) =>
+                <span onClick={request} className="dropdown-content3">
+                    {data}<br/>
+                </span>
+            )}
+            
+            {/* <p>{text}</p> */}
 
       
     </div>
 	</div>
 	</div>
-	
-		
-
-
-		
-		
-		
-		
-		
-		{/* <NavLink to='/sign-up' activestyle='true'>
-			Sign Up
-		</NavLink> */}
-		{/* Second Nav */}
 		
 		</NavMenu>
 

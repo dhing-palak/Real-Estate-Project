@@ -39,3 +39,14 @@ export const register = async (
 
   return res;
 };
+//Get City Name
+export const request = async () => {
+  try {
+    const response = await fetch('/user/location');
+    const json = await response.json();
+    console.log(json);
+  }
+  catch (e) {
+    console.log('We have the error', e);
+  }
+}

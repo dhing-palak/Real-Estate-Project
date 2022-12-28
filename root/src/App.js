@@ -4,8 +4,9 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Header";
-import About from "./pages/about/about";
-import City from "./api/location/city";
+// import About from "./pages/about/about";
+// import City from "./api/location/city";
+import City from "./components/location/city";
 
 
 
@@ -15,11 +16,11 @@ function App() {
     <div className="Header">
     <Navbar/>
     </div>
-    <div className="App">
+    <div >
     
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        
         
         <Route path="/location/city" element={<City />}></Route>
         <Route path="/user/login" element={<Login />}></Route>
@@ -33,7 +34,7 @@ function App() {
 }
 function PageNotFound() {
 	return (
-	  <div>
+	  <div className="App">
 		<h2>404 Page not found</h2>
 	  </div>
 	);
