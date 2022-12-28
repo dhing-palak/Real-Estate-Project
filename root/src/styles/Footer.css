@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* :root {
+  --bgcolor: #f3f5f9;
+  --primary-color: #6f5de7;
+  --text-color: #828286;
+  --main-text-color: #333333;
+} */
+
+html {
+  font-size: 60%;
+  position: relative;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(18, 18, 18);
+  font-size: 1.5rem;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0c0c0c;
+} */
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+footer {
+  padding-top: 2em;
+  position: relative;
+  /* height: 270px; */
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(243, 243, 247, 0.701);
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
+
+footer h2 {
+  color: rgb(18, 17, 17);
+}
+
+footer li {
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: rgb(8, 8, 8);
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+footer li:hover {
+  color: black;
+}
+
+footer a:hover {
+  color: red;
+}
+
+footer .fontawesome-style {
+  padding-bottom: 2rem;
+  font-size: 2.3rem;
+  color: red;
+  background-color: transparent;
+  width: 0rem;
+  height: 0rem;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+
+footer .fontawesome-style:hover {
+  transition: all 1s;
+  animation: rotatefont 1s linear infinite alternate-reverse;
+  color: red;
+}
+
+@keyframes rotatefont {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+footer .main-hero-para {
+  margin: 0;
+}

@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable no-unused-vars */
-
 import React, { useState } from "react";
 import "../../styles/Property.css";
 import { useEffect } from "react";
@@ -36,9 +33,9 @@ const Property = () => {
   // return data.map((detail) => {
   return (
     <div className="outer">
-      {data.map((detail) => {
+      {data.map((detail, id) => {
         return (
-          <div className="inner">
+          <div key={id} className="inner">
             <div className="picOwner">
               <img className="image" src={image} alt="Palace" />
               <p className="owner">Owner: {detail.ownerName}</p>
