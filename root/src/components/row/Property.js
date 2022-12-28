@@ -5,10 +5,10 @@ import React, { useState } from "react";
 import "../../styles/Property.css";
 import { useEffect } from "react";
 
-import image from "../../images/PropertyImages/Property1.jpg";
-import superAreaImage from "../../images/PropertyImages/square.jpg";
-import statusImage from "../../images/PropertyImages/status.jpg";
-import floorImage from "../../images/PropertyImages/floor.jpg";
+import image from "../../images/Property1.jpg";
+import superAreaImage from "../../images/square.jpg";
+import statusImage from "../../images/status.jpg";
+import floorImage from "../../images/floor.jpg";
 import { propertydetails } from "../../api/api";
 
 

@@ -11,25 +11,25 @@ const Home = () => {
     <>
       {/* <Header/> */}
       <Property />
-      <>
-        <div className="homepage">
-          <h1>Hello Homepage</h1>
-          <div
-            className="button"
-            role="presentation"
-            onClick={() => navigate("/user/login")}
-          >
+      {/* <> */}
+      <div className="homepage">
+        <h1>Hello Homepage</h1>
+        <div
+          className="button"
+          role="presentation"
+          onClick={() => navigate("/user/login")}
+        >
             Login
-          </div>
-          <div
-            className="button"
-            role="presentation"
-            onClick={() => navigate("/user/register")}
-          >
-            Sign Up
-          </div>
         </div>
-      </>
+        <div
+          className="button"
+          role="presentation"
+          onClick={() => navigate("/user/register")}
+        >
+            Sign Up
+        </div>
+      </div>
+      {/* </> */}
       {/* <Footer /> */}
     </>
   );
