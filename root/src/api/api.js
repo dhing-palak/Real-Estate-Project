@@ -33,6 +33,33 @@ export const register = async (name, phone, email, person, password, cpassword) 
   return res;
 };
 
+//Profile api
+export const profile = async () => {
+  const res = await fetch("/user/profile", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
+
+  return res;
+};
+
+//Logout api
+export const logout = async () => {
+  const res = await fetch("/user/logout", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
+  return res;
+};
+
 export const property = async (
   iam,
   name,
@@ -79,13 +106,12 @@ export const property = async (
   return res;
 };
 
-
 export const propertydetails = async () => {
   const res = await fetch("get/propertydetails", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-  })
+  });
   return res;
-}
+};

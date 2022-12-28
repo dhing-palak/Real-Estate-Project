@@ -11,26 +11,24 @@ import statusImage from "../../images/status.jpg";
 import floorImage from "../../images/floor.jpg";
 import { propertydetails } from "../../api/api";
 
-
 const Property = () => {
   const [data, setData] = useState([]);
 
   const getPropertyData = async () => {
-    try{
+    try {
       const res = await propertydetails();
       const responseData = await res.json();
-      if(res.status === 200 && responseData){
-        console.log("responseData",responseData);
+      if (res.status === 200 && responseData) {
+        console.log("responseData", responseData);
         // return responseData;
         setData(responseData);
       }
+    } catch (err) {
+      console.error("Error while fetching ", err.message);
     }
-    catch (err) {
-      console.error("Error while fetching ", err.message)
-    }  
-  }
+  };
 
-  useEffect(()  => {
+  useEffect(() => {
     getPropertyData();
   }, []);
   console.log("data", data);
@@ -39,7 +37,7 @@ const Property = () => {
   return (
     <div className="outer">
       {data.map((detail) => {
-        return(
+        return (
           <div className="inner">
             <div className="picOwner">
               <img className="image" src={image} alt="Palace" />
@@ -51,11 +49,18 @@ const Property = () => {
                 <h5>ONLY ON MAGICBRICKS</h5>
               </div>
               <div className="statusProperty">
-                <h3>{detail.rooms} Ready to Occupy {detail.propertytype} for sale {detail.city}</h3>
+                <h3>
+                  {detail.rooms} Ready to Occupy {detail.propertytype} for sale{" "}
+                  {detail.city}
+                </h3>
               </div>
               <div className="detailsProperty">
                 <div className="detailsInfo">
-                  <img className="detailsImage" src={superAreaImage} alt="superArea" />
+                  <img
+                    className="detailsImage"
+                    src={superAreaImage}
+                    alt="superArea"
+                  />
                   <span className="detailsHeading">
                     <p className="text">SUPER AREA</p>
                     <p className="value">{detail.area}</p>
@@ -77,7 +82,11 @@ const Property = () => {
 
                 <div className="detailsInfo">
                   <span>
-                    <img className="detailsImage" src={floorImage} alt="floorImage" />
+                    <img
+                      className="detailsImage"
+                      src={floorImage}
+                      alt="floorImage"
+                    />
                   </span>
                   <span className="detailsHeading">
                     <p className="text">FLOOR</p>
@@ -103,9 +112,8 @@ const Property = () => {
               </div>
             </div>
           </div>
-        )
+        );
       })}
-        
     </div>
   );
 };

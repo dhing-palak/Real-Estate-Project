@@ -53,7 +53,7 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  pricePerSqft:{
+  pricePerSqft: {
     type: String,
     required: true,
   },
