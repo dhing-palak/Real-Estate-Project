@@ -129,24 +129,24 @@
 }
 
 .ownerDetails {
-  background-color: red;
-  color: white;
+  background-color:#D82329;
+  color: #FFFFFF;
   border-radius: 15px;
   width: 120px;
   padding-bottom: 10px;
-  border-color: red;
+  border-color: #D82329;
 }
 
 .getPhoneNo {
   padding-bottom: 10px;
 }
 .phoneDetails {
-  background-color: white;
-  color: red;
+  background-color: #FFFFFF;
+  color: #D82329;
   border-radius: 15px;
   width: 120px;
   padding-bottom: 10px;
-  border-color: red;
+  border-color: #D82329;
 }
 
 .feedback {
