@@ -72,3 +72,30 @@ export const postproperty = async (
   });
   return res;
 };
+
+//Profile api
+export const profile = async () => {
+  const res = await fetch("/user/profile", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
+
+  return res;
+};
+
+//Logout api
+export const logout = async () => {
+  const res = await fetch("/user/logout", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
+  return res;
+};

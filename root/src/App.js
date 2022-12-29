@@ -9,6 +9,8 @@ import Helpcenter from "./pages/Helpcenter";
 import Footer from "./components/footer/Footer";
 import Postproperty from "./components/postproperty/Postproperty";
 import { Routes, Route } from "react-router-dom";
+import Profile from "./pages/Profile";
+import Logout from "./pages/Logout";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/privacypolicy" element={<Privacypolicy />}></Route>
         <Route path="/helpcenter" element={<Helpcenter />}></Route>
         <Route path="/postproperty" element={<Postproperty />}></Route>
+        <Route path="/user/profile" element={<Profile />}></Route>
+        <Route path="/user/logout" element={<Logout />}></Route>
       </Routes>
       <div className="footer">
         <Footer />
