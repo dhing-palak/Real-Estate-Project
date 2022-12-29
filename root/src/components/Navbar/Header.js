@@ -64,7 +64,7 @@ const Navbar = () => {
         <NavBtn>
           <NavBtnLink to="/user/register">Register</NavBtnLink>
           <NavBtnLink to="/user/login">Login</NavBtnLink>
-          <NavBtnLink to="/about">
+          <NavBtnLink to="/postproperty">
             <i className="fas fa-home"></i> Post Property{" "}
           </NavBtnLink>
         </NavBtn>
