@@ -105,10 +105,12 @@ export const logout = async () => {
   return res;
 };
 
+//Propertydetails Api
 export const propertydetails = async () => {
   const res = await fetch("get/propertydetails", {
     method: "GET",
     headers: {
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
   });

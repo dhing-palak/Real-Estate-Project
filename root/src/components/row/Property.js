@@ -38,7 +38,7 @@ const Property = () => {
           <div key={id} className="inner">
             <div className="picOwner">
               <img className="image" src={image} alt="Palace" />
-              <p className="owner">Owner: {detail.ownerName}</p>
+              <p className="owner">Owner: {detail.name}</p>
             </div>
 
             <div className="middlePart">
@@ -96,7 +96,7 @@ const Property = () => {
 
             <div className="contactSizePrice">
               <div className="price">₹ {detail.price}</div>
-              <div className="pricePerSqft">₹ {detail.pricePerSqft} per sqft</div>
+              <div className="pricePerSqft">₹ 6,691 per sqft</div>
               <div className="contactOwner">
                 <button className="ownerDetails">Contact Owner</button>
               </div>
