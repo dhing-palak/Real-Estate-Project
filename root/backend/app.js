@@ -16,6 +16,11 @@ app.use('/user',userApi)
 app.use('/location',locationRoute);
 
 
+
+app.use(express.json());
+
+
+
 const PORT = 5000;
 
 app.listen(5000, () => {

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Login.css";
@@ -21,11 +23,11 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     const { email, password } = user;
-    
-    //calling login api
-    const res = await login (email, password);
 
-    const data =  res.json();
+    //calling login api
+    const res = await login(email, password);
+
+    const data = res.json();
     if (res.status === 400 || !data) {
       window.alert("invalid credientials");
     } else {
@@ -66,11 +68,7 @@ const Login = () => {
             <div className="login_container">
               <div className="login_heading">Login</div>
               <div className="login_wrapper">
-                <form
-                  className="login-form-wrapper"
-                  method="POST"
-                  id="login-form"
-                >
+                <form className="login-form-wrapper" method="POST" id="login-form">
                   <div className="login-input-email">
                     <input
                       className="login-input"
