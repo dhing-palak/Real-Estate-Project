@@ -56,7 +56,7 @@ function Helpcenter() {
                 Dashboard` and select `&apos my profile`
               </li>
               <li>
-                Step 3: Proceed to `&apos Profile Details` section. Here, click on
+                Step 3: Proceed to `&apos Profile Details` section. Here, click onnpm
                 `&apos Deactivate account`.
               </li>
               <li>

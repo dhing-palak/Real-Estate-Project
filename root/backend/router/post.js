@@ -9,7 +9,6 @@ router.post("/property", async (req, res) => {
   const {
     iam,
     name,
-    ownerName,
     email,
     phone,
     propertyfor,
@@ -20,7 +19,6 @@ router.post("/property", async (req, res) => {
     area,
     floors,
     price,
-    pricePerSqft,
     status,
     description,
   } = req.body;
@@ -28,7 +26,6 @@ router.post("/property", async (req, res) => {
   if (
     !iam ||
     !name ||
-    !ownerName ||
     !email ||
     !phone ||
     !propertyfor ||
@@ -39,7 +36,6 @@ router.post("/property", async (req, res) => {
     !area ||
     !floors ||
     !price ||
-    !pricePerSqft ||
     !status ||
     !description
   ) {
@@ -50,7 +46,6 @@ router.post("/property", async (req, res) => {
     const property = new Property({
       iam,
       name,
-      ownerName,
       email,
       phone,
       propertyfor,
@@ -61,7 +56,6 @@ router.post("/property", async (req, res) => {
       area,
       floors,
       price,
-      pricePerSqft,
       status,
       description,
     });

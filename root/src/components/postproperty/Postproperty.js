@@ -8,7 +8,6 @@ const Postproperty = () => {
   const [property, setProperty] = useState({
     iam: "",
     name: "",
-    ownerName: "",
     email: "",
     phone: "",
     propertyfor: "",
@@ -19,7 +18,6 @@ const Postproperty = () => {
     area: "",
     floors: "",
     price: "",
-    pricePerSqft: "",
     status: "",
     description: "",
   });
@@ -43,7 +41,6 @@ const Postproperty = () => {
     const {
       iam,
       name,
-      ownerName,
       email,
       phone,
       propertyfor,
@@ -54,7 +51,6 @@ const Postproperty = () => {
       area,
       floors,
       price,
-      pricePerSqft,
       status,
       description,
     } = property;
@@ -63,7 +59,6 @@ const Postproperty = () => {
     const res = await postproperty(
       iam,
       name,
-      ownerName,
       email,
       phone,
       propertyfor,
@@ -74,7 +69,6 @@ const Postproperty = () => {
       area,
       floors,
       price,
-      pricePerSqft,
       status,
       description,
     );

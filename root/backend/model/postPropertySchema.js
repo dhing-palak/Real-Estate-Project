@@ -9,10 +9,6 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  ownerName: {
-    type: String,
-    required: true,
-  },
   email: {
     type: String,
     required: true,
@@ -50,10 +46,6 @@ const postPropertySchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: String,
-    required: true,
-  },
-  pricePerSqft: {
     type: String,
     required: true,
   },
