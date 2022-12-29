@@ -8,29 +8,22 @@
   padding-right: 2em;
   padding-top: 2em;
   padding-bottom: 2em;
-  /* font-size: 1.5rem; */
+}
+.helpcenter-main {
+  font-size: 16px;
+  width: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #0c0c0c;
+.helpcenter-title {
   font-weight: bold;
+  font-size: 20px;
 }
 
-.terms p {
-  font-size: 1.4rem;
+.helpcenter_list_content {
+  width: 100%;
 }
 
-li {
-  margin: 4px 0 3px 0;
-  margin-top: 4px;
-  margin-right: 0px;
-  margin-bottom: 3px;
-  margin-left: 0px;
-  display: list-item;
-  font-size: 1.4rem;
+.helpcenter_list_content > li {
+  font-size: 14px;
+  margin-top: 10px;
 }

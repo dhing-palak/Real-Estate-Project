@@ -10,36 +10,20 @@
   padding-bottom: 2em;
   /* font-size: 1.5rem; */
 }
+.terms-main {
+  font-size: 16px;
+}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #0c0c0c;
+.terms-title {
   font-weight: bold;
+  font-size: 20px;
 }
 
-.terms p {
-  font-size: 1.4rem;
+.terms_list_content {
+  width: 100%;
 }
 
-/* terms li {
-    list-style: none;
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: rgb(8, 8, 8);
-    cursor: pointer;
-    margin: 1rem 0;
-  } */
-
-li {
-  margin: 4px 0 3px 0;
-  margin-top: 4px;
-  margin-right: 0px;
-  margin-bottom: 3px;
-  margin-left: 0px;
-  display: list-item;
-  font-size: 1.2rem;
+.terms_list_content > li {
+  font-size: 14px;
+  margin-top: 10px;
 }

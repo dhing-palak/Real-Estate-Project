@@ -147,7 +147,7 @@ const Postproperty = () => {
   return (
     <>
       <div className="postproperty_webpage">
-        <div className="postproperty_left_register">
+        <div className="postproperty_left_container">
           <div className="postproperty_container">
             <div className="postproperty_heading">
               <span>
@@ -179,14 +179,14 @@ const Postproperty = () => {
               </div>
             </div>
 
-            <div className="register_wrapper">
-              <form className="register-form-wrapper">
+            <div className="postproperty_wrapper">
+              <form className="postproperty-form-wrapper">
                 <div className="secHeading">Personal Details</div>
 
-                <div className="formElement">
-                  <div className="formLabel">I am</div>
-                  <div className="formValue">
-                    <div className="register_input_iam">
+                <div className="postproperty_formElement">
+                  <div className="postproperty_formLabel">I am</div>
+                  <div className="postproperty_formValue">
+                    <div className="postproperty_input_iam">
                       <input
                         type="radio"
                         name="iam"
@@ -209,27 +209,27 @@ const Postproperty = () => {
                         onChange={handleInput}
                       />
                       {/* <span className="register_person_title">I am</span> */}
-                      <div className="register_category">
+                      <div className="postproperty_category">
                         <label htmlFor="dot-1">
                           <span className="dot one"></span>
-                          <span className="register_iam">Owner</span>
+                          <span className="postproperty_iam">Owner</span>
                         </label>
                         <label htmlFor="dot-2">
                           <span className="dot two"></span>
-                          <span className="register_iam">Agent</span>
+                          <span className="postproperty_iam">Agent</span>
                         </label>
                         <label htmlFor="dot-3">
                           <span className="dot three"></span>
-                          <span className="register_iam">Builder</span>
+                          <span className="postproperty_iam">Builder</span>
                         </label>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="register-input-name">
+                <div className="postproperty-input-name">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="name"
                     id="name"
@@ -237,14 +237,14 @@ const Postproperty = () => {
                     value={property.name}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.username}
                     </span> */}
                 </div>
 
-                <div className="register-input-email">
+                <div className="postproperty-input-email">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="email"
                     name="email"
                     id="email"
@@ -252,13 +252,13 @@ const Postproperty = () => {
                     value={property.email}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.email}
                     </span> */}
                 </div>
-                <div className="register-input-phone">
+                <div className="postproperty-input-phone">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="phone"
                     id="phone"
@@ -266,15 +266,15 @@ const Postproperty = () => {
                     value={property.phone}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.phone}
                     </span> */}
                 </div>
 
-                <div className="formElement">
-                  <div className="formLabel">For</div>
-                  <div className="formValue">
-                    <div className="register_input_propertyfor">
+                <div className="postproperty_formElement">
+                  <div className="postproperty_formLabel">For</div>
+                  <div className="postproperty_formValue">
+                    <div className="postproperty_input_propertyfor">
                       <input
                         type="radio"
                         name="propertyfor"
@@ -296,28 +296,28 @@ const Postproperty = () => {
                         id="dot-6"
                         onChange={handleInput}
                       />
-                      {/* <span className="register_person_title">I am</span> */}
-                      <div className="register_category">
+                      {/* <span className="postproperty_person_title">I am</span> */}
+                      <div className="postproperty_category">
                         <label htmlFor="dot-4">
                           <span className="dot four"></span>
-                          <span className="register_propertyfor">Sale</span>
+                          <span className="postproperty_propertyfor">Sale</span>
                         </label>
                         <label htmlFor="dot-5">
                           <span className="dot five"></span>
-                          <span className="register_propertyfor">Rent</span>
+                          <span className="postproperty_propertyfor">Rent</span>
                         </label>
                         <label htmlFor="dot-6">
                           <span className="dot six"></span>
-                          <span className="register_propertyfor">Hostel</span>
+                          <span className="postproperty_propertyfor">Hostel</span>
                         </label>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="register-input-city">
+                <div className="postproperty-input-city">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="city"
                     id="city"
@@ -325,14 +325,14 @@ const Postproperty = () => {
                     value={property.city}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.city}
                     </span> */}
                 </div>
 
-                <div className="register-input-locality">
+                <div className="postproperty-input-locality">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="locality"
                     id="locality"
@@ -340,14 +340,14 @@ const Postproperty = () => {
                     value={property.locality}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.locality}
                     </span> */}
                 </div>
 
-                <div className="register-input-rooms">
+                <div className="postproperty-input-rooms">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="rooms"
                     id="rooms"
@@ -355,14 +355,14 @@ const Postproperty = () => {
                     value={property.rooms}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.rooms}
                     </span> */}
                 </div>
 
-                <div className="register-input-propertytype">
+                <div className="postproperty-input-propertytype">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="propertytype"
                     id="propertytype"
@@ -370,14 +370,14 @@ const Postproperty = () => {
                     value={property.propertytype}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.propertytype}
                     </span> */}
                 </div>
 
-                <div className="register-input-area">
+                <div className="postproperty-input-area">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="area"
                     id="area"
@@ -385,14 +385,14 @@ const Postproperty = () => {
                     value={property.area}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.area}
                     </span> */}
                 </div>
 
-                <div className="register-input-floors">
+                <div className="postproperty-input-floors">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="floors"
                     id="floors"
@@ -400,14 +400,14 @@ const Postproperty = () => {
                     value={property.floors}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.floors}
                     </span> */}
                 </div>
 
-                <div className="register-input-price">
+                <div className="postproperty-input-price">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="price"
                     id="price"
@@ -415,14 +415,14 @@ const Postproperty = () => {
                     value={property.price}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.price}
                     </span> */}
                 </div>
 
-                <div className="register-input-status">
+                <div className="postproperty-input-status">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="status"
                     id="status"
@@ -430,14 +430,14 @@ const Postproperty = () => {
                     value={property.status}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.status}
                     </span> */}
                 </div>
 
-                <div className="register-input-description">
+                <div className="postproperty-input-description">
                   <input
-                    className="register-input"
+                    className="postproperty-input"
                     type="text"
                     name="description"
                     id="description"
@@ -445,7 +445,7 @@ const Postproperty = () => {
                     value={property.description}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="register-error-data">
+                  {/* <span className="postproperty-error-data">
                       {formErrors.description}
                     </span> */}
                 </div>

@@ -13,7 +13,6 @@ const Property = require("./model/postPropertySchema");
 
 const userApi = require("./router/user");
 const propertyApi = require("./router/post");
-
 const propertydetailsApi = require("./router/propertyDetails");
 
 app.use(express.json());

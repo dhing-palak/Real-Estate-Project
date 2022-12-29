@@ -43,13 +43,13 @@ const Property = () => {
 
             <div className="middlePart">
               <div className="magicbrick">
-                <h5>ONLY ON MAGICBRICKS</h5>
+                <h6>ONLY ON MAGICBRICKS</h6>
               </div>
               <div className="statusProperty">
-                <h3>
+                <h5>
                   {detail.rooms} Ready to Occupy {detail.propertytype} for sale{" "}
                   {detail.city}
-                </h3>
+                </h5>
               </div>
               <div className="detailsProperty">
                 <div className="detailsInfo">

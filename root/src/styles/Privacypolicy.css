@@ -10,16 +10,13 @@
   padding-bottom: 2em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #0c0c0c;
-  font-weight: bold;
+.privacy-main {
+  font-size: 16px;
 }
-
-p {
-  font-size: 1.4rem;
+.privacy-title {
+  font-size: 20px;
+}
+.privacy-subtitle {
+  font-weight: 600;
+  font-size: 18px;
 }
