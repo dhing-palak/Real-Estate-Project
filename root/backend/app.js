@@ -6,7 +6,7 @@ app.use(cors());
 
 dotenv.config({ path: "./config.env" });
 require("./db/conn");
-const User = require("./model/userSchema");
+// const User = require("./model/userSchema");
 const userApi = require("./router/user");
 
 app.use(express.json());
