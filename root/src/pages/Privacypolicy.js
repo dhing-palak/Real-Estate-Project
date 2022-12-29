@@ -6,22 +6,22 @@ function Privacypolicy() {
     <>
       <privacypolicy>
         <div className="privacy-container">
-          <div className="row">
+          <div className="privacy-main">
             <p>
-              This privacy policy ("Policy") explains the policy regarding the
-              collection, use, disclosure and transfer of your information by
-              RealEstate and/or its subsidiary(ies) and/or affiliate(s) (collectively
-              referred to as the "Company"), which operates various websites,
-              including sub-sites, platforms, applications, m-web platforms and other
-              platforms (collectively referred to as "Sites") for delivery of
+              This privacy policy explains the policy regarding the collection, use,
+              disclosure and transfer of your information by RealEstate and/or its
+              subsidiary(ies) and/or affiliate(s) (collectively referred to as the
+              &quotCompany&quot), which operates various websites, including
+              sub-sites, platforms, applications, m-web platforms and other platforms
+              (collectively referred to as &quotSites&quot) for delivery of
               information, products, offerings and content via any mobile or internet
-              connected device or otherwise (collectively the "Services").
+              connected device or otherwise (collectively the &quotServices&quot).
             </p>
             <p>
               This Policy forms part and parcel of the Terms of Use and other terms
-              on the Site ("Terms of Use"). Capitalized terms which have been used
-              here but are undefined shall have the same meaning as attributed to
-              them in the Terms of Use. This policy is effective from the date and
+              on the Site (&quotTerms of Use&quot). Capitalized terms which have been
+              used here but are undefined shall have the same meaning as attributed
+              to them in the Terms of Use. This policy is effective from the date and
               time a user registers with Site and accept the terms and conditions
               laid out in the Site. Please read this Privacy Policy and our Terms of
               Use carefully before using our Services.
@@ -34,12 +34,14 @@ function Privacypolicy() {
             </p>
 
             <div
-              className="text-align-left p-3"
+              className="privacy-title p-1"
               style={{ backgroundColor: "#f3efe0" }}
             >
-              <h5>1. Information Received, Collected And Stored by The Company </h5>
+              <div className="privacy-title">
+                1. Information Received, Collected And Stored by The Company{" "}
+              </div>
             </div>
-            <h3>Registration data</h3>
+            <div className="privacy-subtitle">Registration data</div>
             <p>
               When you register on the Sites for the Service, we ask you to provide
               basic contact information such as your name, sex, age, address, pin
@@ -48,7 +50,7 @@ function Privacypolicy() {
               etc. we shall retrieve Information from such account to continue to
               interact with you and to continue providing the Services.
             </p>
-            <h3>Subscription or paid service data</h3>
+            <div className="privacy-subtitle">Subscription or paid service data</div>
             <p>
               When you register on the Sites for the Service, we ask you to provide
               basic contact information such as your name, sex, age, address, pin
@@ -57,11 +59,12 @@ function Privacypolicy() {
               etc. we shall retrieve Information from such account to continue to
               interact with you and to continue providing the Services.
             </p>
+
             <div
-              className="text-align-left p-3"
+              className="privacy-title p-1"
               style={{ backgroundColor: "#f3efe0" }}
             >
-              <h5>2. Updates / Changes </h5>
+              <div className="privacy-title">2. Updates / Changes </div>
             </div>
             <p>
               The internet is an ever evolving medium. We may alter our Policy from
@@ -78,12 +81,12 @@ function Privacypolicy() {
             </p>
 
             <div
-              className="text-align-left p-3"
+              className="privacy-title p-1"
               style={{ backgroundColor: "#f3efe0" }}
             >
-              <h5>3. 9. Miscellaneous </h5>
+              <div className="privacy-title">3. 9. Miscellaneous </div>
             </div>
-            <h3>Security</h3>
+            <div className="privacy-subtitle">Security</div>
             <p>
               We use commercially reasonable security measures to protect the loss,
               misuse, and alteration of the information under our control. However,

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const dotenv = require("dotenv");
 const express = require("express");
 const app = express();
@@ -10,7 +11,6 @@ const User = require("./model/userSchema");
 const Property = require("./model/postPropertySchema");
 const userApi = require("./router/user");
 const propertyApi = require("./router/post");
-
 
 app.use(express.json());
 app.use("/user", userApi);
