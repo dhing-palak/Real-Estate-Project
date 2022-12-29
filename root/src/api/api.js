@@ -36,7 +36,6 @@ export const register = async (name, phone, email, person, password, cpassword) 
 export const postproperty = async (
   iam,
   name,
-  ownerName,
   email,
   phone,
   propertyfor,
@@ -47,7 +46,6 @@ export const postproperty = async (
   area,
   floors,
   price,
-  pricePerSqft,
   status,
   description,
 ) => {
@@ -59,7 +57,6 @@ export const postproperty = async (
     body: JSON.stringify({
       iam,
       name,
-      ownerName,
       email,
       phone,
       propertyfor,
@@ -70,7 +67,6 @@ export const postproperty = async (
       area,
       floors,
       price,
-      pricePerSqft,
       status,
       description,
     }),
