@@ -17,7 +17,6 @@ const Property = () => {
       const responseData = await res.json();
       if (res.status === 200 && responseData) {
         console.log("responseData", responseData);
-        // return responseData;
         setData(responseData);
       }
     } catch (err) {
@@ -30,7 +29,6 @@ const Property = () => {
   }, []);
   console.log("data", data);
 
-  // return data.map((detail) => {
   return (
     <div className="outer">
       {data.map((detail, id) => {
@@ -104,7 +102,6 @@ const Property = () => {
                 <button className="phoneDetails">Get Phone No.</button>
               </div>
               <div>
-                {/* <p className = "feedback" onClick={() => setFeedback("This is my feedback")}> */}
                 <p className="feedback"> Share Feedback</p>
               </div>
             </div>
