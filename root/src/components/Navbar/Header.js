@@ -49,7 +49,8 @@ const Navbar = () => {
                 {city.map((data, i) => (
                   <React.Fragment key={i}>
                     <span className="dropdown-content3">
-                      {data}<br />
+                      {data}
+                      <br />
                     </span>
                   </React.Fragment>
                 ))}
