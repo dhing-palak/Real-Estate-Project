@@ -1,0 +1,149 @@
+.footer {
+  display: block;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+}
+.footer__main {
+  width: 100%;
+  min-height: 200px;
+  background-color: #f5f5f5;
+  padding: 38px 0;
+}
+.footer__main__section {
+  display: flex;
+}
+.footer__main__left {
+  width: 54%;
+  padding-right: 92px;
+}
+.footer__main__title {
+  width: 100%;
+  font-size: 20px;
+  line-height: 16px;
+  color: #0b0b0b;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.footer__main__content {
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  color: #303030;
+}
+.footer__main__social-links {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+.footer ul {
+  list-style: none;
+}
+.footer li {
+  display: list-item;
+  text-align: left;
+}
+.footer__main__social-links .fa-facebook-f {
+  width: 32px;
+  height: 32px;
+  background-position: -59px -52px;
+}
+.footer__main__social-links .fa-instagram {
+  width: 32px;
+  height: 32px;
+  background-position: -99px -52px;
+}
+.footer__main__social-links .fa-youtube {
+  width: 32px;
+  height: 32px;
+  background-position: -139px -52px;
+}
+.footer__main__social-links .fa-twitter {
+  width: 32px;
+  height: 32px;
+  background-position: -199px -52px;
+}
+.footer__main__right {
+  width: 46%;
+}
+
+.footer__main__right__content-1 {
+  margin-bottom: 34px;
+}
+.footer__main__right__link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 20px;
+  color: #303030;
+  margin-right: 10px;
+  position: relative;
+}
+.footer__secondary {
+  width: 100%;
+  min-height: 50px;
+  padding-bottom: 0%;
+  background-color: #e8e8e8;
+}
+.footer__secondary__links {
+  width: 100%;
+  display: flex;
+}
+.footer__secondary__links > li {
+  padding-right: 8rem;
+  padding-left: 8rem;
+  display: inline-block;
+  color: #060606;
+  font-size: 16px;
+  line-height: 48px;
+}
+.footer__secondary__links > li > a {
+  display: inline-block;
+  color: #060606;
+  font-size: 16px;
+  line-height: 48px;
+}
+.footer li:hover {
+  color: red;
+}
+
+.footer a:hover {
+  color: red;
+}
+.footer .fontawesome-style {
+  padding-bottom: 0rem;
+  padding-right: 4rem;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  color: red;
+  background-color: transparent;
+  width: 0rem;
+  height: 0rem;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+
+.footer .fontawesome-style:hover {
+  transition: all 1s;
+  animation: rotatefont 1s linear infinite alternate-reverse;
+  color: red;
+}
+
+@keyframes rotatefont {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.footer__copyright {
+  width: 100%;
+  height: 50px;
+  background-color: #303030;
+  color: #fff;
+  font-size: 12px;
+  line-height: 40px;
+  padding-top: 0%;
+}

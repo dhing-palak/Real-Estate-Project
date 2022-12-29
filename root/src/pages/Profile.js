@@ -39,12 +39,13 @@ const Profile = () => {
         <div className="profile_container">
           <div className="profile_left">
             <div className="profile_left_body">
-              <div className="profile_image">
+              <figure className="profile_image_block">
                 <image
+                  className="profile_image"
                   src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                  alt="image"
+                  alt="profile-image"
                 />
-              </div>
+              </figure>
               <div className="profile_left_data">
                 <h4>{userData.name}</h4>
                 <p>{userData.person}</p>

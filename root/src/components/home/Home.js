@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <>
       <div className="homepage">
-        <h1>Hello {userData.name} welcome to Real Estate.</h1>
+        <h4>Hello {userData.name} welcome to Real Estate.</h4>
         <div
           className="button"
           role="presentation"
