@@ -42,8 +42,8 @@
 }
 
 .magicbrick {
-  color: green;
-  border: solid green;
+  color: #009681;
+  border: solid #009681;
   font-weight: bolder;
   height: -moz-fit-content;
   height: fit-content;
@@ -129,24 +129,24 @@
 }
 
 .ownerDetails {
-  background-color:#D82329;
-  color: #FFFFFF;
+  background-color: #d82329;
+  color: #ffffff;
   border-radius: 15px;
   width: 120px;
   padding-bottom: 10px;
-  border-color: #D82329;
+  border-color: #d82329;
 }
 
 .getPhoneNo {
   padding-bottom: 10px;
 }
 .phoneDetails {
-  background-color: #FFFFFF;
-  color: #D82329;
+  background-color: #ffffff;
+  color: #d82329;
   border-radius: 15px;
   width: 120px;
   padding-bottom: 10px;
-  border-color: #D82329;
+  border-color: #d82329;
 }
 
 .feedback {
