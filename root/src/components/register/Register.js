@@ -81,11 +81,11 @@ const Register = () => {
 
   return (
     <>
-      <header className="register_main_header">
+      {/* <header className="register_main_header">
         <div className="register_header_container">
           <div className="register_header_logo">Real Estate</div>
         </div>
-      </header>
+      </header> */}
       <div className="register_webpage">
         <div className="register_left">
           <div className="register_left_data">

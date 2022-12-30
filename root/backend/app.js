@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const express = require("express");
 const app = express();
 const cors = require("cors");
+
 app.use(cors());
 
 dotenv.config({ path: "./config.env" });
@@ -12,11 +13,16 @@ const User = require("./model/userSchema");
 const Property = require("./model/postPropertySchema");
 
 const userApi = require("./router/user");
+const locationRoute = require("./router/user");
+
+app.use(express.json());
+app.use("/user", userApi);
+app.use("/location", locationRoute);
 const propertyApi = require("./router/post");
 const propertydetailsApi = require("./router/propertyDetails");
 
 app.use(express.json());
-app.use("/user", userApi);
+
 
 app.use("/get", propertydetailsApi);
 app.use("/post", propertyApi);
