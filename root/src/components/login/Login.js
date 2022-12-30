@@ -38,11 +38,11 @@ const Login = () => {
 
   return (
     <>
-      <header className="login_main_header">
+      {/* <header className="login_main_header">
         <div className="login_header_container">
           <div className="login_header_logo">Real Estate</div>
         </div>
-      </header>
+      </header> */}
       <div className="login_webpage">
         <div className="login_left">
           <div className="login_left_data">
@@ -139,14 +139,14 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <footer className="login_footer">
+      {/* <footer className="login_footer">
         <div className="login_inner_footer">Real Estate</div>
         <div className="login_footer_links">
           <span>About</span>
           <span>Terms and Conditions</span>
           <span>Privacy</span>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };

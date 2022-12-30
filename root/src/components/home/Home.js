@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <>
-      <h1 className="userName">Hello {userData.name} welcome to Real Estate.</h1>
+      <h5 className="userName">Hello {userData.name} welcome to Real Estate.</h5>
       <Property />
     </>
   );

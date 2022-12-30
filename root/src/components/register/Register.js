@@ -246,14 +246,14 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <footer className="register_footer">
+      {/* <footer className="register_footer">
         <div className="register_inner_footer">Real Estate</div>
         <div className="register_footer_links">
           <span>About</span>
           <span>Terms and Conditions</span>
           <span>Privacy</span>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };
