@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../styles/Property.css";
-import { useEffect } from "react";
+import { useEffect, useContext} from "react";
+import { AppContext } from "../../state/StateContext"
 
 import image from "../../images/Property1.jpg";
 import superAreaImage from "../../images/square.jpg";
@@ -9,7 +10,11 @@ import floorImage from "../../images/floor.jpg";
 import { propertydetails } from "../../api/api";
 
 const Property = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+
+  const {propertyData, setPropertyData} = useContext(AppContext);
+
+  // const [filterCity, setFilterCity] = useState(["ALL"]);
 
   const getPropertyData = async () => {
     try {
@@ -17,7 +22,7 @@ const Property = () => {
       const responseData = await res.json();
       if (res.status === 200 && responseData) {
         console.log("responseData", responseData);
-        setData(responseData);
+        setPropertyData(responseData);
       }
     } catch (err) {
       console.error("Error while fetching ", err.message);
@@ -27,11 +32,11 @@ const Property = () => {
   useEffect(() => {
     getPropertyData();
   }, []);
-  console.log("data", data);
+  console.log("data", propertyData);
 
   return (
     <div className="outer">
-      {data.map((detail, id) => {
+      {propertyData.map((detail, id) => {
         return (
           <div key={id} className="inner">
             <div className="picOwner">
@@ -40,13 +45,12 @@ const Property = () => {
             </div>
 
             <div className="middlePart">
-              <div className="magicbrick">
-                <h6>ONLY ON MAGICBRICKS</h6>
+              <div className="realEstate">
+                <h6>ONLY ON REALESTATE</h6>
               </div>
               <div className="statusProperty">
                 <h5>
-                  {detail.rooms} Ready to Occupy {detail.propertytype} for sale{" "}
-                  {detail.city}
+                  {detail.rooms} BHK Ready to Occupy {detail.propertytype} for sale {detail.city}
                 </h5>
               </div>
               <div className="detailsProperty">

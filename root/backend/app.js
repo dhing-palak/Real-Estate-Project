@@ -23,7 +23,6 @@ const propertydetailsApi = require("./router/propertyDetails");
 
 app.use(express.json());
 
-
 app.use("/get", propertydetailsApi);
 app.use("/post", propertyApi);
 
