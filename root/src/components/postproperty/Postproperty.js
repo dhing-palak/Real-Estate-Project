@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Postproperty.css";
 import { postproperty } from "../../api/api";
+import validate from "../../validation/validate";
 
 const Postproperty = () => {
   const navigate = useNavigate();
@@ -22,8 +23,8 @@ const Postproperty = () => {
     description: "",
   });
 
-  // const [formErrors, setFormErrors] = useState({});
-  // const [isSubmit, setIsSubmit] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   let name, value;
   const handleInput = (e) => {
@@ -35,8 +36,8 @@ const Postproperty = () => {
 
   const PostData = async (e) => {
     e.preventDefault();
-    // setFormErrors(validate(user));
-    // setIsSubmit(true);
+    setFormErrors(validate(property));
+    setIsSubmit(true);
 
     const {
       iam,
@@ -73,70 +74,19 @@ const Postproperty = () => {
       description,
     );
 
-    // if (Object.keys(formErrors).length === 0 && isSubmit) {
-    // const res = await fetch("/post/property", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     iam,
-    //     name,
-    //     email,
-    //     phone,
-    //     propertyfor,
-    //     city,
-    //     locality,
-    //     rooms,
-    //     propertytype,
-    //     area,
-    //     floors,
-    //     price,
-    //     status,
-    //     description
-    //   }),
-    // });
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      const data = await res.json();
 
-    const data = await res.json();
-
-    if (res.status === 422 || !data) {
-      window.alert(data.error);
-      console.log("Invalid Property");
-    } else {
-      window.alert(" Successfully Added Property");
-      console.log(" Successfully Added Property");
-      navigate("/");
+      if (res.status === 422 || !data) {
+        window.alert(data.error);
+        console.log("Invalid Property");
+      } else {
+        window.alert(" Successfully Added Property");
+        console.log(" Successfully Added Property");
+        navigate("/");
+      }
     }
-    // }
   };
-
-  // const validate = (values) => {
-  //   const errors = {};
-  //   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-  //   if (!values.name) {
-  //     errors.username = "Username is required!";
-  //   }
-  //   if (!values.phone) {
-  //     errors.phone = "Phone number is required!";
-  //   }
-  //   if (!values.email) {
-  //     errors.email = "Email is required!";
-  //   } else if (!regex.test(values.email)) {
-  //     errors.email = "This is not a valid email format!";
-  //   }
-  // if (!values.password) {
-  //   errors.password = "Password is required!";
-  // } else if (values.password.length < 4) {
-  //   errors.password = "Password must be more than 4 characters!";
-  // } else if (values.password.length > 10) {
-  //   errors.password = "Password cannot exceed more than 10 characters!";
-  // }
-  // if (!values.cpassword) {
-  //   errors.cpassword = "Confirm Password is required!";
-  // }
-
-  //   return errors;
-  // };
 
   return (
     <>
@@ -146,7 +96,7 @@ const Postproperty = () => {
             <div className="postproperty_heading">
               <span>
                 <h1 className="highLight">Sell or Rent your Property</h1>
-                <h4> We have over 15 Lac buyers and tenants for you!</h4>
+                <h6> We have over 15 Lac buyers and tenants for you!</h6>
               </span>
             </div>
             <div className="postproperty__offer__block">
@@ -231,9 +181,9 @@ const Postproperty = () => {
                     value={property.name}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.username}
-                    </span> */}
+                  <span className="postproperty-error-data">
+                    {formErrors.username}
+                  </span>
                 </div>
 
                 <div className="postproperty-input-email">
@@ -246,9 +196,7 @@ const Postproperty = () => {
                     value={property.email}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.email}
-                    </span> */}
+                  <span className="postproperty-error-data">{formErrors.email}</span>
                 </div>
                 <div className="postproperty-input-phone">
                   <input
@@ -260,9 +208,7 @@ const Postproperty = () => {
                     value={property.phone}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.phone}
-                    </span> */}
+                  <span className="postproperty-error-data">{formErrors.phone}</span>
                 </div>
 
                 <div className="postproperty_formElement">
@@ -319,9 +265,7 @@ const Postproperty = () => {
                     value={property.city}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.city}
-                    </span> */}
+                  <span className="postproperty-error-data">{formErrors.city}</span>
                 </div>
 
                 <div className="postproperty-input-locality">
@@ -334,9 +278,9 @@ const Postproperty = () => {
                     value={property.locality}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.locality}
-                    </span> */}
+                  <span className="postproperty-error-data">
+                    {formErrors.locality}
+                  </span>
                 </div>
 
                 <div className="postproperty-input-rooms">
@@ -349,9 +293,7 @@ const Postproperty = () => {
                     value={property.rooms}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.rooms}
-                    </span> */}
+                  <span className="postproperty-error-data">{formErrors.rooms}</span>
                 </div>
 
                 <div className="postproperty-input-propertytype">
@@ -364,9 +306,9 @@ const Postproperty = () => {
                     value={property.propertytype}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.propertytype}
-                    </span> */}
+                  <span className="postproperty-error-data">
+                    {formErrors.propertytype}
+                  </span>
                 </div>
 
                 <div className="postproperty-input-area">
@@ -379,9 +321,7 @@ const Postproperty = () => {
                     value={property.area}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.area}
-                    </span> */}
+                  <span className="postproperty-error-data">{formErrors.area}</span>
                 </div>
 
                 <div className="postproperty-input-floors">
@@ -394,9 +334,9 @@ const Postproperty = () => {
                     value={property.floors}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.floors}
-                    </span> */}
+                  <span className="postproperty-error-data">
+                    {formErrors.floors}
+                  </span>
                 </div>
 
                 <div className="postproperty-input-price">
@@ -409,9 +349,7 @@ const Postproperty = () => {
                     value={property.price}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.price}
-                    </span> */}
+                  <span className="postproperty-error-data">{formErrors.price}</span>
                 </div>
 
                 <div className="postproperty-input-status">
@@ -424,9 +362,9 @@ const Postproperty = () => {
                     value={property.status}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.status}
-                    </span> */}
+                  <span className="postproperty-error-data">
+                    {formErrors.status}
+                  </span>
                 </div>
 
                 <div className="postproperty-input-description">
@@ -439,9 +377,9 @@ const Postproperty = () => {
                     value={property.description}
                     onChange={handleInput}
                   ></input>
-                  {/* <span className="postproperty-error-data">
-                      {formErrors.description}
-                    </span> */}
+                  <span className="postproperty-error-data">
+                    {formErrors.description}
+                  </span>
                 </div>
 
                 <div className="postproperty-submit-button">
