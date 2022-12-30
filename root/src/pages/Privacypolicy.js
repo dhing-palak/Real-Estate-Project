@@ -10,16 +10,16 @@ function Privacypolicy() {
             <p>
               This privacy policy explains the policy regarding the collection, use,
               disclosure and transfer of your information by RealEstate and/or its
-              subsidiary(ies) and/or affiliate(s) (collectively referred to as the
-              &quotCompany&quot), which operates various websites, including
+              subsidiary(ies) and/or affiliate(s) `collectively referred to as the
+              &quotCompany&quot`, which operates various websites, including
               sub-sites, platforms, applications, m-web platforms and other platforms
-              (collectively referred to as &quotSites&quot) for delivery of
+              `collectively referred to as &quotSites&quot` for delivery of
               information, products, offerings and content via any mobile or internet
-              connected device or otherwise (collectively the &quotServices&quot).
+              connected device or otherwise `collectively the &quotServices&quot`.
             </p>
             <p>
               This Policy forms part and parcel of the Terms of Use and other terms
-              on the Site (&quotTerms of Use&quot). Capitalized terms which have been
+              on the Site `&quotTerms of Use&quot`. Capitalized terms which have been
               used here but are undefined shall have the same meaning as attributed
               to them in the Terms of Use. This policy is effective from the date and
               time a user registers with Site and accept the terms and conditions

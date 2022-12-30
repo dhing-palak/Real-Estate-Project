@@ -8,12 +8,17 @@ app.use(cors());
 dotenv.config({ path: "./config.env" });
 require("./db/conn");
 const User = require("./model/userSchema");
+
 const Property = require("./model/postPropertySchema");
+
 const userApi = require("./router/user");
 const propertyApi = require("./router/post");
+const propertydetailsApi = require("./router/propertyDetails");
 
 app.use(express.json());
 app.use("/user", userApi);
+
+app.use("/get", propertydetailsApi);
 app.use("/post", propertyApi);
 
 const PORT = 5000;

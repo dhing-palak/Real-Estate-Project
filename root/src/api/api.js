@@ -31,6 +31,7 @@ export const register = async (name, phone, email, person, password, cpassword) 
   });
   return res;
 };
+
 //postproperty api
 export const postproperty = async (
   iam,
@@ -96,6 +97,18 @@ export const logout = async () => {
       "Content-Type": "application/json",
     },
     credentials: "include",
+  });
+  return res;
+};
+
+//Propertydetails Api
+export const propertydetails = async () => {
+  const res = await fetch("get/propertydetails", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
   });
   return res;
 };
