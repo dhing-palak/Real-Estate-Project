@@ -31,6 +31,7 @@ export const register = async (name, phone, email, person, password, cpassword) 
   });
   return res;
 };
+
 //postproperty api
 export const postproperty = async (
   iam,
@@ -98,4 +99,27 @@ export const logout = async () => {
     credentials: "include",
   });
   return res;
+};
+
+//Propertydetails Api
+export const propertydetails = async () => {
+  const res = await fetch("get/propertydetails", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  return res;
+};
+
+//Get City Name
+export const request = async () => {
+  try {
+    const response = await fetch("/user/location");
+    const json = await response.json();
+    console.log(json);
+  } catch (e) {
+    console.log("We have the error", e);
+  }
 };

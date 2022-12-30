@@ -11,12 +11,12 @@ function Terms() {
               <div className="terms-title">Terms of Use </div>
             </div>
             <p>
-              These terms of use (&quotTerms&quot) constitute a legally binding
-              agreement between you and Real Estate Services Limited (the
-              &quotCompany&quot) regarding your use of the website www.realestate.com
-              (the &quotSite&quot) and any services offered by the Company including
+              These terms of use `&quotTerms&quot` constitute a legally binding
+              agreement between you and Real Estate Services Limited `the
+              &quotCompany&quot` regarding your use of the website www.realestate.com
+              `the &quotSite&quot` and any services offered by the Company including
               but not limited to delivery of content via the Site, any mobile or
-              internet connected device or otherwise (the &quotthe Service&quot).
+              internet connected device or otherwise `the &quotthe Service&quot`.
             </p>
             <div className="terms-title p-1" style={{ backgroundColor: "#f3efe0" }}>
               <div className="terms-title"> Term: </div>

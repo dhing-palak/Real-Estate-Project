@@ -81,11 +81,11 @@ const Register = () => {
 
   return (
     <>
-      <header className="register_main_header">
+      {/* <header className="register_main_header">
         <div className="register_header_container">
           <div className="register_header_logo">Real Estate</div>
         </div>
-      </header>
+      </header> */}
       <div className="register_webpage">
         <div className="register_left">
           <div className="register_left_data">
@@ -246,14 +246,14 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <footer className="register_footer">
+      {/* <footer className="register_footer">
         <div className="register_inner_footer">Real Estate</div>
         <div className="register_footer_links">
           <span>About</span>
           <span>Terms and Conditions</span>
           <span>Privacy</span>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };
