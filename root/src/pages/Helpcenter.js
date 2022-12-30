@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import "../styles/Helpcenter.css";
 
@@ -22,7 +21,7 @@ function Helpcenter() {
               <li>
                 Step 2: Enter a strong password and Re-enter it to confirm Password.
               </li>
-              <li>click 'Confirm'. Your account will be created.</li>
+              <li>click `&apos Confirm`. Your account will be created.</li>
             </ul>
             <div
               className="helpcenter-title p-1"
@@ -33,7 +32,9 @@ function Helpcenter() {
             <p>To login your account, follow these steps:</p>
             <ul className="helpcenter_list_content">
               <li>Step 1: Enter your Username and Password.</li>
-              <li>click 'Confirm'. Your account will be Login to your account.</li>
+              <li>
+                click `&apos Confirm`. Your account will be Login to your account.
+              </li>
             </ul>
             <div
               className="helpcenter-title p-1"
@@ -51,20 +52,20 @@ function Helpcenter() {
                 password.
               </li>
               <li>
-                Step 2: On the top banner, click on 'My Activity / My Dashboard' and
-                select 'Manage Profile'.
+                Step 2: On the top banner, click on `&apos My Activity / My
+                Dashboard` and select `&apos my profile`
               </li>
               <li>
-                Step 3: Proceed to 'Profile Details' section. Here, click on
-                'Deactivate account'.
+                Step 3: Proceed to `&apos Profile Details` section. Here, click onnpm
+                `&apos Deactivate account`.
               </li>
               <li>
                 Step 4: You will get a Verification Code on your registered mobile
                 no. & email id.
               </li>
               <li>
-                Enter the 3 digit verification code sent and click 'Confirm'. Your
-                account will be de-activated.
+                Enter the 3 digit verification code sent and click `&apos Confirm`.
+                Your account will be de-activated.
               </li>
             </ul>
             <div
