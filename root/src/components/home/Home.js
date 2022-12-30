@@ -1,12 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import "../../styles/Home.css";
-import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../state/StateContext";
 import { profile } from "../../api/api";
+import Property from "../row/Property";
 
 const Home = () => {
-  const navigate = useNavigate();
-
   //Accessing Global State from Context
   const { userData, setuserData } = useContext(AppContext);
 
@@ -33,37 +31,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="homepage">
-        <h4>Hello {userData.name} welcome to Real Estate.</h4>
-        <div
-          className="button"
-          role="presentation"
-          onClick={() => navigate("/user/login")}
-        >
-          Login
-        </div>
-        <div
-          className="button"
-          role="presentation"
-          onClick={() => navigate("/user/register")}
-        >
-          Sign Up
-        </div>
-        <div
-          className="button"
-          role="presentation"
-          onClick={() => navigate("/user/profile")}
-        >
-          Profile
-        </div>
-        <div
-          className="button"
-          role="presentation"
-          onClick={() => navigate("/user/logout")}
-        >
-          Logout
-        </div>
-      </div>
+      <h1 className="userName">Hello {userData.name} welcome to Real Estate.</h1>
+      <Property />
     </>
   );
 };
