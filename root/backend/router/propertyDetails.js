@@ -5,7 +5,6 @@ require("../db/conn");
 const Property = require("../model/postPropertySchema");
 
 router.get("/:cityName", (req, res) => {
-
   if (req.params.cityName != "all") {
     Property.find({ city: req.params.cityName }, (err, data) => {
       if (err) {
@@ -23,7 +22,6 @@ router.get("/:cityName", (req, res) => {
       }
     });
   }
-
 });
 
 module.exports = router;

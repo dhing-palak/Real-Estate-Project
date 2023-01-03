@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 const StateContext = ({ children }) => {
   const [userData, setuserData] = useState({});
-  
+
   const [propertyData, setPropertyData] = useState([]);
 
   return (
@@ -13,12 +13,11 @@ const StateContext = ({ children }) => {
         userData,
         setuserData,
         propertyData,
-        setPropertyData
+        setPropertyData,
       }}
     >
       {children}
     </AppContext.Provider>
-
   );
 };
 

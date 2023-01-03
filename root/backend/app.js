@@ -23,7 +23,7 @@ const propertydetailsApi = require("./router/propertyDetails");
 
 app.use(express.json());
 
-app.use("/propertydetails",propertydetailsApi);
+app.use("/propertydetails", propertydetailsApi);
 app.use("/post", propertyApi);
 
 const PORT = 5000;

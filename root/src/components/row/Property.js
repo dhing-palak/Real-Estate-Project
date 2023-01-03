@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/Property.css";
 import { useEffect, useContext } from "react";
-import { AppContext } from "../../state/StateContext"
+import { AppContext } from "../../state/StateContext";
 
 import image from "../../images/Property1.jpg";
 import superAreaImage from "../../images/square.jpg";
@@ -12,8 +12,7 @@ import { propertydetails } from "../../api/api";
 const Property = () => {
   // const [data, setData] = useState([]);
 
-  const {propertyData, setPropertyData} = useContext(AppContext);
-  
+  const { propertyData, setPropertyData } = useContext(AppContext);
 
   const getPropertyData = async () => {
     try {
@@ -30,7 +29,7 @@ const Property = () => {
 
   useEffect(() => {
     getPropertyData();
-  }, []);  
+  }, []);
 
   return (
     <div className="outer">
@@ -48,7 +47,8 @@ const Property = () => {
               </div>
               <div className="statusProperty">
                 <h5>
-                  {detail.rooms} BHK Ready to Occupy {detail.propertytype} for sale {detail.city}
+                  {detail.rooms} BHK Ready to Occupy {detail.propertytype} for sale{" "}
+                  {detail.city}
                 </h5>
               </div>
               <div className="detailsProperty">
