@@ -102,13 +102,17 @@ export const logout = async () => {
 };
 
 //Propertydetails Api
-export const propertydetails = async () => {
-  const res = await fetch("get/propertydetails", {
+export const propertydetails =  async (cityName) => {
+  const res = await fetch(`/propertydetails/${cityName}`, {
     method: "GET",
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: "application/json", 
+      "Content-Type": "application/json", 
     },
+    params: {
+      cityName
+    },
+    credentials: "include",
   });
   return res;
 };

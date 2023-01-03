@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Property.css";
-import { useEffect, useContext} from "react";
+import { useEffect, useContext } from "react";
 import { AppContext } from "../../state/StateContext"
 
 import image from "../../images/Property1.jpg";
@@ -13,12 +13,11 @@ const Property = () => {
   // const [data, setData] = useState([]);
 
   const {propertyData, setPropertyData} = useContext(AppContext);
-
-  // const [filterCity, setFilterCity] = useState(["ALL"]);
+  
 
   const getPropertyData = async () => {
     try {
-      const res = await propertydetails();
+      const res = await propertydetails("all");
       const responseData = await res.json();
       if (res.status === 200 && responseData) {
         console.log("responseData", responseData);
@@ -31,8 +30,7 @@ const Property = () => {
 
   useEffect(() => {
     getPropertyData();
-  }, []);
-  console.log("data", propertyData);
+  }, []);  
 
   return (
     <div className="outer">
