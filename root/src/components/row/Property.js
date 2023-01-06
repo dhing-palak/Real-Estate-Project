@@ -1,24 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useContext } from "react";
 import "../../styles/Property.css";
-import { useEffect } from "react";
-
 import image from "../../images/Property1.jpg";
 import superAreaImage from "../../images/square.jpg";
 import statusImage from "../../images/status.jpg";
 import floorImage from "../../images/floor.jpg";
 import { propertydetails } from "../../api/api";
+import { AppContext } from "../../state/StateContext";
 
 const Property = () => {
-  const [data, setData] = useState([]);
+  //Accessing Global data from Context
+  const { propertyData, setPropertyData } = useContext(AppContext);
 
   const getPropertyData = async () => {
     try {
-      const res = await propertydetails();
+      const res = await propertydetails("All");
       const responseData = await res.json();
-      if (res.status === 200 && responseData) {
-        console.log("responseData", responseData);
-        setData(responseData);
-      }
+      setPropertyData(responseData);
     } catch (err) {
       console.error("Error while fetching ", err.message);
     }
@@ -27,11 +24,10 @@ const Property = () => {
   useEffect(() => {
     getPropertyData();
   }, []);
-  console.log("data", data);
 
   return (
     <div className="outer">
-      {data.map((detail, id) => {
+      {propertyData.map((detail, id) => {
         return (
           <div key={id} className="inner">
             <div className="picOwner">
