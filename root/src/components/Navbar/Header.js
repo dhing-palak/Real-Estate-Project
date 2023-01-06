@@ -1,74 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/Header.css";
 import "font-awesome/css/font-awesome.min.css";
 
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements";
-// import { request } from "../../api/api";
+
 
 const Navbar = () => {
-  const city = [
-    "Mumbai",
-    "Kolkata",
-    "Hyderabad",
-    "Pune",
-    "Chennai",
-    "Patna",
-    "Bangalore",
-    "Lucknow",
-    "Noida",
-    "Kerala",
-  ];
-
   return (
     <>
-      <Nav>
-        <Bars />
+      <header className="header-fixed">
 
-        <NavMenu>
-          <div className="logo">
-            <h2>
-              <NavLink to="/" activestyle="true">
-                <span>R</span>eal-
-                <span>E</span>state
-              </NavLink>
-            </h2>
-          </div>
+        <div className="header-limiter">
 
-          {/* <NavLink to='/about' activestyle='true'>
-			About
-		</NavLink> */}
+          <h1><Link to="/"><span>R</span>eal-<span>E</span>state</Link></h1>
+          <span className="span1">Cities <i className="fa fa-angle-down"></i>
+          </span>
+          <nav>
+            <Link to="/user/register"><i className="fa fa-sign-in"></i> Register </Link>
+            <Link to="/user/login">Login </Link>
+            <Link to="/postproperty"><i className="fas fa-home"></i> Postproperty</Link>
+          </nav>
 
-          <div>
-            <div className="dropdown">
-              <button className="dropbtn">
-                {" "}
-                Cities <i className="fa fa-angle-down"></i>
-              </button>
+        </div>
 
-              <div className="dropdown-content">
-                {city.map((data, i) => (
-                  <React.Fragment key={i}>
-                    <span className="dropdown-content3">
-                      {data}
-                      <br />
-                    </span>
-                  </React.Fragment>
-                ))}
-
-                {/* <p>{text}</p> */}
-              </div>
-            </div>
-          </div>
-        </NavMenu>
-
-        <NavBtn>
-          <NavBtnLink to="/user/register">Register</NavBtnLink>
-          <NavBtnLink to="/user/login">Login</NavBtnLink>
-          <NavBtnLink to="/postproperty">
-            <i className="fas fa-home"></i> Post Property{" "}
-          </NavBtnLink>
-        </NavBtn>
-      </Nav>
+      </header>
+      
       <div className="subheader">
         <div className="dropdown1">
           <button className="dropbtn1">
@@ -80,10 +36,10 @@ const Navbar = () => {
             ></i>
           </button>
           <div className="dropdown-content1">
-            <a href="/about">Ready to Move</a>
-            <a href="/about">Budget Homes</a>
-            <a href="/about">Premium Homes</a>
-            <a href="/about">Newly Launched</a>
+            <Link to="/about">Ready to Move</Link>
+            <Link to="/about">Budget Homes</Link>
+            <Link to="/about">Premium Homes</Link>
+            <Link to="/about">Newly Launched</Link>
 
             {/* <a href="#">Link 3</a> */}
           </div>
@@ -98,10 +54,10 @@ const Navbar = () => {
             ></i>
           </button>
           <div className="dropdown-content1">
-            <a href="/about">Owner Properties</a>
-            <a href="/about">Verified Properties</a>
-            <a href="/about">Furnished Homes</a>
-            <a href="/about">Immediately Homes</a>
+            <Link to="/about">Owner Properties</Link>
+            <Link to="/about">Verified Properties</Link>
+            <Link to="/about">Furnished Homes</Link>
+            <Link to="/about">Immediately Homes</Link>
 
             {/* <a href="#">Link 3</a> */}
           </div>
@@ -117,11 +73,11 @@ const Navbar = () => {
           </button>
           <div className="dropdown-content1">
             For Owner
-            <a href="/about">Sell Properties</a>
-            <a href="/about">My Dashboard</a>
+            <Link to="/about">Sell Properties</Link>
+            <Link to="/about">My Dashboard</Link>
             For Agents & Builder
-            <a href="/about">Sales Enquiry</a>
-            <a href="/about">My Dashboard</a>
+            <Link to="/about">Sales Enquiry</Link>
+            <Link to="/about">My Dashboard</Link>
             {/* <a href="#">Link 3</a> */}
           </div>
         </div>
@@ -135,8 +91,8 @@ const Navbar = () => {
             ></i>
           </button>
           <div className="dropdown-content1">
-            <a href="/about">Help Center</a>
-            <a href="/about">Sales Enquiry</a>
+            <Link to="/helpcenter">Help Center</Link>
+            <Link to="/privacypolicy">Sales Enquiry</Link>
 
             {/* <a href="#">Link 3</a> */}
           </div>
