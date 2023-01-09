@@ -3,6 +3,7 @@ import "../../styles/Home.css";
 import { AppContext } from "../../state/StateContext";
 import { profile } from "../../api/api";
 import Property from "../row/Property";
+import SearchProperty from "../searchProperty/SearchProperty";
 
 const Home = () => {
   //Accessing Global State from Context
@@ -32,6 +33,7 @@ const Home = () => {
   return (
     <>
       <h5 className="userName">Hello {userData.name} welcome to Real Estate.</h5>
+      <SearchProperty />
       <Property />
     </>
   );

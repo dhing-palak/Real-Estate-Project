@@ -117,6 +117,24 @@ export const propertydetails = async (cityName) => {
   return res;
 };
 
+// search Api
+export const searchProperty = async (city, propertytype, price) => {
+  const res = await fetch("/search/propertydetails", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    params: {
+      city,
+      propertytype,
+      price,
+    },
+    credentials: "include",
+  });
+  return res;
+};
+
 //Get City Name
 export const request = async () => {
   try {
