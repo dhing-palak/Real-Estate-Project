@@ -19,12 +19,11 @@ app.use(express.json());
 app.use("/user", userApi);
 app.use("/location", locationRoute);
 const propertyApi = require("./router/post");
-const propertydetailsApi = require("./router/propertyDetails");
+const propertydetailsApi = require("./router/property");
 
 app.use(express.json());
 
-
-app.use("/get", propertydetailsApi);
+app.use("/property", propertydetailsApi);
 app.use("/post", propertyApi);
 
 const PORT = 5000;

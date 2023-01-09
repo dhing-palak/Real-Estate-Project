@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 //Login api
 export const login = async (email, password) => {
   const res = await fetch("/user/login", {
@@ -102,13 +103,16 @@ export const logout = async () => {
 };
 
 //Propertydetails Api
-export const propertydetails = async () => {
-  const res = await fetch("get/propertydetails", {
+// eslint-disable-next-line no-unused-vars
+export const propertydetails = async (cityname) => {
+  const res = await fetch(`/property/details/${cityname}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
+    credentials: "include",
+    params: cityname,
   });
   return res;
 };
