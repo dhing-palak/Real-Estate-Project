@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 700px;
   height: auto;
-  background: #f2f2f2;
+  background: #F7F7F7;
   position: relative;
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
   height: 100%;
   position: relative;
   z-index: 1;
-  background-color: #fff;
+  background-color: #FFFFFF;
   padding: 0;
   left: 0;
 }
@@ -54,7 +54,7 @@
   width: 624px;
   height: 108px;
   border-radius: 4px;
-  background-color: #f7f7f7;
+  background-color: #F7F7F7;
   padding: 17px 0 0 24px;
 }
 .postproperty__offer__heading {
@@ -63,6 +63,32 @@
   line-height: 18px;
   font-weight: 700;
   padding-bottom: 13px;
+}
+.postproperty__message__block {
+  margin-bottom: 15px;
+}
+.postproperty_message_data {
+  width: 624px;
+  height: 60px;
+  border-radius: 4px;
+  background-color: #F7F7F7;
+  padding: 17px 0 0 24px;
+}
+.postproperty__message__display {
+  font-size: 14px;
+  color: #303030;
+  line-height: 18px;
+  font-weight: 700;
+  padding-bottom: 13px;
+  color: #D8232A;
+}
+.postproperty__message__sucess {
+  font-size: 14px;
+  color: #303030;
+  line-height: 18px;
+  font-weight: 700;
+  padding-bottom: 13px;
+  background-color: aqua;
 }
 .postproperty__offer__list {
   float: left;
@@ -165,7 +191,7 @@
 #dot-4:checked ~ .postproperty_category label .four,
 #dot-5:checked ~ .postproperty_category label .five,
 #dot-6:checked ~ .postproperty_category label .six {
-  background: #e02817;
+  background: #D8232A;
   border-color: #d9d9d9;
 }
 
@@ -184,8 +210,10 @@ form input[type="radio"] {
 .postproperty-input-area,
 .postproperty-input-floors,
 .postproperty-input-price,
+.postproperty-input-ratepersqft,
 .postproperty-input-status,
-.postproperty-input-description {
+.postproperty-input-description,
+.postproperty-input-image {
   margin: 2px;
   color: #969292;
   font-size: 16px;
@@ -213,7 +241,7 @@ form input[type="radio"] {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #d8282a;
+  color: #D8232A;
   font-size: 10px;
 }
 
@@ -222,7 +250,7 @@ form input[type="radio"] {
   padding: 10px;
   width: 40%;
   justify-content: center;
-  background-color: #d8282a;
+  background-color: #D8232A;
   color: white;
   margin: auto;
   outline: none;
@@ -235,19 +263,10 @@ form input[type="radio"] {
 .postproperty-submit-button {
   margin-top: 10px;
 }
-
-.postproperty-signin-text {
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-family: sans-serif;
-}
-
-.postproperty-signin-btn {
-  padding: 5px;
-  color: #d8282a;
-  font-weight: bold;
-  cursor: pointer;
-}
+.asterisk_input:before {
+  content:"*"; 
+  color: #D8232A;
+  position: relative; 
+  margin: 0px 0px 0px -20px; 
+  font-size: xx-large; 
+  padding: 0 5px 0 0; }

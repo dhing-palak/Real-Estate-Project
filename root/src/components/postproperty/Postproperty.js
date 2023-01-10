@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "../../styles/Postproperty.css";
 import { postproperty } from "../../api/api";
 import validate from "../../validation/validate";
+import { city } from "../../common/common";
+import PropertyInput from "../postproperty/PropertyInput";
 
 const Postproperty = () => {
   const navigate = useNavigate();
+  const [showdiv, setshowdiv] = useState(false);
   const [property, setProperty] = useState({
     iam: "",
     name: "",
@@ -19,12 +22,19 @@ const Postproperty = () => {
     area: "",
     floors: "",
     price: "",
+    ratepersqft: "",
     status: "",
     description: "",
+    image: null,
   });
 
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  console.log(showdiv);
+
+  city.map((e) => {
+    console.log(e);
+  });
 
   let name, value;
   const handleInput = (e) => {
@@ -33,12 +43,24 @@ const Postproperty = () => {
 
     setProperty({ ...property, [name]: value });
   };
+  function handleImage(e) {
+    if (e.target.files && e.target.files[0]) {
+      let img = e.target.files[0];
+      setProperty({ ...property, image: img });
+    }
+  }
+  const handleChange = (event) => {
+    if (event.target.value) {
+      setProperty({ ...property, city: event.target.value });
+    }
+  };
 
   const PostData = async (e) => {
+    console.log(property)
     e.preventDefault();
     setFormErrors(validate(property));
     setIsSubmit(true);
-
+    setshowdiv(true);
     const {
       iam,
       name,
@@ -52,11 +74,13 @@ const Postproperty = () => {
       area,
       floors,
       price,
+      ratepersqft,
       status,
       description,
+      image,
     } = property;
 
-    //calling login api
+    //calling postproperty api
     const res = await postproperty(
       iam,
       name,
@@ -70,8 +94,10 @@ const Postproperty = () => {
       area,
       floors,
       price,
+      ratepersqft,
       status,
       description,
+      image,
     );
 
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -83,7 +109,7 @@ const Postproperty = () => {
       } else {
         window.alert(" Successfully Added Property");
         console.log(" Successfully Added Property");
-        navigate("/");
+        navigate("/Postproperty");
       }
     }
   };
@@ -122,6 +148,33 @@ const Postproperty = () => {
                 </div>
               </div>
             </div>
+            {showdiv ? (
+              <div className="postproperty__message__block">
+                <div className="postproperty_message_data">
+                  <div className="postproperty__message__display">
+                    {formErrors.iam ||
+                    formErrors.username ||
+                    formErrors.email ||
+                    formErrors.phone ||
+                    formErrors.city ||
+                    formErrors.locality ||
+                    formErrors.rooms ||
+                    formErrors.propertytype ||
+                    formErrors.area ||
+                    formErrors.floors ||
+                    formErrors.price ||
+                    formErrors.status ||
+                    formErrors.description ||
+                    formErrors.propertyfor ||
+                    formErrors.image
+                      ? "Please fill the details mention below: "
+                      : "Your Property details added Sucesssfully"}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div></div>
+            )}
 
             <div className="postproperty_wrapper">
               <form className="postproperty-form-wrapper">
@@ -152,7 +205,7 @@ const Postproperty = () => {
                         id="dot-3"
                         onChange={handleInput}
                       />
-                      {/* <span className="register_person_title">I am</span> */}
+
                       <div className="postproperty_category">
                         <label htmlFor="dot-1">
                           <span className="dot one"></span>
@@ -167,49 +220,48 @@ const Postproperty = () => {
                           <span className="postproperty_iam">Builder</span>
                         </label>
                       </div>
+                      <span className="postproperty-error-data">
+                        {formErrors.iam}
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="postproperty-input-name">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your Name"
-                    value={property.name}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">
-                    {formErrors.username}
-                  </span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-name"
+                  name="name"
+                  type="text"
+                  id="name"
+                  placeholder="Enter your Name"
+                  value={property.name}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.username}
+                />
 
-                <div className="postproperty-input-email">
-                  <input
-                    className="postproperty-input"
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your Email - id"
-                    value={property.email}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">{formErrors.email}</span>
-                </div>
-                <div className="postproperty-input-phone">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    placeholder="Enter your Phone Number"
-                    value={property.phone}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">{formErrors.phone}</span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-email"
+                  name="email"
+                  type="text"
+                  id="email"
+                  placeholder="Enter your email-id"
+                  value={property.email}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.email}
+                />
+
+                <PropertyInput
+                  className="postproperty-input-phone"
+                  name="phone"
+                  type="text"
+                  id="phone"
+                  placeholder="Enter your phone"
+                  value={property.phone}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.phone}
+                />
 
                 <div className="postproperty_formElement">
                   <div className="postproperty_formLabel">For</div>
@@ -236,7 +288,6 @@ const Postproperty = () => {
                         id="dot-6"
                         onChange={handleInput}
                       />
-                      {/* <span className="postproperty_person_title">I am</span> */}
                       <div className="postproperty_category">
                         <label htmlFor="dot-4">
                           <span className="dot four"></span>
@@ -251,135 +302,141 @@ const Postproperty = () => {
                           <span className="postproperty_propertyfor">Hostel</span>
                         </label>
                       </div>
+                      <span className="postproperty-error-data">
+                        {formErrors.propertyfor}
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="postproperty-input-city">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="city"
-                    id="city"
-                    placeholder="City"
-                    value={property.city}
-                    onChange={handleInput}
-                  ></input>
+                  <select className="postproperty-input" onChange={handleChange}>
+                    {/* <option key="property.city" /> {""}  */}
+                    <option key="property.city" disabled selected hidden>
+                      Select City
+                    </option>
+                    {city.map((allcities) => {
+                      return <option key={allcities}>{allcities}</option>;
+                    })}
+                  </select>
                   <span className="postproperty-error-data">{formErrors.city}</span>
                 </div>
 
-                <div className="postproperty-input-locality">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="locality"
-                    id="locality"
-                    placeholder="Locality"
-                    value={property.locality}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">
-                    {formErrors.locality}
-                  </span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-locality"
+                  name="locality"
+                  type="text"
+                  id="locality"
+                  placeholder="Enter your locality"
+                  value={property.locality}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.locality}
+                />
 
-                <div className="postproperty-input-rooms">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="rooms"
-                    id="rooms"
-                    placeholder="Rooms"
-                    value={property.rooms}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">{formErrors.rooms}</span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-rooms"
+                  name="rooms"
+                  type="text"
+                  id="rooms"
+                  placeholder="Enter number of rooms"
+                  value={property.rooms}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.rooms}
+                />
 
-                <div className="postproperty-input-propertytype">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="propertytype"
-                    id="propertytype"
-                    placeholder="Type of Property "
-                    value={property.propertytype}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">
-                    {formErrors.propertytype}
-                  </span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-propertytype"
+                  name="propertytype"
+                  type="text"
+                  id="propertytype"
+                  placeholder="Enter your type of property"
+                  value={property.propertytype}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.propertytype}
+                />
 
-                <div className="postproperty-input-area">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="area"
-                    id="area"
-                    placeholder="Area"
-                    value={property.area}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">{formErrors.area}</span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-area"
+                  name="area"
+                  type="text"
+                  id="area"
+                  placeholder="Enter your area"
+                  value={property.area}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.area}
+                />
 
-                <div className="postproperty-input-floors">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="floors"
-                    id="floors"
-                    placeholder="Number of Floors"
-                    value={property.floors}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">
-                    {formErrors.floors}
-                  </span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-floors"
+                  name="floors"
+                  type="text"
+                  id="floors"
+                  placeholder="Enter number of floors"
+                  value={property.floors}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.floors}
+                />
 
-                <div className="postproperty-input-price">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="price"
-                    id="price"
-                    placeholder="Price of Property"
-                    value={property.price}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">{formErrors.price}</span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-price"
+                  name="price"
+                  type="text"
+                  id="price"
+                  placeholder="Enter the price"
+                  value={property.price}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.price}
+                />
 
-                <div className="postproperty-input-status">
-                  <input
-                    className="postproperty-input"
-                    type="text"
-                    name="status"
-                    id="status"
-                    placeholder="Status"
-                    value={property.status}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">
-                    {formErrors.status}
-                  </span>
-                </div>
+                <PropertyInput
+                  className="postproperty-input-ratepersqft"
+                  name="ratepersqft"
+                  type="text"
+                  id="ratepersqft"
+                  placeholder="Enter rate per sqft"
+                  value={property.ratepersqft}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.ratepersqft}
+                />
 
-                <div className="postproperty-input-description">
+                <PropertyInput
+                  className="postproperty-input-status"
+                  name="status"
+                  type="text"
+                  id="status"
+                  placeholder="Enter status"
+                  value={property.status}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.status}
+                />
+
+                <PropertyInput
+                  className="postproperty-input-description"
+                  name="description"
+                  type="text"
+                  id="description"
+                  placeholder="Enter description"
+                  value={property.description}
+                  onChange={handleInput}
+                  spanClassName="postproperty-error-data"
+                  formErrors={formErrors.description}
+                />
+
+                <div>
                   <input
-                    className="postproperty-input"
-                    type="text"
-                    name="description"
-                    id="description"
-                    placeholder="Description"
-                    value={property.description}
-                    onChange={handleInput}
-                  ></input>
-                  <span className="postproperty-error-data">
-                    {formErrors.description}
-                  </span>
+                    type="file"
+                    name="myImage"
+                    accept=".jpg, .png, .jpeg"
+                    onChange={handleImage}
+                  />
                 </div>
 
                 <div className="postproperty-submit-button">
