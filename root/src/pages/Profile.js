@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { profile } from "../api/api";
 import { AppContext } from "../state/StateContext";
 import "../styles/Profile.css";
+import { UserContext } from "../App";
 
 const Profile = () => {
   const navigate = useNavigate();
+  const {dispatch}=useContext(UserContext);
 
   //Accessing Global State from Context
   const { userData, setuserData } = useContext(AppContext);
@@ -22,6 +24,10 @@ const Profile = () => {
       if (!res.status === 200) {
         const error = new Error(res.error);
         throw error;
+      }else {
+        
+        dispatch({type:"USER",payload:true})
+        
       }
     } catch (error) {
       console.log(error);

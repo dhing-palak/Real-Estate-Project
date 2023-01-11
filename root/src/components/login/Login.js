@@ -1,11 +1,15 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import "../../styles/Login.css";
 import { login } from "../../api/api";
+import { UserContext } from "../../App";
 
 const Login = () => {
+
+  const {dispatch}=useContext(UserContext);
+
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -31,6 +35,7 @@ const Login = () => {
     if (res.status === 400 || !data) {
       window.alert("invalid credientials");
     } else {
+      dispatch({type:"USER",payload:true})
       window.alert("Login Successful");
       navigate("/");
     }

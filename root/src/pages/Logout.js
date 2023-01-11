@@ -2,8 +2,11 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../api/api";
 import { AppContext } from "../state/StateContext";
+import { UserContext } from "../App";
 
 const Logout = () => {
+  const {dispatch}=useContext(UserContext);
+
   const navigate = useNavigate();
   const { setuserData } = useContext(AppContext);
 
@@ -19,6 +22,7 @@ const Logout = () => {
         throw error;
       } else {
         setuserData({});
+        dispatch({type:"USER",payload:false})
         navigate("/", { replace: true });
       }
     } catch (error) {
