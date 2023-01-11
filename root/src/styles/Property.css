@@ -41,11 +41,12 @@
   margin-right: auto;
 }
 
-.magicbrick {
+.realEstate {
   color: #009681;
   border: solid #009681;
   font-weight: bolder;
-  height: -moz-fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
   height: fit-content;
   width: fit-content;
   line-height: 40px;
@@ -108,7 +109,7 @@
   padding-left: 50px;
   margin-left: 15px;
   border-radius: 0px 15px 15px 0px;
-  margin-right: 1px;
+  margin-right: 20px;
 }
 
 .price {

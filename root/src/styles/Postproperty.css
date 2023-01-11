@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 700px;
   height: auto;
-  background: #F7F7F7;
+  background: #f7f7f7;
   position: relative;
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
   height: 100%;
   position: relative;
   z-index: 1;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 0;
   left: 0;
 }
@@ -54,7 +54,7 @@
   width: 624px;
   height: 108px;
   border-radius: 4px;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   padding: 17px 0 0 24px;
 }
 .postproperty__offer__heading {
@@ -71,7 +71,7 @@
   width: 624px;
   height: 60px;
   border-radius: 4px;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   padding: 17px 0 0 24px;
 }
 .postproperty__message__display {
@@ -80,7 +80,7 @@
   line-height: 18px;
   font-weight: 700;
   padding-bottom: 13px;
-  color: #D8232A;
+  color: #d8232a;
 }
 .postproperty__message__sucess {
   font-size: 14px;
@@ -191,7 +191,7 @@
 #dot-4:checked ~ .postproperty_category label .four,
 #dot-5:checked ~ .postproperty_category label .five,
 #dot-6:checked ~ .postproperty_category label .six {
-  background: #D8232A;
+  background: #d8232a;
   border-color: #d9d9d9;
 }
 
@@ -241,7 +241,7 @@ form input[type="radio"] {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #D8232A;
+  color: #d8232a;
   font-size: 10px;
 }
 
@@ -250,7 +250,7 @@ form input[type="radio"] {
   padding: 10px;
   width: 40%;
   justify-content: center;
-  background-color: #D8232A;
+  background-color: #d8232a;
   color: white;
   margin: auto;
   outline: none;
@@ -264,9 +264,10 @@ form input[type="radio"] {
   margin-top: 10px;
 }
 .asterisk_input:before {
-  content:"*"; 
-  color: #D8232A;
-  position: relative; 
-  margin: 0px 0px 0px -20px; 
-  font-size: xx-large; 
-  padding: 0 5px 0 0; }
+  content: "*";
+  color: #d8232a;
+  position: relative;
+  margin: 0px 0px 0px -20px;
+  font-size: xx-large;
+  padding: 0 5px 0 0;
+}

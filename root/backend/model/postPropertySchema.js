@@ -61,10 +61,10 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image:{
-    data:Buffer,
+  image: {
+    data: Buffer,
     contentType: String,
-  }
+  },
 });
 
 const Property = new mongoose.model("postProperties", postPropertySchema);

@@ -3,6 +3,7 @@ const validate = (values) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   const phoneno = /^\d{10}$/;
   const number = /^[0-9]$/;
+ 
 
   if (!values.iam) {
     errors.iam = "Select any option";
@@ -32,7 +33,7 @@ const validate = (values) => {
   if (!values.rooms) {
     errors.rooms = "Rooms is required!";
   } else if (!number.test(values.rooms)) {
-    errors.rooms = "Number of rooms must be in digits!";
+    errors.rooms = "Number of rooms must be in a single digit!";
   }
   if (!values.propertytype) {
     errors.propertytype = "Type of Property is required!";
@@ -42,10 +43,12 @@ const validate = (values) => {
   }
   if (!values.floors) {
     errors.floors = "Floors is required!";
+  } else if (!number.test(values.floors)) {
+    errors.floors = "Number of floors must be in single digits!";
   }
   if (!values.price) {
     errors.price = "Price is required!";
-  }
+  } 
   if (!values.ratepersqft) {
     errors.ratepersqft = "Rate per Sqft is required!";
   }

@@ -2,7 +2,6 @@ import React from "react";
 import "../../styles/Postproperty.css";
 
 export function PropertyInput(props) {
-
   return (
     <div className={props.className}>
       <input
@@ -14,10 +13,8 @@ export function PropertyInput(props) {
         value={props.value}
         onChange={props.onChange}
       ></input>
-      <span className="asterisk_input"></span> 
-      <span className="postproperty-error-data">
-        {props.formErrors}
-      </span>
+      <span className="asterisk_input"></span>
+      <span className="postproperty-error-data">{props.formErrors}</span>
     </div>
   );
 }

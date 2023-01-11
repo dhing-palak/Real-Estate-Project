@@ -25,7 +25,7 @@ router.post("/property", async (req, res) => {
     description,
     image,
   } = req.body;
-  console.log(req)
+  console.log(req);
 
   if (
     !iam ||
@@ -43,7 +43,7 @@ router.post("/property", async (req, res) => {
     !ratepersqft ||
     !status ||
     !description ||
-    !image 
+    !image
   ) {
     return res.status(422).json({ error: "Plz fill the fields properly" });
   }
@@ -65,7 +65,7 @@ router.post("/property", async (req, res) => {
       ratepersqft,
       status,
       description,
-      image
+      image,
     });
     await property.save();
     res.status(201).json({ message: "Post Property Successfully" });

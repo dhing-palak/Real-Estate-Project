@@ -56,7 +56,7 @@ const Postproperty = () => {
   };
 
   const PostData = async (e) => {
-    console.log(property)
+    console.log(property);
     e.preventDefault();
     setFormErrors(validate(property));
     setIsSubmit(true);
