@@ -3,7 +3,6 @@ const validate = (values) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   const phoneno = /^\d{10}$/;
   const number = /^[0-9]$/;
- 
 
   if (!values.iam) {
     errors.iam = "Select any option";
@@ -48,7 +47,7 @@ const validate = (values) => {
   }
   if (!values.price) {
     errors.price = "Price is required!";
-  } 
+  }
   if (!values.ratepersqft) {
     errors.ratepersqft = "Rate per Sqft is required!";
   }

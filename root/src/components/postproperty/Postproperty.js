@@ -25,7 +25,7 @@ const Postproperty = () => {
     ratepersqft: "",
     status: "",
     description: "",
-    image: null,
+    // image: { preview: "", data: "" },
   });
 
   const [formErrors, setFormErrors] = useState({});
@@ -43,12 +43,13 @@ const Postproperty = () => {
 
     setProperty({ ...property, [name]: value });
   };
-  function handleImage(e) {
-    if (e.target.files && e.target.files[0]) {
-      let img = e.target.files[0];
-      setProperty({ ...property, image: img });
-    }
-  }
+  // function handleImage(e) {
+  //   const img = {
+  //     preview: URL.createObjectURL(e.target.files[0]),
+  //     data: e.target.files[0],
+  //   };
+  //   setProperty({...property, image: img})
+  // }
   const handleChange = (event) => {
     if (event.target.value) {
       setProperty({ ...property, city: event.target.value });
@@ -57,6 +58,7 @@ const Postproperty = () => {
 
   const PostData = async (e) => {
     console.log(property);
+
     e.preventDefault();
     setFormErrors(validate(property));
     setIsSubmit(true);
@@ -430,14 +432,15 @@ const Postproperty = () => {
                   formErrors={formErrors.description}
                 />
 
-                <div>
-                  <input
+                {/* <div> */}
+                {/* <input
                     type="file"
                     name="myImage"
                     accept=".jpg, .png, .jpeg"
                     onChange={handleImage}
-                  />
-                </div>
+                  /> */}
+                {/* <input type="file" name="file" onChange={handleImage}></input>
+                </div> */}
 
                 <div className="postproperty-submit-button">
                   <button
