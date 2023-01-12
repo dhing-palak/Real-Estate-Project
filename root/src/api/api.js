@@ -47,8 +47,10 @@ export const postproperty = async (
   area,
   floors,
   price,
+  ratepersqft,
   status,
   description,
+  image,
 ) => {
   const res = await fetch("/post/property", {
     method: "POST",
@@ -68,8 +70,10 @@ export const postproperty = async (
       area,
       floors,
       price,
+      ratepersqft,
       status,
       description,
+      image,
     }),
   });
   return res;
