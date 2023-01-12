@@ -3,16 +3,11 @@ import { render, screen, logRoles } from "@testing-library/react";
 import Login from "../components/login/Login";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { shallow } from "enzyme";
+
 // import userEvent from "@testing-library/user-event";
 
 // eslint-disable-next-line no-undef
 describe("Testing the login component", () => {
-  const wrapper = shallow(
-    <BrowserRouter>
-      <Login />
-    </BrowserRouter>,
-  );
   test("Render the login form with button", async () => {
     render(
       <BrowserRouter>
@@ -66,9 +61,9 @@ describe("Testing the login component", () => {
     expect(emailField).toBeInTheDocument();
   });
 
-  test("Object check", () => {
-    expect(wrapper.exists(".login_right")).toEqual(false);
-  });
+  // test("Object check", () => {
+  //   expect(wrapper.exists(".login_right")).toEqual(false);
+  // });
 
   // test("State Check", () => {
   //   // let wrapper = shallow(

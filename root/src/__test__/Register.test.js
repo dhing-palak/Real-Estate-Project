@@ -3,17 +3,10 @@
 import { render, screen, logRoles } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { shallow } from "enzyme";
 import Register from "../components/register/Register";
 
 // eslint-disable-next-line no-undef
 describe("Testing the Register Component", () => {
-  const wrapper = shallow(
-    <BrowserRouter>
-      <Register />
-    </BrowserRouter>,
-  );
-
   test("Header Rendering  in the document", () => {
     render(
       <BrowserRouter>
