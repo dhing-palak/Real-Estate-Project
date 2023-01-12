@@ -4,9 +4,9 @@ const router = express.Router();
 require("../db/conn");
 const Property = require("../model/postPropertySchema");
 
-router.get("/:cityName", (req, res) => {
-  if (req.params.cityName != "all") {
-    Property.find({ city: req.params.cityName }, (err, data) => {
+router.get("/details/:cityname", (req, res) => {
+  if (req.params.cityname != "All") {
+    Property.find({ city: req.params.cityname }, (err, data) => {
       if (err) {
         return res.status(500).send(err);
       } else {
@@ -23,5 +23,4 @@ router.get("/:cityName", (req, res) => {
     });
   }
 });
-
 module.exports = router;

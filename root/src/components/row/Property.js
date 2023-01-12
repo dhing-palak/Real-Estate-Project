@@ -1,27 +1,21 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import "../../styles/Property.css";
-import { useEffect, useContext } from "react";
-import { AppContext } from "../../state/StateContext";
-
 import image from "../../images/Property1.jpg";
 import superAreaImage from "../../images/square.jpg";
 import statusImage from "../../images/status.jpg";
 import floorImage from "../../images/floor.jpg";
 import { propertydetails } from "../../api/api";
+import { AppContext } from "../../state/StateContext";
 
 const Property = () => {
-  // const [data, setData] = useState([]);
-
+  //Accessing Global data from Context
   const { propertyData, setPropertyData } = useContext(AppContext);
 
   const getPropertyData = async () => {
     try {
-      const res = await propertydetails("all");
+      const res = await propertydetails("All");
       const responseData = await res.json();
-      if (res.status === 200 && responseData) {
-        console.log("responseData", responseData);
-        setPropertyData(responseData);
-      }
+      setPropertyData(responseData);
     } catch (err) {
       console.error("Error while fetching ", err.message);
     }
@@ -60,7 +54,7 @@ const Property = () => {
                   />
                   <span className="detailsHeading">
                     <p className="text">SUPER AREA</p>
-                    <p className="value">{detail.area}</p>
+                    <p className="value">{detail.area} sqft</p>
                   </span>
                 </div>
                 <div className="detailsInfo">
@@ -96,7 +90,7 @@ const Property = () => {
 
             <div className="contactSizePrice">
               <div className="price">₹ {detail.price} Lac</div>
-              <div className="pricePerSqft">₹ 6,691 per sqft</div>
+              <div className="pricePerSqft">₹ {detail.ratepersqft} per sqft</div>
               <div className="contactOwner">
                 <button className="ownerDetails">Contact Owner</button>
               </div>
@@ -114,3 +108,4 @@ const Property = () => {
   );
 };
 export default Property;
+    

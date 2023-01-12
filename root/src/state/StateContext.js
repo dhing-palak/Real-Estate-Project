@@ -4,8 +4,9 @@ export const AppContext = createContext();
 
 const StateContext = ({ children }) => {
   const [userData, setuserData] = useState({});
-
   const [propertyData, setPropertyData] = useState([]);
+
+  // const [searchData,setSearchData] = useState([]);
 
   return (
     <AppContext.Provider
@@ -14,6 +15,7 @@ const StateContext = ({ children }) => {
         setuserData,
         propertyData,
         setPropertyData,
+        // setSearchData
       }}
     >
       {children}

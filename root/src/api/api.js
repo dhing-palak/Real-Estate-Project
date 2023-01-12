@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 //Login api
 export const login = async (email, password) => {
   const res = await fetch("/user/login", {
@@ -102,24 +103,22 @@ export const logout = async () => {
 };
 
 //Propertydetails Api
-export const propertydetails = async (cityName) => {
-  const res = await fetch(`/propertydetails/${cityName}`, {
+export const propertydetails = async (cityname) => {
+  const res = await fetch(`/property/details/${cityname}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    params: {
-      cityName,
-    },
     credentials: "include",
+    params: cityname,
   });
   return res;
 };
 
 // search Api
 export const searchProperty = async (city, propertytype, price) => {
-  const res = await fetch("/search/propertydetails", {
+  const res = await fetch(`/search/propertydetails?city=${city}&propertytype=${propertytype}&price=${price}`, {
     method: "GET",
     headers: {
       Accept: "application/json",

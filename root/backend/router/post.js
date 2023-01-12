@@ -19,6 +19,7 @@ router.post("/property", async (req, res) => {
     area,
     floors,
     price,
+    ratepersqft,
     status,
     description,
   } = req.body;
@@ -36,6 +37,7 @@ router.post("/property", async (req, res) => {
     !area ||
     !floors ||
     !price ||
+    !ratepersqft ||
     !status ||
     !description
   ) {
@@ -56,6 +58,7 @@ router.post("/property", async (req, res) => {
       area,
       floors,
       price,
+      ratepersqft,
       status,
       description,
     });

@@ -1,29 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../styles/Header.css";
 import "font-awesome/css/font-awesome.min.css";
-
+import { propertydetails } from "../../api/api";
+import { AppContext } from "../../state/StateContext";
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements";
-// import { request } from "../../api/api";
 
 const Navbar = () => {
-  const city = [
+  const cities = [
+    "All",
     "Mumbai",
+    "Delhi",
     "Kolkata",
     "Hyderabad",
     "Pune",
     "Chennai",
     "Patna",
-    "Bangalore",
+    "Bengaluru",
     "Lucknow",
     "Noida",
     "Kerala",
   ];
 
+  //Accessing Global data from Context
+  const { setPropertyData } = useContext(AppContext);
+
+  const cityDetails = async (city) => {
+    const res = await propertydetails(city);
+    const responseData = await res.json();
+    setPropertyData(responseData);
+  };
+
+  const handleChange = (event) => {
+    cityDetails(event.target.value);
+  };
+
   return (
     <>
       <Nav>
         <Bars />
-
         <NavMenu>
           <div className="logo">
             <h2>
@@ -33,31 +47,16 @@ const Navbar = () => {
               </NavLink>
             </h2>
           </div>
-
-          {/* <NavLink to='/about' activestyle='true'>
-			About
-		</NavLink> */}
-
           <div>
-            <div className="dropdown">
-              <button className="dropbtn">
-                {" "}
-                Cities <i className="fa fa-angle-down"></i>
-              </button>
-
-              <div className="dropdown-content">
-                {city.map((data, i) => (
-                  <React.Fragment key={i}>
-                    <span className="dropdown-content3">
-                      {data}
-                      <br />
-                    </span>
-                  </React.Fragment>
-                ))}
-
-                {/* <p>{text}</p> */}
-              </div>
-            </div>
+            <select onChange={handleChange}>
+              {cities.map((city, index) => {
+                return (
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
+                );
+              })}
+            </select>
           </div>
         </NavMenu>
 

@@ -18,6 +18,7 @@ const Postproperty = () => {
     area: "",
     floors: "",
     price: "",
+    ratepersqft: "",
     status: "",
     description: "",
   });
@@ -51,6 +52,7 @@ const Postproperty = () => {
       area,
       floors,
       price,
+      ratepersqft,
       status,
       description,
     } = property;
@@ -69,6 +71,7 @@ const Postproperty = () => {
       area,
       floors,
       price,
+      ratepersqft,
       status,
       description,
     );

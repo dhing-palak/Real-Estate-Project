@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "../../styles/Login.css";
 import { login } from "../../api/api";
 
@@ -91,7 +91,7 @@ const Login = () => {
                       onChange={handleChange}
                     ></input>
                   </div>
-                  <div className="login-submit-button">
+                  <div className="login-submit-button" data-testid="buttondiv">
                     <button
                       className="login-form-submit"
                       name="signin"
