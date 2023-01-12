@@ -64,7 +64,7 @@ const postPropertySchema = new mongoose.Schema({
   // image: {
   //   data: Buffer,
   //   contentType: String,
-   
+
   // },
 });
 
