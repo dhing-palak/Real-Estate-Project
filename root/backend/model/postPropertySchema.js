@@ -30,7 +30,7 @@ const postPropertySchema = new mongoose.Schema({
     required: true,
   },
   rooms: {
-    type: String,
+    type: Number,
     required: true,
   },
   propertytype: {
@@ -49,6 +49,10 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  ratepersqft: {
+    type: String,
+    required: true,
+  },
   status: {
     type: String,
     required: true,
@@ -57,6 +61,11 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  // image: {
+  //   data: Buffer,
+  //   contentType: String,
+   
+  // },
 });
 
 const Property = new mongoose.model("postProperties", postPropertySchema);
