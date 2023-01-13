@@ -122,19 +122,22 @@ export const propertydetails = async (cityname) => {
 
 // search Api
 export const searchProperty = async (city, propertytype, price) => {
-  const res = await fetch(`/search/propertydetails?city=${city}&propertytype=${propertytype}&price=${price}`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+  const res = await fetch(
+    `/search/propertydetails?city=${city}&propertytype=${propertytype}&price=${price}`,
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      params: {
+        city,
+        propertytype,
+        price,
+      },
+      credentials: "include",
     },
-    params: {
-      city,
-      propertytype,
-      price,
-    },
-    credentials: "include",
-  });
+  );
   return res;
 };
 

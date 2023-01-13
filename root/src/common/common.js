@@ -5,7 +5,7 @@ export const city = [
   "Pune",
   "Chennai",
   "Patna",
-  "Bangalore",
+  "Bengaluru",
   "Lucknow",
   "Noida",
   "Kerala",

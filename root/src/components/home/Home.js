@@ -32,7 +32,9 @@ const Home = () => {
 
   return (
     <>
-      <div><h5 className="userName">Hello {userData.name} welcome to Real Estate.</h5></div>
+      <div>
+        <h5 className="userName">Hello {userData.name} welcome to Real Estate.</h5>
+      </div>
       <SearchProperty />
       <Property />
     </>

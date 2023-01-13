@@ -5,11 +5,10 @@ const router = express.Router();
 // var path = require("path");
 // require("dotenv/config");
 
-
 require("../db/conn");
 // router.use(bodyParser.urlencoded({ extended: false }))
 // router.use(bodyParser.json())
- 
+
 // // Set EJS as templating engine
 // router.set("view engine", "ejs");
 
