@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState} from "react";
 import { AppContext } from "../../state/StateContext";
 import "../../styles/SearchProperty.css";
 import {city} from "../../common/common"
@@ -22,7 +22,7 @@ const SearchProperty = () => {
         ...searchData,
         [name]: value}
     })
-    console.log([name] , value);
+    // console.log([name] , value);
   }
 
   const getSearchData = async (city, propertytype, price) => {
@@ -31,47 +31,21 @@ const SearchProperty = () => {
       const responseData = await res.json();
       console.log(responseData);
       setPropertyData(responseData);
-      // console.log(responseData);
     } catch (err) {
       console.error("Error while fetching ", err.message);
     }
   };
 
   // useEffect(() => {
-  //   getSearchData();
+  //   getSearchData(searchData.cityname, searchData.propertytype, searchData.price);
   // }, []);
 
-  // const handleCity = (event) => {
-  //   if(event.target.value){
-  //     setSearchData({...searchData, city:event.target.value});
-  //   }
-  // }
-
-  // const handlePropertytype = (event) => {
-  //   if(event.target.value){
-  //     setSearchData({...searchData, propertytype:event.target.value});
-  //   }
-  // }
-
-  // const handleBudget = (event) => {
-  //   if(event.target.value){
-  //     setSearchData({...searchData, price:event.target.value});
-  //   }
-  // }
-
-  // const handleSearch = (event) => {
-  //   if(event.target.value){
-  //     setSearchData({...getSearchData, getSearchData(event.target.value})
-  //   }
-  // }
-
-
-
-
-  const handleChange1 = (event) => {
+  const handleChange1 = () => {
     event.preventDefault();
-    getSearchData(event.target.value);
+    getSearchData(searchData.cityname, searchData.propertytype, searchData.price);
   };
+
+  
 
   return (
     <>
@@ -100,8 +74,8 @@ const SearchProperty = () => {
           </span>
           <span>
             <select name = "propertytype" value={searchData.propertytype} onChange={handleChange} required className="drpdwn">
-              <option value="Flat">Flat</option>
-              <option value="Villa">Villa</option>
+              <option value="flat">Flat</option>
+              <option value="villa">Villa</option>
             </select>
           </span>
         </div>
@@ -115,12 +89,13 @@ const SearchProperty = () => {
               <option value="" hidden>
                 Budget
               </option>
-              <option value="50 Lac">50 Lac</option>
-              <option value="60 Lac">60 Lac</option>
-              <option value="70 Lac">70 Lac</option>
-              <option value="80 Lac">80 Lac</option>
-              <option value="90 Lac">90 Lac</option>
-              <option value="100 Lac">100 Lac</option>
+              <option value="50">50 Lac</option>
+              <option value="60">60 Lac</option>
+              <option value="70">70 Lac</option>
+              <option value="80">80 Lac</option>
+              <option value="90">90 Lac</option>
+              <option value="100">100 Lac</option>
+              <option value="200">200 Lac</option>
             </select>
           </span>
         </div>

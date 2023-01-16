@@ -22,6 +22,7 @@ router.get("/propertydetails", (req, res) => {
       },
     );
   }
+  
   // fetching if we pass city and propertytype
   else if (req.query.city && req.query.propertytype) {
     Property.find(
@@ -35,6 +36,7 @@ router.get("/propertydetails", (req, res) => {
       },
     );
   }
+  
   // fetching if we pass city and price
   else if (req.query.city && req.query.price) {
     Property.find({ city: req.query.city, price: req.query.price }, (err, data) => {
@@ -45,6 +47,7 @@ router.get("/propertydetails", (req, res) => {
       }
     });
   }
+  
   // fetching if we pass city
   else {
     Property.find({ city: req.query.city }, (err, data) => {
@@ -55,6 +58,7 @@ router.get("/propertydetails", (req, res) => {
       }
     });
   }
+  // console.log(req.query);
 });
 
 module.exports = router;

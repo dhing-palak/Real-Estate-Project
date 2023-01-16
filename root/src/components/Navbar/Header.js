@@ -4,23 +4,9 @@ import "font-awesome/css/font-awesome.min.css";
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./NavbarElements";
+import { cities } from "../../common/common";
 
 const Navbar = () => {
-  const cities = [
-    "All",
-    "Mumbai",
-    "Delhi",
-    "Kolkata",
-    "Hyderabad",
-    "Pune",
-    "Chennai",
-    "Patna",
-    "Bengaluru",
-    "Lucknow",
-    "Noida",
-    "Kerala",
-  ];
-
   //Accessing Global data from Context
   const { setPropertyData } = useContext(AppContext);
 
