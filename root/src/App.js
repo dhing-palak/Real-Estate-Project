@@ -13,12 +13,12 @@ import Profile from "./pages/Profile";
 import Logout from "./pages/Logout";
 import Navbar from "./components/Navbar/Header";
 
-import { initialState,reducer } from "./reducer/UseReducer";
+import { initialState, reducer } from "./reducer/UseReducer";
 
 //1:contextApi
-export const UserContext=createContext();
+export const UserContext = createContext();
 
-const Routing= ()=>{
+const Routing = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
@@ -32,20 +32,19 @@ const Routing= ()=>{
       <Route path="/user/logout" element={<Logout />}></Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
-  )
-}
-const App= () => {
-
-  const [state,dispatch] = useReducer(reducer,initialState)
+  );
+};
+const App = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
-      <UserContext.Provider value={{state,dispatch}}>
+      <UserContext.Provider value={{ state, dispatch }}>
         <div className="Header">
           <Navbar />
         </div>
         <div>
-          <Routing/>
+          <Routing />
           <div className="footer">
             <Footer />
           </div>
@@ -53,7 +52,7 @@ const App= () => {
       </UserContext.Provider>
     </>
   );
-}
+};
 function PageNotFound() {
   return (
     <div className="pagenot">

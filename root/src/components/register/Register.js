@@ -86,7 +86,7 @@ const Register = () => {
           <div className="register_header_logo">Real Estate</div>
         </div>
       </header> */}
-      <div className="register_webpage">
+      <div className="register_webpage" data-testid="registrationpage">
         <div className="register_left">
           <div className="register_left_data">
             <h3 className="register_left_heading">

@@ -2,32 +2,17 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from "react";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "../../styles/Header.css";
 import "font-awesome/css/font-awesome.min.css";
 
-
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
-import { UserContext } from "../../App";
-
+import {UserContext} from "../../App";
+import {cities} from "../../common/common";
 
 
 const Navbar = () => {
-  const cities = [
-    "All",
-    "Mumbai",
-    "Delhi",
-    "Kolkata",
-    "Hyderabad",
-    "Pune",
-    "Chennai",
-    "Patna",
-    "Bangalore",
-    "Lucknow",
-    "Noida",
-    "Kerala",
-  ];
   
 
   //Accessing Global data from Context
@@ -47,13 +32,12 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   const Close = () => setClick(false);
 
-  const {state,dispatch}=useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
 
-  const RenderMenu = ()=>{
-    if(state){
-      return(
+  const RenderMenu = () => {
+    if (state) {
+      return (
         <>
-          
           <li className="nav-item">
             <NavLink
               exact
@@ -62,7 +46,7 @@ const Navbar = () => {
               className="nav-links"
               onClick={click ? handleClick : null}
             >
-            MyProfile
+              MyProfile
             </NavLink>
           </li>
           <li className="nav-item">
@@ -73,7 +57,7 @@ const Navbar = () => {
               className="nav-links"
               onClick={click ? handleClick : null}
             >
-            PostProperty
+              PostProperty
             </NavLink>
           </li>
           <li className="nav-item">
@@ -87,11 +71,10 @@ const Navbar = () => {
               Logout
             </NavLink>
           </li>
-
         </>
-      )
-    }else{
-      return(
+      );
+    } else {
+      return (
         <>
           <li className="nav-item">
             <NavLink
@@ -112,7 +95,7 @@ const Navbar = () => {
               className="nav-links"
               onClick={click ? handleClick : null}
             >
-            Login
+              Login
             </NavLink>
           </li>
           <li className="nav-item">
@@ -122,22 +105,25 @@ const Navbar = () => {
               activeClassName="active"
               className="nav-links"
               onClick={click ? handleClick : null}
-            ><i className="fas fa-home"></i>
-            PostProperty
+            >
+              <i className="fas fa-home"></i>
+              PostProperty
             </NavLink>
           </li>
         </>
-      )
+      );
     }
-
-  }
-  
+  };
 
   return (
     <>
       <div>
-        <div className={click ? "main-container" : ""}  onClick={()=>Close()}/>
-        <nav className="navbar" onClick={e => e.stopPropagation()} role="presentation">
+        <div className={click ? "main-container" : ""} onClick={() => Close()} />
+        <nav
+          className="navbar"
+          onClick={(e) => e.stopPropagation()}
+          role="presentation"
+        >
           <div className="nav-container">
             <NavLink exact to="/" className="nav-logo">
               Real-Estate
@@ -153,10 +139,10 @@ const Navbar = () => {
                     );
                   })}
                 </select>
-              </div> 
+              </div>
             </span>
             <ul className={click ? "nav-menu active" : "nav-menu"}>
-              <RenderMenu/>
+              <RenderMenu />
             </ul>
             <div className="nav-icon" onClick={handleClick}>
               <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
@@ -165,7 +151,6 @@ const Navbar = () => {
         </nav>
       </div>
 
-     
       {/* <header className="header-fixed">
 
         <div className="header-limiter">
@@ -195,7 +180,7 @@ const Navbar = () => {
         </div>
 
       </header> */}
-      
+
       <div className="subheader">
         <div className="dropdown1">
           <button className="dropbtn1">

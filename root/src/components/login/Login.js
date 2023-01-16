@@ -7,8 +7,7 @@ import { login } from "../../api/api";
 import { UserContext } from "../../App";
 
 const Login = () => {
-
-  const {dispatch}=useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -35,7 +34,7 @@ const Login = () => {
     if (res.status === 400 || !data) {
       window.alert("invalid credientials");
     } else {
-      dispatch({type:"USER",payload:true})
+      dispatch({ type: "USER", payload: true });
       window.alert("Login Successful");
       navigate("/");
     }
@@ -48,7 +47,7 @@ const Login = () => {
           <div className="login_header_logo">Real Estate</div>
         </div>
       </header> */}
-      <div className="login_webpage">
+      <div className="login_webpage" data-testid="loginpage">
         <div className="login_left">
           <div className="login_left_data">
             <h3 className="login_left_heading">
