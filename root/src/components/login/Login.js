@@ -4,10 +4,10 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import "../../styles/Login.css";
 import { login } from "../../api/api";
-import { UserContext } from "../../App";
+import { AppContext } from "../../state/StateContext";
 
 const Login = () => {
-  const { dispatch } = useContext(UserContext);
+  const { setisLoggedin } = useContext(AppContext);
 
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ const Login = () => {
     if (res.status === 400 || !data) {
       window.alert("invalid credientials");
     } else {
-      dispatch({ type: "USER", payload: true });
+      setisLoggedin(true);
       window.alert("Login Successful");
       navigate("/");
     }

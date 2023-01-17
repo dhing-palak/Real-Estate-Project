@@ -2,21 +2,19 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from "react";
-import { NavLink, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 import "../../styles/Header.css";
 import "font-awesome/css/font-awesome.min.css";
-
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
-import {UserContext} from "../../App";
-import {cities} from "../../common/common";
+import { cities } from "../../common/common";
 
 
 const Navbar = () => {
   
 
   //Accessing Global data from Context
-  const { setPropertyData } = useContext(AppContext);
+  const { setPropertyData ,isLoggedin} = useContext(AppContext);
 
   const cityDetails = async (city) => {
     const res = await propertydetails(city);
@@ -32,102 +30,15 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   const Close = () => setClick(false);
 
-  const { state, dispatch } = useContext(UserContext);
-
-  const RenderMenu = () => {
-    if (state) {
-      return (
-        <>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/user/profile"
-              activeClassName="active"
-              className="nav-links"
-              onClick={click ? handleClick : null}
-            >
-              MyProfile
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/postproperty"
-              activeClassName="active"
-              className="nav-links"
-              onClick={click ? handleClick : null}
-            >
-              PostProperty
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/user/logout"
-              activeClassName="active"
-              className="nav-links"
-              onClick={click ? handleClick : null}
-            >
-              Logout
-            </NavLink>
-          </li>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/user/register"
-              activeClassName="active"
-              className="nav-links"
-              onClick={click ? handleClick : null}
-            >
-              Register
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/user/login"
-              activeClassName="active"
-              className="nav-links"
-              onClick={click ? handleClick : null}
-            >
-              Login
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/postproperty"
-              activeClassName="active"
-              className="nav-links"
-              onClick={click ? handleClick : null}
-            >
-              <i className="fas fa-home"></i>
-              PostProperty
-            </NavLink>
-          </li>
-        </>
-      );
-    }
-  };
-
   return (
     <>
       <div>
-        <div className={click ? "main-container" : ""} onClick={() => Close()} />
-        <nav
-          className="navbar"
-          onClick={(e) => e.stopPropagation()}
-          role="presentation"
-        >
+        <div className={click ? "main-container" : ""}  onClick={()=>Close()}/>
+        <nav className="navbar" onClick={e => e.stopPropagation()} role="presentation">
           <div className="nav-container">
-            <NavLink exact to="/" className="nav-logo">
+            <Link to="/" className="nav-logo">
               Real-Estate
-            </NavLink>
+            </Link>
             <span className="span1">
               <div>
                 <select onChange={handleChange}>
@@ -139,10 +50,78 @@ const Navbar = () => {
                     );
                   })}
                 </select>
-              </div>
+              </div> 
             </span>
             <ul className={click ? "nav-menu active" : "nav-menu"}>
-              <RenderMenu />
+              {!isLoggedin?(
+                <>
+                  <li className="nav-item">
+                    <Link
+                      to="/user/register"
+                      activeclassname="active"
+                      className="nav-links"
+                      onClick={click ? handleClick : null}
+                    >
+                      Register
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/user/login"
+                      activeclassname="active"
+                      className="nav-links"
+                      onClick={click ? handleClick : null}
+                    >
+                    Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/postproperty"
+                      activeclassname="active"
+                      className="nav-links"
+                      onClick={click ? handleClick : null}
+                    >
+                    PostProperty
+                    </Link>
+                  </li>
+                </>
+                
+              ):(
+                <>
+                  <li className="nav-item">
+                    <Link
+                      to="/user/profile"
+                      activeclassname="active"
+                      className="nav-links"
+                      onClick={click ? handleClick : null}
+                    >
+                    MyProfile
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/postproperty"
+                      activeclassname="active"
+                      className="nav-links"
+                      onClick={click ? handleClick : null}
+                    >
+                    PostProperty
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/user/logout"
+                      activeclassname="active"
+                      className="nav-links"
+                      onClick={click ? handleClick : null}
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                </>
+                
+              )} 
             </ul>
             <div className="nav-icon" onClick={handleClick}>
               <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
@@ -150,37 +129,6 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
-
-      {/* <header className="header-fixed">
-
-        <div className="header-limiter">
-
-          <h1><Link to="/"><span>R</span>eal-<span>E</span>state</Link></h1>
-
-          <span className="span1">
-            <div>
-              <select onChange={handleChange}>
-                {cities.map((city, index) => {
-                  return (
-                    <option key={index} value={city}>
-                      {city}
-                    </option>
-                  );
-                })}
-              </select>
-            </div> 
-          </span>
-
-          <nav>
-            <Link to="/user/register"><i className="fa fa-sign-in"></i>  Register</Link>
-            <Link to="/user/login">Login </Link>
-            <Link to="/postproperty"><i className="fas fa-home"></i> Postproperty</Link>
-          </nav>
-
-        </div>
-
-      </header> */}
-
       <div className="subheader">
         <div className="dropdown1">
           <button className="dropbtn1">
@@ -196,8 +144,6 @@ const Navbar = () => {
             <Link to="/about">Budget Homes</Link>
             <Link to="/about">Premium Homes</Link>
             <Link to="/about">Newly Launched</Link>
-
-            {/* <a href="#">Link 3</a> */}
           </div>
         </div>
         <div className="dropdown1">
@@ -214,8 +160,6 @@ const Navbar = () => {
             <Link to="/about">Verified Properties</Link>
             <Link to="/about">Furnished Homes</Link>
             <Link to="/about">Immediately Homes</Link>
-
-            {/* <a href="#">Link 3</a> */}
           </div>
         </div>
         <div className="dropdown1">
@@ -230,11 +174,10 @@ const Navbar = () => {
           <div className="dropdown-content1">
             For Owner
             <Link to="/about">Sell Properties</Link>
-            <Link to="/about">My Dashboard</Link>
+            <Link to="/user/profile">My Dashboard</Link>
             For Agents & Builder
             <Link to="/about">Sales Enquiry</Link>
-            <Link to="/about">My Dashboard</Link>
-            {/* <a href="#">Link 3</a> */}
+            <Link to="/user/profile">My Dashboard</Link>
           </div>
         </div>
         <div className="dropdown1">
@@ -249,8 +192,6 @@ const Navbar = () => {
           <div className="dropdown-content1">
             <Link to="/helpcenter">Help Center</Link>
             <Link to="/privacypolicy">Sales Enquiry</Link>
-
-            {/* <a href="#">Link 3</a> */}
           </div>
         </div>
       </div>

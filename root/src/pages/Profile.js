@@ -3,14 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { profile } from "../api/api";
 import { AppContext } from "../state/StateContext";
 import "../styles/Profile.css";
-import { UserContext } from "../App";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const { dispatch } = useContext(UserContext);
 
   //Accessing Global State from Context
-  const { userData, setuserData } = useContext(AppContext);
+  const { userData, setuserData,setisLoggedin} = useContext(AppContext);
 
   const profilePage = async () => {
     try {
@@ -25,7 +23,7 @@ const Profile = () => {
         const error = new Error(res.error);
         throw error;
       } else {
-        dispatch({ type: "USER", payload: true });
+        setisLoggedin(true);
       }
     } catch (error) {
       console.log(error);

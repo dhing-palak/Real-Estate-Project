@@ -62,7 +62,7 @@ body {
   display: flex;
   list-style: none;
   text-align: center;
-  margin-right: 30rem;
+  margin-right: 32rem;
   padding-bottom: 0.8em;
 }
 
@@ -159,7 +159,7 @@ body {
     display: flex;
     list-style: none;
     text-align: center;
-    margin-right: 40rem;
+    margin-right: 42rem;
     padding-bottom: 0.8rem;
   }
 }
