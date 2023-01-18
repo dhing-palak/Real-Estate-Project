@@ -1,5 +1,6 @@
 export const city = [
   "Mumbai",
+  "Delhi",
   "Kolkata",
   "Hyderabad",
   "Pune",

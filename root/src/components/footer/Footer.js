@@ -7,7 +7,8 @@ const Footer = () => {
     <>
       <footer className="footer">
         <section className="footer__main">
-          <div className="container footer__main__section">
+          
+          <div className="fcontainer footer__main__section">
             <div className="footer__main__left">
               <div className="footer__main__title">About Us </div>
               <div className="footer__main__content">
@@ -82,9 +83,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
+         
         </section>
         <section className="footer__secondary">
-          <div className="footer">
+          <div className="fcontainer">
             <ul className="footer__secondary__links">
               <li>
                 <Link to="/helpcenter" className="footer__main__right__link">
@@ -106,7 +108,7 @@ const Footer = () => {
         </section>
 
         <section className="footer__copyright">
-          <div className="footer">
+          <div className="fcontainer">
             Copyright @ 2022 Real Estate. All rights reserved.
           </div>
         </section>

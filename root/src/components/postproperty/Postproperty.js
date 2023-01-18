@@ -78,8 +78,8 @@ const Postproperty = () => {
       price,
       ratepersqft,
       status,
-      description,
-      image,
+      description
+      // image,
     } = property;
 
     //calling postproperty api
@@ -99,7 +99,7 @@ const Postproperty = () => {
       ratepersqft,
       status,
       description,
-      image,
+      // image,
     );
 
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -165,10 +165,11 @@ const Postproperty = () => {
                     formErrors.area ||
                     formErrors.floors ||
                     formErrors.price ||
+                    formErrors.ratepersqft||
                     formErrors.status ||
                     formErrors.description ||
-                    formErrors.propertyfor ||
-                    formErrors.image
+                    formErrors.propertyfor 
+                    
                       ? "Please fill the details mention below: "
                       : "Your Property details added Sucesssfully"}
                   </div>

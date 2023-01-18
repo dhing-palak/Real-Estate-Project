@@ -42,7 +42,7 @@ const postPropertySchema = new mongoose.Schema({
     required: true,
   },
   floors: {
-    type: String,
+    type: Number,
     required: true,
   },
   price: {

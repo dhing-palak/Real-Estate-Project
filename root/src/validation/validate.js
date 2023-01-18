@@ -2,7 +2,8 @@ const validate = (values) => {
   const errors = {};
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   const phoneno = /^\d{10}$/;
-  const number = /^[0-9]$/;
+  const singlenumber = /^[0-9]$/;
+  // const numberstring = /^\d+$/;
 
   if (!values.iam) {
     errors.iam = "Select any option";
@@ -31,7 +32,7 @@ const validate = (values) => {
   }
   if (!values.rooms) {
     errors.rooms = "Rooms is required!";
-  } else if (!number.test(values.rooms)) {
+  } else if (!singlenumber.test(values.rooms)) {
     errors.rooms = "Number of rooms must be in a single digit!";
   }
   if (!values.propertytype) {
@@ -39,10 +40,14 @@ const validate = (values) => {
   }
   if (!values.area) {
     errors.area = "Area is required!";
-  }
+  } 
+  // else if (!numberstring.test(values.area)) {
+  //   errors.area = "Area must be in a digits!";
+  // }
   if (!values.floors) {
     errors.floors = "Floors is required!";
-  } else if (!number.test(values.floors)) {
+  }
+  else if (!singlenumber.test.length <1) {
     errors.floors = "Number of floors must be in single digits!";
   }
   if (!values.price) {
@@ -51,6 +56,9 @@ const validate = (values) => {
   if (!values.ratepersqft) {
     errors.ratepersqft = "Rate per Sqft is required!";
   }
+  // else if (!numberstring.test(values.ratepersqft)) {
+  //   errors.ratepersqft = "Rate per Sqft must be in a digits!";
+  // }
   if (!values.status) {
     errors.status = "status is required!";
   }
