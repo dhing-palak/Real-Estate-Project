@@ -1,6 +1,5 @@
 .search_outer {
   width: 70%;
-  /* max-height: 100%; */
   display: flex;
   border-radius: 40px;
   flex-wrap: wrap;
@@ -8,21 +7,10 @@
   margin-left: 30px;
   flex-direction: row;
   background-color: #ffffff;
-  /* border: thin; */
   border-style: solid;
   border-width: thin;
   justify-content: space-around;
 }
-
-/* .search_city input {
-  padding: 15px;
-  margin-top: 5px;
-  box-sizing: border-box;
-  width: 293px;
-  font-size: 15px;
-  height: 30px;
-  border: white;
-} */
 
 .search_city {
   padding-top: 10px;
@@ -37,25 +25,6 @@
   padding-top: 10px;
   padding-right: 25px;
 }
-
-/* .search_flat input {
-  margin-top: 5px;
-  box-sizing: border-box;
-  width: 140px;
-  font-size: 15px;
-  height: 30px;
-  border: white;
-}
-
-.search_budget input {
-  padding: 15px;
-  margin-top: 5px;
-  box-sizing: border-box;
-  width: 140px;
-  font-size: 15px;
-  height: 30px;
-  border: white;
-} */
 
 .fontIcon.fa {
   color: #d8232a;
@@ -86,15 +55,6 @@
   font-weight: 600;
 }
 
-/* .drpdwn.fa {
-  color: black;
-  height: 10px;
-  width: 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  transform: scale(1.1);
-} */
-
 .drpdwn {
   padding-right: 78px;
   padding-left: 5px;
@@ -115,3 +75,5 @@
 .line {
   height: 10px;
 }
+
+

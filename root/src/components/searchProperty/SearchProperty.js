@@ -22,7 +22,6 @@ const SearchProperty = () => {
         ...searchData,
         [name]: value}
     })
-    // console.log([name] , value);
   }
 
   const getSearchData = async (city, propertytype, price) => {
@@ -36,16 +35,10 @@ const SearchProperty = () => {
     }
   };
 
-  // useEffect(() => {
-  //   getSearchData(searchData.cityname, searchData.propertytype, searchData.price);
-  // }, []);
-
   const handleChange1 = () => {
     event.preventDefault();
     getSearchData(searchData.cityname, searchData.propertytype, searchData.price);
   };
-
-  
 
   return (
     <>

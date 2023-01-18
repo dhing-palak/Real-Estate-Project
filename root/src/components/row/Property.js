@@ -89,7 +89,7 @@ const Property = () => {
             </div>
 
             <div className="contactSizePrice">
-              <div className="price">₹ {detail.price} Lac</div>
+              <div className="price">₹ {detail.price}</div>
               <div className="pricePerSqft">₹ {detail.ratepersqft} per sqft</div>
               <div className="contactOwner">
                 <button className="ownerDetails">Contact Owner</button>
