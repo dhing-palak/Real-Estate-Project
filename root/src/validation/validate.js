@@ -47,7 +47,7 @@ const validate = (values) => {
   if (!values.floors) {
     errors.floors = "Floors is required!";
   }
-  else if (!singlenumber.test.length <1) {
+  else if (!singlenumber.test(values.floors)) {
     errors.floors = "Number of floors must be in single digits!";
   }
   if (!values.price) {
@@ -65,9 +65,6 @@ const validate = (values) => {
   if (!values.description) {
     errors.description = "Description is required!";
   }
-  // if (!values.image) {
-  //   errors.image = "Image is required!";
-  // }
 
   return errors;
 };

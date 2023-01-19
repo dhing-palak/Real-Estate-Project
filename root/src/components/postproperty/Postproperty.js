@@ -78,7 +78,7 @@ const Postproperty = () => {
       price,
       ratepersqft,
       status,
-      description
+      description,
       // image,
     } = property;
 
@@ -165,11 +165,10 @@ const Postproperty = () => {
                     formErrors.area ||
                     formErrors.floors ||
                     formErrors.price ||
-                    formErrors.ratepersqft||
+                    formErrors.ratepersqft ||
                     formErrors.status ||
                     formErrors.description ||
-                    formErrors.propertyfor 
-                    
+                    formErrors.propertyfor
                       ? "Please fill the details mention below: "
                       : "Your Property details added Sucesssfully"}
                   </div>
@@ -366,7 +365,7 @@ const Postproperty = () => {
                   name="area"
                   type="text"
                   id="area"
-                  placeholder="Enter your area"
+                  placeholder="Enter the area in Sqft"
                   value={property.area}
                   onChange={handleInput}
                   spanClassName="postproperty-error-data"

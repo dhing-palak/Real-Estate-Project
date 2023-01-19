@@ -7,7 +7,6 @@ const Footer = () => {
     <>
       <footer className="footer">
         <section className="footer__main">
-          
           <div className="fcontainer footer__main__section">
             <div className="footer__main__left">
               <div className="footer__main__title">About Us </div>
@@ -83,7 +82,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-         
         </section>
         <section className="footer__secondary">
           <div className="fcontainer">
