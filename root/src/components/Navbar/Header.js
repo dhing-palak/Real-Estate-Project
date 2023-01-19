@@ -2,19 +2,16 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from "react";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../styles/Header.css";
 import "font-awesome/css/font-awesome.min.css";
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
 import { cities } from "../../common/common";
 
-
 const Navbar = () => {
-  
-
   //Accessing Global data from Context
-  const { setPropertyData ,isLoggedin} = useContext(AppContext);
+  const { setPropertyData, isLoggedin } = useContext(AppContext);
 
   const cityDetails = async (city) => {
     const res = await propertydetails(city);
@@ -33,8 +30,12 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <div className={click ? "main-container" : ""}  onClick={()=>Close()}/>
-        <nav className="navbar" onClick={e => e.stopPropagation()} role="presentation">
+        <div className={click ? "main-container" : ""} onClick={() => Close()} />
+        <nav
+          className="navbar"
+          onClick={(e) => e.stopPropagation()}
+          role="presentation"
+        >
           <div className="nav-container">
             <Link to="/" className="nav-logo">
               Real-Estate
@@ -50,10 +51,10 @@ const Navbar = () => {
                     );
                   })}
                 </select>
-              </div> 
+              </div>
             </span>
             <ul className={click ? "nav-menu active" : "nav-menu"}>
-              {!isLoggedin?(
+              {!isLoggedin ? (
                 <>
                   <li className="nav-item">
                     <Link
@@ -72,7 +73,7 @@ const Navbar = () => {
                       className="nav-links"
                       onClick={click ? handleClick : null}
                     >
-                    Login
+                      Login
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -82,12 +83,11 @@ const Navbar = () => {
                       className="nav-links"
                       onClick={click ? handleClick : null}
                     >
-                    PostProperty
+                      PostProperty
                     </Link>
                   </li>
                 </>
-                
-              ):(
+              ) : (
                 <>
                   <li className="nav-item">
                     <Link
@@ -96,7 +96,7 @@ const Navbar = () => {
                       className="nav-links"
                       onClick={click ? handleClick : null}
                     >
-                    MyProfile
+                      MyProfile
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -106,7 +106,7 @@ const Navbar = () => {
                       className="nav-links"
                       onClick={click ? handleClick : null}
                     >
-                    PostProperty
+                      PostProperty
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -120,8 +120,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                 </>
-                
-              )} 
+              )}
             </ul>
             <div className="nav-icon" onClick={handleClick}>
               <i className={click ? "fa fa-times" : "fa fa-bars"}></i>

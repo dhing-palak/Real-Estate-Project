@@ -40,14 +40,13 @@ const validate = (values) => {
   }
   if (!values.area) {
     errors.area = "Area is required!";
-  } 
+  }
   // else if (!numberstring.test(values.area)) {
   //   errors.area = "Area must be in a digits!";
   // }
   if (!values.floors) {
     errors.floors = "Floors is required!";
-  }
-  else if (!singlenumber.test(values.floors)) {
+  } else if (!singlenumber.test(values.floors)) {
     errors.floors = "Number of floors must be in single digits!";
   }
   if (!values.price) {

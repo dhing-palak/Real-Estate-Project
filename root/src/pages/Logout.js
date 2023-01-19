@@ -4,9 +4,8 @@ import { logout } from "../api/api";
 import { AppContext } from "../state/StateContext";
 
 const Logout = () => {
-
   const navigate = useNavigate();
-  const { setuserData,setisLoggedin } = useContext(AppContext);
+  const { setuserData, setisLoggedin } = useContext(AppContext);
 
   const logoutPage = async () => {
     try {
