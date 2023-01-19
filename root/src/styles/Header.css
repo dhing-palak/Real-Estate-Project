@@ -18,7 +18,7 @@
   
   .navbar {
 	background-color: #d8282a;
-	height: 50px;
+	height: 60px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,7 +33,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 50px;
+	height: 60px;
 	max-width: 1500px;
 	
   }
@@ -54,7 +54,7 @@
 	margin-left: 35px;
 	cursor: pointer;
 	text-decoration: none;
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	flex-grow: 1;
 	justify-content: center;
 	padding-bottom: 0.5em;
@@ -139,7 +139,7 @@
 		  display: flex;
 		  list-style: none;
 		  text-align: center;
-		  margin-right: 30rem;
+		  margin-right: 35rem;
 		  padding-bottom: 0.8rem;
 		}
 		.nav-icon {
@@ -191,7 +191,7 @@
 		display: flex;
 		list-style: none;
 		text-align: center;
-		margin-right: 42rem;
+		margin-right: 38rem;
 		padding-bottom: 0.8rem;
 	  }
 	
@@ -296,6 +296,7 @@
 		font-size: 1.5rem;
 		cursor: pointer;
 		color: #ffdd40;
+		justify-content: center;
 		
 	  }
   }
