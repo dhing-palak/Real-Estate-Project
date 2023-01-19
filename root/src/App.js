@@ -12,10 +12,10 @@ import { Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile";
 import Logout from "./pages/Logout";
 import Navbar from "./components/Navbar/Header";
-// import About from "./pages/about/about";
-// import City from "./api/location/city";s
 
-function App() {
+const App= () => {
+
+
   return (
     <>
       <div className="Header">
@@ -43,7 +43,7 @@ function App() {
 }
 function PageNotFound() {
   return (
-    <div className="App">
+    <div className="pagenot">
       <h2>404 Page not found</h2>
     </div>
   );
