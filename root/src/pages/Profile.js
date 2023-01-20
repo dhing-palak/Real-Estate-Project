@@ -8,7 +8,7 @@ const Profile = () => {
   const navigate = useNavigate();
 
   //Accessing Global State from Context
-  const { userData, setuserData } = useContext(AppContext);
+  const { userData, setuserData, setisLoggedin } = useContext(AppContext);
 
   const profilePage = async () => {
     try {
@@ -22,6 +22,8 @@ const Profile = () => {
       if (!res.status === 200) {
         const error = new Error(res.error);
         throw error;
+      } else {
+        setisLoggedin(true);
       }
     } catch (error) {
       console.log(error);

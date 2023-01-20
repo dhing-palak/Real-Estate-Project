@@ -1,28 +1,29 @@
-import React, { useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../../state/StateContext";
 import "../../styles/SearchProperty.css";
-import {city} from "../../common/common"
+import { city } from "../../common/common";
 import { searchProperty } from "../../api/api";
 
 const SearchProperty = () => {
   const { setPropertyData } = useContext(AppContext);
 
-  const[searchData, setSearchData] = useState({
-    cityname:"",
-    propertytype:"",
-    price:""
-  })
+  const [searchData, setSearchData] = useState({
+    cityname: "",
+    propertytype: "",
+    price: "",
+  });
 
-  const handleChange = (event) =>{
+  const handleChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
 
     setSearchData(() => {
-      return{
+      return {
         ...searchData,
-        [name]: value}
-    })
-  }
+        [name]: value,
+      };
+    });
+  };
 
   const getSearchData = async (city, propertytype, price) => {
     try {
@@ -48,8 +49,16 @@ const SearchProperty = () => {
             <i className="fontIcon fa fa-map-marker" aria-hidden="true"></i>
           </span>
           <span>
-            <select name = "cityname" value={searchData.cityname} onChange={handleChange} required className="drpdwn">
-              <option value="" hidden>Enter City </option>
+            <select
+              name="cityname"
+              value={searchData.cityname}
+              onChange={handleChange}
+              required
+              className="drpdwn"
+            >
+              <option value="" hidden>
+                Enter City{" "}
+              </option>
               {city.map((city, index) => {
                 return (
                   <option key={index} value={city}>
@@ -66,7 +75,13 @@ const SearchProperty = () => {
             <i className="fontIcon fa fa-home" aria-hidden="true"></i>
           </span>
           <span>
-            <select name = "propertytype" value={searchData.propertytype} onChange={handleChange} required className="drpdwn">
+            <select
+              name="propertytype"
+              value={searchData.propertytype}
+              onChange={handleChange}
+              required
+              className="drpdwn"
+            >
               <option value="flat">Flat</option>
               <option value="villa">Villa</option>
             </select>
@@ -78,7 +93,13 @@ const SearchProperty = () => {
             <i className="fontIcon fa fa-inr" aria-hidden="true"></i>
           </span>
           <span>
-            <select name = "price" value={searchData.price} onChange={handleChange} required className="drpdwn1">
+            <select
+              name="price"
+              value={searchData.price}
+              onChange={handleChange}
+              required
+              className="drpdwn1"
+            >
               <option value="" hidden>
                 Budget
               </option>

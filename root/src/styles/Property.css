@@ -159,27 +159,25 @@
   padding-left: 10px;
 }
 
-
-
 /* media queries */
 
-@media (max-width: 925px){
+@media (max-width: 925px) {
   .image {
     width: 100%;
     height: auto;
   }
 
-  .detailsProperty{
+  .detailsProperty {
     height: 80px;
   }
 
-  .contactSizePrice{
+  .contactSizePrice {
     margin-right: 20px;
   }
 }
 
-@media (max-width: 750px){
-  .inner{
+@media (max-width: 750px) {
+  .inner {
     display: block;
   }
 
@@ -188,47 +186,45 @@
     height: auto;
   }
 
-  .middlePart{
+  .middlePart {
     padding-top: 300px;
   }
-  .detailsProperty{
+  .detailsProperty {
     margin-right: 20px;
   }
 }
 
-@media (max-width: 480px){
-
+@media (max-width: 480px) {
   .image {
     width: 100%;
     height: auto;
   }
 
-  .middlePart{
+  .middlePart {
     padding-top: 80px;
   }
 
-  .detailsProperty{
+  .detailsProperty {
     width: 95%;
     height: 70px;
     padding-left: 10px;
     padding-right: 10px;
   }
-  
-  .contactSizePrice{
+
+  .contactSizePrice {
     width: 90%;
   }
 }
 
-@media (max-width: 360px){
-
-  .outer{
+@media (max-width: 360px) {
+  .outer {
     width: 100%;
   }
-  .inner{
+  .inner {
     display: block;
   }
 
-  .middlePart{
+  .middlePart {
     padding-top: 70px;
   }
 
@@ -237,7 +233,7 @@
     height: auto;
   }
 
-  .detailsProperty{
+  .detailsProperty {
     display: block;
     width: 90%;
     height: 200px;
