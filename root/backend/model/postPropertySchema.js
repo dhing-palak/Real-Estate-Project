@@ -38,7 +38,7 @@ const postPropertySchema = new mongoose.Schema({
     required: true,
   },
   area: {
-    type: String,
+    type: Number,
     required: true,
   },
   floors: {
@@ -50,7 +50,7 @@ const postPropertySchema = new mongoose.Schema({
     required: true,
   },
   ratepersqft: {
-    type: String,
+    type: Number,
     required: true,
   },
   status: {

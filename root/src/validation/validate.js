@@ -1,9 +1,10 @@
 const validate = (values) => {
   const errors = {};
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-  const phoneno = /^[0-9]{10}$/;
-  const singlenumber = /^[0-9]$/;
-  const numberstring = /^\d+$/;
+  const phoneno = /^[0-9]{10}\s*$/;
+  const singlenumber = /^[0-9]{1}\s*$/;
+  const floornumber = /^[1-4]{1}\s*$/;
+  const numberstring = /^\d*\.?\d*\s*$/;
 
   if (!values.iam) {
     errors.iam = "Select any option";
@@ -13,7 +14,8 @@ const validate = (values) => {
   }
   if (!values.phone) {
     errors.phone = "Phone number is required!";
-  } else if (!phoneno.test(values.phone)) {
+  }
+  else if (!phoneno.test(values.phone)) {
     errors.phone = "Phone number must be in 10 digits!";
   }
   if (!values.email) {
@@ -42,12 +44,12 @@ const validate = (values) => {
     errors.area = "Area is required!";
   }
   else if (!numberstring.test(values.area)) {
-    errors.area = "Area must be in a digits!";
+    errors.area = "Area must be in a valid numeric format!";
   }
   if (!values.floors) {
-    errors.floors = "Floors is required!";
-  } else if (!singlenumber.test(values.floors)) {
-    errors.floors = "Number of floors must be in single digits!";
+    errors.floors = "floors is required!";
+  } else if (!floornumber.test(values.floors)) {
+    errors.floors = "Number of floors must be smaller than 5!";
   }
   if (!values.price) {
     errors.price = "Price is required!";
@@ -56,8 +58,9 @@ const validate = (values) => {
     errors.ratepersqft = "Rate per Sqft is required!";
   }
   else if (!numberstring.test(values.ratepersqft)) {
-    errors.ratepersqft = "Rate per Sqft must be in a digits!";
+    errors.ratepersqft = "Rate per Sqft must be in a valid numeric format!";
   }
+
   if (!values.status) {
     errors.status = "status is required!";
   }

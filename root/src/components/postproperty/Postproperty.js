@@ -258,7 +258,7 @@ const Postproperty = () => {
                   name="phone"
                   type="text"
                   id="phone"
-                  placeholder="Enter your phone"
+                  placeholder="Enter your phone Number"
                   value={property.phone}
                   onChange={handleInput}
                   spanClassName="postproperty-error-data"
@@ -341,7 +341,7 @@ const Postproperty = () => {
                   name="rooms"
                   type="text"
                   id="rooms"
-                  placeholder="Enter number of rooms"
+                  placeholder="Enter the number of BHK Rooms"
                   value={property.rooms}
                   onChange={handleInput}
                   spanClassName="postproperty-error-data"
