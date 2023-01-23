@@ -271,3 +271,87 @@ form input[type="radio"] {
   font-size: xx-large;
   padding: 0 5px 0 0;
 }
+
+/* media queries */
+
+@media (max-width: 750px) {
+  /* .postproperty_webpage {
+   width: 740px;
+  } */
+  .postproperty_left_container {
+    width: 540px;
+  }
+  .postproperty_container {
+    width: 520px;
+  }
+  .postproperty__offer__block {
+    width: 410px;
+  }
+  .postproperty_offer_data {
+    width: 450px;
+    height: 130px;
+  }
+  .postproperty_message_data {
+    width: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .postproperty_webpage { 
+      width: 460px;
+     } */
+  .postproperty_left_container {
+    width: 420px;
+  }
+  .postproperty_container {
+    width: 410px;
+    padding: 9px 9px 9px;
+  }
+  .postproperty__offer__block {
+    width: 380px;
+  }
+  .postproperty_offer_data {
+    width: 380px;
+    height: 130px;
+  }
+  .postproperty_message_data {
+    width: 380px;
+  }
+  .postproperty_heading {
+    width: 350px;
+  }
+  .postproperty_heading .highLight {
+    font-size: 20px;
+  }
+  .postproperty_heading p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 360px) {
+  .postproperty_left_container {
+    width: 350px;
+  }
+  .postproperty_container {
+    width: 350px;
+    padding: 1px 1px 1px;
+  }
+  .postproperty__offer__block {
+    width: 300px;
+  }
+  .postproperty_offer_data {
+    width: 300px;
+    height: 150px;
+  }
+  .postproperty_message_data {
+    width: 300px;
+  }
+  .postproperty_heading {
+    width: 280px;
+  }
+  .postproperty_heading .highLight {
+    font-size: 15px;
+  }
+  .postproperty_heading p {
+    font-size: 10px;
+  }
+}

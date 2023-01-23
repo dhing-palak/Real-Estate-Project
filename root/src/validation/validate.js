@@ -1,8 +1,10 @@
 const validate = (values) => {
   const errors = {};
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-  const phoneno = /^\d{10}$/;
-  const number = /^[0-9]$/;
+  const phoneno = /^[0-9]{10}\s*$/;
+  const singlenumber = /^[0-9]{1}\s*$/;
+  const floornumber = /^[1-4]{1}\s*$/;
+  const numberstring = /^\d*\.?\d*\s*$/;
 
   if (!values.iam) {
     errors.iam = "Select any option";
@@ -12,7 +14,8 @@ const validate = (values) => {
   }
   if (!values.phone) {
     errors.phone = "Phone number is required!";
-  } else if (!phoneno.test(values.phone)) {
+  }
+  else if (!phoneno.test(values.phone)) {
     errors.phone = "Phone number must be in 10 digits!";
   }
   if (!values.email) {
@@ -31,7 +34,7 @@ const validate = (values) => {
   }
   if (!values.rooms) {
     errors.rooms = "Rooms is required!";
-  } else if (!number.test(values.rooms)) {
+  } else if (!singlenumber.test(values.rooms)) {
     errors.rooms = "Number of rooms must be in a single digit!";
   }
   if (!values.propertytype) {
@@ -40,10 +43,13 @@ const validate = (values) => {
   if (!values.area) {
     errors.area = "Area is required!";
   }
+  else if (!numberstring.test(values.area)) {
+    errors.area = "Area must be in a valid numeric format!";
+  }
   if (!values.floors) {
-    errors.floors = "Floors is required!";
-  } else if (!number.test(values.floors)) {
-    errors.floors = "Number of floors must be in single digits!";
+    errors.floors = "floors is required!";
+  } else if (!floornumber.test(values.floors)) {
+    errors.floors = "Number of floors must be smaller than 5!";
   }
   if (!values.price) {
     errors.price = "Price is required!";
@@ -51,15 +57,16 @@ const validate = (values) => {
   if (!values.ratepersqft) {
     errors.ratepersqft = "Rate per Sqft is required!";
   }
+  else if (!numberstring.test(values.ratepersqft)) {
+    errors.ratepersqft = "Rate per Sqft must be in a valid numeric format!";
+  }
+
   if (!values.status) {
     errors.status = "status is required!";
   }
   if (!values.description) {
     errors.description = "Description is required!";
   }
-  // if (!values.image) {
-  //   errors.image = "Image is required!";
-  // }
 
   return errors;
 };

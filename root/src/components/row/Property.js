@@ -54,7 +54,7 @@ const Property = () => {
                   />
                   <span className="detailsHeading">
                     <p className="text">SUPER AREA</p>
-                    <p className="value">{detail.area}</p>
+                    <p className="value">{detail.area} sqft</p>
                   </span>
                 </div>
                 <div className="detailsInfo">
@@ -90,7 +90,7 @@ const Property = () => {
 
             <div className="contactSizePrice">
               <div className="price">₹ {detail.price}</div>
-              <div className="pricePerSqft">₹ 6,691 per sqft</div>
+              <div className="pricePerSqft">₹ {detail.ratepersqft} per sqft</div>
               <div className="contactOwner">
                 <button className="ownerDetails">Contact Owner</button>
               </div>
