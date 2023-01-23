@@ -79,7 +79,7 @@ const Postproperty = () => {
       ratepersqft,
       status,
       description,
-      image,
+      // image,
     } = property;
 
     //calling postproperty api
@@ -99,7 +99,7 @@ const Postproperty = () => {
       ratepersqft,
       status,
       description,
-      image,
+      // image,
     );
 
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -165,10 +165,10 @@ const Postproperty = () => {
                     formErrors.area ||
                     formErrors.floors ||
                     formErrors.price ||
+                    formErrors.ratepersqft ||
                     formErrors.status ||
                     formErrors.description ||
-                    formErrors.propertyfor ||
-                    formErrors.image
+                    formErrors.propertyfor
                       ? "Please fill the details mention below: "
                       : "Your Property details added Sucesssfully"}
                   </div>
@@ -258,7 +258,7 @@ const Postproperty = () => {
                   name="phone"
                   type="text"
                   id="phone"
-                  placeholder="Enter your phone"
+                  placeholder="Enter your phone Number"
                   value={property.phone}
                   onChange={handleInput}
                   spanClassName="postproperty-error-data"
@@ -341,7 +341,7 @@ const Postproperty = () => {
                   name="rooms"
                   type="text"
                   id="rooms"
-                  placeholder="Enter number of rooms"
+                  placeholder="Enter the number of BHK Rooms"
                   value={property.rooms}
                   onChange={handleInput}
                   spanClassName="postproperty-error-data"
@@ -365,7 +365,7 @@ const Postproperty = () => {
                   name="area"
                   type="text"
                   id="area"
-                  placeholder="Enter your area"
+                  placeholder="Enter the area in Sqft"
                   value={property.area}
                   onChange={handleInput}
                   spanClassName="postproperty-error-data"

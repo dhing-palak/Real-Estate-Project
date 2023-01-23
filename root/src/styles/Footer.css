@@ -5,6 +5,11 @@
   margin: auto;
   box-sizing: border-box;
 }
+.fcontainer {
+  width: 100%;
+  margin: auto;
+}
+
 .footer__main {
   width: 100%;
   min-height: 200px;
