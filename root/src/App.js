@@ -13,9 +13,7 @@ import Profile from "./pages/Profile";
 import Logout from "./pages/Logout";
 import Navbar from "./components/Navbar/Header";
 
-const App= () => {
-
-
+const App = () => {
   return (
     <>
       <div className="Header">
@@ -40,7 +38,7 @@ const App= () => {
       </div>
     </>
   );
-}
+};
 function PageNotFound() {
   return (
     <div className="pagenot">
