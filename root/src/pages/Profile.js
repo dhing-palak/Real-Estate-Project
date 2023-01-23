@@ -8,7 +8,7 @@ const Profile = () => {
   const navigate = useNavigate();
 
   //Accessing Global State from Context
-  const { userData, setuserData,setisLoggedin} = useContext(AppContext);
+  const { userData, setuserData, setisLoggedin } = useContext(AppContext);
 
   const profilePage = async () => {
     try {

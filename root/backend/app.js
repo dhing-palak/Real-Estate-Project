@@ -20,11 +20,14 @@ app.use("/user", userApi);
 app.use("/location", locationRoute);
 const propertyApi = require("./router/post");
 const propertydetailsApi = require("./router/property");
+const searchPropertyApi = require("./router/search");
 
 app.use(express.json());
 
 app.use("/property", propertydetailsApi);
 app.use("/post", propertyApi);
+
+app.use("/search", searchPropertyApi);
 
 const PORT = 5000;
 

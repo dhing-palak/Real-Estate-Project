@@ -107,7 +107,6 @@ export const logout = async () => {
 };
 
 //Propertydetails Api
-// eslint-disable-next-line no-unused-vars
 export const propertydetails = async (cityname) => {
   const res = await fetch(`/property/details/${cityname}`, {
     method: "GET",
@@ -118,6 +117,27 @@ export const propertydetails = async (cityname) => {
     credentials: "include",
     params: cityname,
   });
+  return res;
+};
+
+// search Api
+export const searchProperty = async (city, propertytype, price) => {
+  const res = await fetch(
+    `/search/propertydetails?city=${city}&propertytype=${propertytype}&price=${price}`,
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      params: {
+        city,
+        propertytype,
+        price,
+      },
+      credentials: "include",
+    },
+  );
   return res;
 };
 
