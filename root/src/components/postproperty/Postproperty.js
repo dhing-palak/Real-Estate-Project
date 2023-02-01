@@ -118,7 +118,7 @@ const Postproperty = () => {
 
   return (
     <>
-      <div className="postproperty_webpage">
+      <div className="postproperty_webpage" data-testid="postpropertypage">
         <div className="postproperty_left_container">
           <div className="postproperty_container">
             <div className="postproperty_heading">

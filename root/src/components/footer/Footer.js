@@ -5,11 +5,11 @@ import "../../styles/Footer.css";
 const Footer = () => {
   return (
     <>
-      <footer className="footer">
+      <footer className="footer" data-testid="footerpage">
         <section className="footer__main">
           <div className="fcontainer footer__main__section">
             <div className="footer__main__left">
-              <div className="footer__main__title">About Us </div>
+              <h2 className="footer__main__title">About Us </h2>
               <div className="footer__main__content">
                 RealEstate is a full stack service provider for all real estate
                 needs, with 15+ services including home loans, pay rent, packers and
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
 
             <div className="footer__main__right">
-              <div className="footer__main__title">Properties in India</div>
+              <h2 className="footer__main__title">Properties in India</h2>
               <div className="footer__main__right__content-1">
                 <Link to="/" className="footer__main__right__link">
                   Property in New Delhi |
@@ -61,7 +61,7 @@ const Footer = () => {
                   Property in Pune |
                 </Link>
               </div>
-              <div className="footer__main__title">New Projects in India</div>
+              <h2 className="footer__main__title">New Projects in India</h2>
               <div className="">
                 <Link to="/" className="footer__main__right__link">
                   {" "}
