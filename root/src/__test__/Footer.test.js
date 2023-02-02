@@ -98,6 +98,10 @@ describe("Testing the Footer Component", () => {
       name: "Property in Ahmedabad |",
       exact: false,
     });
+    const linkElement12 = screen.getByTestId("facebook");
+    const linkElement13 = screen.getByTestId("instagram");
+    const linkElement14 = screen.getByTestId("youtube");
+    const linkElement15 = screen.getByTestId("twitter");
     expect(linkElement1).toBeInTheDocument();
     expect(linkElement2).toBeInTheDocument();
     expect(linkElement3).toBeInTheDocument();
@@ -109,5 +113,9 @@ describe("Testing the Footer Component", () => {
     expect(linkElement9).toBeInTheDocument();
     expect(linkElement10).toBeInTheDocument();  
     expect(linkElement11).toBeInTheDocument();
+    expect(linkElement12).toBeInTheDocument();
+    expect(linkElement13).toBeInTheDocument();
+    expect(linkElement14).toBeInTheDocument();
+    expect(linkElement15).toBeInTheDocument();
   });
 });

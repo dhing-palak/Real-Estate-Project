@@ -21,22 +21,22 @@ const Footer = () => {
               <ul className="footer__main__social-links">
                 <li>
                   <a href="https://www.facebook.com">
-                    <i className="fab fa-facebook-f fontawesome-style"></i>
+                    <i className="fab fa-facebook-f fontawesome-style" data-testid="facebook"></i>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.instagram.com/">
-                    <i className="fab fa-instagram fontawesome-style"></i>
+                    <i className="fab fa-instagram fontawesome-style"  data-testid="instagram"></i>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.youtube.com/">
-                    <i className="fab fa-youtube fontawesome-style"></i>
+                    <i className="fab fa-youtube fontawesome-style"  data-testid="youtube"></i>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.twitter.com/">
-                    <i className="fab fa-twitter fontawesome-style"></i>
+                    <i className="fab fa-twitter fontawesome-style"  data-testid="twitter"></i>
                   </a>
                 </li>
               </ul>
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
         </section>
 
-        <section className="footer__copyright">
+        <section className="footer__copyright" >
           <div className="fcontainer">
             Copyright @ 2022 Real Estate. All rights reserved.
           </div>
