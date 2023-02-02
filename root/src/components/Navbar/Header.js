@@ -11,7 +11,9 @@ import { cities } from "../../common/common";
 
 const Navbar = () => {
   //Accessing Global data from Context
+
   const { setPropertyData, isLoggedin } = useContext(AppContext);
+  
 
   const cityDetails = async (city) => {
     const res = await propertydetails(city);
@@ -35,9 +37,10 @@ const Navbar = () => {
           className="navbar"
           onClick={(e) => e.stopPropagation()}
           role="presentation"
+          data-test-id="navbar"
         >
           <div className="nav-container">
-            <Link to="/" className="nav-logo">
+            <Link data-testid="nav-logo" to="/" className="nav-logo">
               Real-Estate
             </Link>
             <span className="span1">
@@ -62,6 +65,7 @@ const Navbar = () => {
                       activeclassname="active"
                       className="nav-links"
                       onClick={click ? handleClick : null}
+                      data-testid="nav-register"
                     >
                       Register
                     </Link>
@@ -72,6 +76,7 @@ const Navbar = () => {
                       activeclassname="active"
                       className="nav-links"
                       onClick={click ? handleClick : null}
+                      data-testid="nav-login"
                     >
                       Login
                     </Link>
@@ -82,6 +87,7 @@ const Navbar = () => {
                       activeclassname="active"
                       className="nav-links"
                       onClick={click ? handleClick : null}
+                      data-testid="nav-post"
                     >
                       PostProperty
                     </Link>
