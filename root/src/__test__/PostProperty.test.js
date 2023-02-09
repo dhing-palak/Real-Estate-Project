@@ -75,7 +75,7 @@ describe("Testing the Postproperty Component", () => {
       name: "Hostel",
       exact: false,
     });
-    
+
     expect(radioBtn1).toBeInTheDocument();
     expect(radioBtn2).toBeInTheDocument();
     expect(radioBtn3).toBeInTheDocument();
@@ -110,7 +110,9 @@ describe("Testing the Postproperty Component", () => {
     const phoneField = screen.getByPlaceholderText("Enter your phone Number");
     const localityField = screen.getByPlaceholderText("Enter your locality");
     const roomField = screen.getByPlaceholderText("Enter the number of BHK Rooms");
-    const propertytypeField = screen.getByPlaceholderText("Enter your type of property");
+    const propertytypeField = screen.getByPlaceholderText(
+      "Enter your type of property",
+    );
     const areaField = screen.getByPlaceholderText("Enter the area in Sqft");
     const floorField = screen.getByPlaceholderText("Enter number of floors");
     const priceField = screen.getByPlaceholderText("Enter the price");
@@ -136,7 +138,4 @@ describe("Testing the Postproperty Component", () => {
     expect(descriptionField).toBeInTheDocument();
     expect(buttonElement).toBeInTheDocument();
   });
-
- 
 });
-

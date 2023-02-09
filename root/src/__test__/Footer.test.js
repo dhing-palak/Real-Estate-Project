@@ -111,7 +111,7 @@ describe("Testing the Footer Component", () => {
     expect(linkElement7).toBeInTheDocument();
     expect(linkElement8).toBeInTheDocument();
     expect(linkElement9).toBeInTheDocument();
-    expect(linkElement10).toBeInTheDocument();  
+    expect(linkElement10).toBeInTheDocument();
     expect(linkElement11).toBeInTheDocument();
     expect(linkElement12).toBeInTheDocument();
     expect(linkElement13).toBeInTheDocument();
