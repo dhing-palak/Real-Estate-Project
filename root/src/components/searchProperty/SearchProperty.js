@@ -43,10 +43,10 @@ const SearchProperty = () => {
 
   return (
     <>
-      <div className="search_outer">
-        <div className="search_city">
+      <div className="search-outer">
+        <div className="search-city">
           <span>
-            <i className="fontIcon fa fa-map-marker" aria-hidden="true"></i>
+            <i className="fonticon fa fa-map-marker" aria-hidden="true"></i>
           </span>
           <span>
             <select
@@ -70,9 +70,9 @@ const SearchProperty = () => {
           </span>
         </div>
         <hr width="1" size="25"></hr>
-        <div className="search_flat">
+        <div className="search-flat">
           <span>
-            <i className="fontIcon fa fa-home" aria-hidden="true"></i>
+            <i className="fonticon fa fa-home" aria-hidden="true"></i>
           </span>
           <span>
             <select
@@ -82,15 +82,18 @@ const SearchProperty = () => {
               required
               className="drpdwn"
             >
+              <option value="" hidden>
+                Flat
+              </option>
               <option value="flat">Flat</option>
               <option value="villa">Villa</option>
             </select>
           </span>
         </div>
         <hr width="1" size="25"></hr>
-        <div className="search_budget">
+        <div className="search-budget">
           <span>
-            <i className="fontIcon fa fa-inr" aria-hidden="true"></i>
+            <i className="fonticon fa fa-inr" aria-hidden="true"></i>
           </span>
           <span>
             <select
@@ -114,9 +117,9 @@ const SearchProperty = () => {
           </span>
         </div>
 
-        <div className="search_button">
+        <div className="search-button">
           <span>
-            <i className="searchIcon fa fa-search" aria-hidden="true"></i>
+            <i className="searchicon fa fa-search" aria-hidden="true"></i>
           </span>
           <span>
             <button type="button" onClick={handleChange1} className="search">
