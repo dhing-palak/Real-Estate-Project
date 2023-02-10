@@ -13,7 +13,7 @@ export function PropertyInput(props) {
         value={props.value}
         onChange={props.onChange}
       ></input>
-      <span className="asterisk_input"></span>
+      <span className="asterisk-input"></span>
       <span className="postproperty-error-data">{props.formErrors}</span>
     </div>
   );

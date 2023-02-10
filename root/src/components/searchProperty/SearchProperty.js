@@ -54,7 +54,7 @@ const SearchProperty = () => {
               value={searchData.cityname}
               onChange={handleChange}
               required
-              className="drpdwn"
+              className="drpdwn1"
             >
               <option value="" hidden>
                 Enter City{" "}
@@ -80,7 +80,7 @@ const SearchProperty = () => {
               value={searchData.propertytype}
               onChange={handleChange}
               required
-              className="drpdwn"
+              className="drpdwn2"
             >
               <option value="" hidden>
                 Flat
@@ -101,7 +101,7 @@ const SearchProperty = () => {
               value={searchData.price}
               onChange={handleChange}
               required
-              className="drpdwn1"
+              className="drpdwn3"
             >
               <option value="" hidden>
                 Budget

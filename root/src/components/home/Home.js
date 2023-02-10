@@ -34,6 +34,7 @@ const Home = () => {
     <>
       <h5 className="username">Hello {userData.name} Welcome to Real Estate.</h5>
       <SearchProperty />
+
       <Property />
     </>
   );
