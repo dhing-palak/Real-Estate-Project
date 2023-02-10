@@ -36,7 +36,7 @@
   height: 100%;
   position: absolute;
   left: 0;
-  z-index: 1;
+  z-index: 0;
   background-color: #f2f2f2;
   transition: all 0.5s ease;
 }
@@ -147,6 +147,7 @@
   border-left-style: none;
   border-right-style: none;
   border-bottom-style: 1px solid black;
+  border-bottom: 1px solid #e2e2e2;
   margin-bottom: 10px;
 }
 

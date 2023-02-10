@@ -103,13 +103,13 @@ const SearchProperty = () => {
               <option value="" hidden>
                 Budget
               </option>
-              <option value="50">50 Lac</option>
-              <option value="60">60 Lac</option>
-              <option value="70">70 Lac</option>
-              <option value="80">80 Lac</option>
-              <option value="90">90 Lac</option>
-              <option value="100">100 Lac</option>
-              <option value="200">200 Lac</option>
+              <option value="50 Lac">50 Lac</option>
+              <option value="60 Lac">60 Lac</option>
+              <option value="70 Lac">70 Lac</option>
+              <option value="80 Lac">80 Lac</option>
+              <option value="90 Lac">90 Lac</option>
+              <option value="100 Lac">100 Lac</option>
+              <option value="200 Lac">200 Lac</option>
             </select>
           </span>
         </div>

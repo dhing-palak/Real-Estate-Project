@@ -118,42 +118,42 @@ const Postproperty = () => {
 
   return (
     <>
-      <div className="postproperty_webpage">
-        <div className="postproperty_left_container">
-          <div className="postproperty_container">
-            <div className="postproperty_heading">
+      <div className="postproperty-webpage" data-testid="postpropertypage">
+        <div className="postproperty-left-container">
+          <div className="postproperty-container">
+            <div className="postproperty-heading">
               <span>
-                <h1 className="highLight">Sell or Rent your Property</h1>
+                <h1 className="highlight">Sell or Rent your Property</h1>
                 <h6> We have over 15 Lac buyers and tenants for you!</h6>
               </span>
             </div>
-            <div className="postproperty__offer__block">
-              <div className="postproperty_offer_data">
-                <div className="postproperty__offer__heading">
+            <div className="postproperty-offer-block">
+              <div className="postproperty-offer-data">
+                <div className="postproperty-offer-heading">
                   You are posting this property for{" "}
-                  <span className="postproperty__offer__free">FREE!</span>
+                  <span className="postproperty-offer-free">FREE!</span>
                 </div>
-                <div className="postproperty__offer__list">
-                  <div className="postproperty__offer__listitems">
-                    <span className="postproperty__offer__bold">Free</span>{" "}
+                <div className="postproperty-offer-list">
+                  <div className="postproperty-offer-listitems">
+                    <span className="postproperty-offer-bold">Free</span>{" "}
                     Professional Photoshoot
                   </div>
-                  <div className="postproperty__offer__listitems">
+                  <div className="postproperty-offer-listitems">
                     Get Contact Details of upto{" "}
-                    <span className="postproperty__offer__bold">5</span> Responses
+                    <span className="postproperty-offer-bold">5</span> Responses
                   </div>
-                  <div className="postproperty__offer__listitems">
+                  <div className="postproperty-offer-listitems">
                     Access to{" "}
-                    <span className="postproperty__offer__bold">15 Lac</span> Buyers
+                    <span className="postproperty-offer-bold">15 Lac</span> Buyers
                     &amp; Tenants
                   </div>
                 </div>
               </div>
             </div>
             {showdiv ? (
-              <div className="postproperty__message__block">
-                <div className="postproperty_message_data">
-                  <div className="postproperty__message__display">
+              <div className="postproperty-message-block">
+                <div className="postproperty-message-data">
+                  <div className="postproperty-message-display">
                     {formErrors.iam ||
                     formErrors.username ||
                     formErrors.email ||
@@ -178,14 +178,14 @@ const Postproperty = () => {
               <div></div>
             )}
 
-            <div className="postproperty_wrapper">
+            <div className="postproperty-wrapper">
               <form className="postproperty-form-wrapper">
-                <div className="secHeading">Personal Details</div>
+                <div className="sec-Heading">Personal Details</div>
 
-                <div className="postproperty_formElement">
-                  <div className="postproperty_formLabel">I am</div>
-                  <div className="postproperty_formValue">
-                    <div className="postproperty_input_iam">
+                <div className="postproperty-formElement">
+                  <div className="postproperty-formLabel">I am</div>
+                  <div className="postproperty-formValue">
+                    <div className="postproperty-input-iam">
                       <input
                         type="radio"
                         name="iam"
@@ -208,18 +208,18 @@ const Postproperty = () => {
                         onChange={handleInput}
                       />
 
-                      <div className="postproperty_category">
+                      <div className="postproperty-category">
                         <label htmlFor="dot-1">
                           <span className="dot one"></span>
-                          <span className="postproperty_iam">Owner</span>
+                          <span className="postproperty-iam">Owner</span>
                         </label>
                         <label htmlFor="dot-2">
                           <span className="dot two"></span>
-                          <span className="postproperty_iam">Agent</span>
+                          <span className="postproperty-iam">Agent</span>
                         </label>
                         <label htmlFor="dot-3">
                           <span className="dot three"></span>
-                          <span className="postproperty_iam">Builder</span>
+                          <span className="postproperty-iam">Builder</span>
                         </label>
                       </div>
                       <span className="postproperty-error-data">
@@ -265,10 +265,10 @@ const Postproperty = () => {
                   formErrors={formErrors.phone}
                 />
 
-                <div className="postproperty_formElement">
-                  <div className="postproperty_formLabel">For</div>
-                  <div className="postproperty_formValue">
-                    <div className="postproperty_input_propertyfor">
+                <div className="postproperty-formElement">
+                  <div className="postproperty-formLabel">For</div>
+                  <div className="postproperty-formValue">
+                    <div className="postproperty-input-propertyfor">
                       <input
                         type="radio"
                         name="propertyfor"
@@ -290,18 +290,18 @@ const Postproperty = () => {
                         id="dot-6"
                         onChange={handleInput}
                       />
-                      <div className="postproperty_category">
+                      <div className="postproperty-category">
                         <label htmlFor="dot-4">
                           <span className="dot four"></span>
-                          <span className="postproperty_propertyfor">Sale</span>
+                          <span className="postproperty-propertyfor">Sale</span>
                         </label>
                         <label htmlFor="dot-5">
                           <span className="dot five"></span>
-                          <span className="postproperty_propertyfor">Rent</span>
+                          <span className="postproperty-propertyfor">Rent</span>
                         </label>
                         <label htmlFor="dot-6">
                           <span className="dot six"></span>
-                          <span className="postproperty_propertyfor">Hostel</span>
+                          <span className="postproperty-propertyfor">Hostel</span>
                         </label>
                       </div>
                       <span className="postproperty-error-data">
@@ -312,7 +312,7 @@ const Postproperty = () => {
                 </div>
 
                 <div className="postproperty-input-city">
-                  <select className="postproperty-input" onChange={handleChange}>
+                  <select className="citydropdown" onChange={handleChange}>
                     {/* <option key="property.city" /> {""}  */}
                     <option key="property.city" disabled selected hidden>
                       Select City
@@ -453,9 +453,9 @@ const Postproperty = () => {
                     Add Property
                   </button>
                 </div>
-                <div className="postproperty_heading">
+                <div className="postproperty-heading">
                   <span>
-                    <h3 className="highLight">
+                    <h3 className="highlight">
                       Looking to Sell or Rent your Flat?{" "}
                     </h3>
                     <p>

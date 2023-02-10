@@ -54,11 +54,14 @@ const Register = () => {
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const phoneno = /^[0-9]{10}\s*$/;
     if (!values.name) {
       errors.username = "Username is required!";
     }
     if (!values.phone) {
       errors.phone = "Phone number is required!";
+    } else if (!phoneno.test(values.phone)) {
+      errors.phone = "Phone number must be in 10 digits!";
     }
     if (!values.email) {
       errors.email = "Email is required!";

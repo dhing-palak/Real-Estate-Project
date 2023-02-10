@@ -14,8 +14,7 @@ const validate = (values) => {
   }
   if (!values.phone) {
     errors.phone = "Phone number is required!";
-  }
-  else if (!phoneno.test(values.phone)) {
+  } else if (!phoneno.test(values.phone)) {
     errors.phone = "Phone number must be in 10 digits!";
   }
   if (!values.email) {
@@ -42,8 +41,7 @@ const validate = (values) => {
   }
   if (!values.area) {
     errors.area = "Area is required!";
-  }
-  else if (!numberstring.test(values.area)) {
+  } else if (!numberstring.test(values.area)) {
     errors.area = "Area must be in a valid numeric format!";
   }
   if (!values.floors) {
@@ -56,8 +54,7 @@ const validate = (values) => {
   }
   if (!values.ratepersqft) {
     errors.ratepersqft = "Rate per Sqft is required!";
-  }
-  else if (!numberstring.test(values.ratepersqft)) {
+  } else if (!numberstring.test(values.ratepersqft)) {
     errors.ratepersqft = "Rate per Sqft must be in a valid numeric format!";
   }
 
