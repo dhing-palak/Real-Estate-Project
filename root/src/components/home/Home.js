@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      <h5 className="username">Hello {userData.name} welcome to Real Estate.</h5>
+      <h5 className="username">Hello {userData.name} Welcome to Real Estate.</h5>
       <SearchProperty />
 
       <Property />
