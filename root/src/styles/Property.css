@@ -1,10 +1,9 @@
 .outer {
   width: 100%;
   max-height: 100%;
-  box-shadow: lightgrey solid 1px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  margin-top: 20px;
   background-color: #f5f5f5;
 }
 
@@ -20,60 +19,50 @@
   margin: 20px;
 }
 
-.picOwner {
+.pic-owner {
   height: 200px;
   padding-right: 15px;
 }
 
 .image {
   width: 300px;
-  height: 150px;
+  /* height: 150px; */
   border-radius: 10px;
 }
 
 .owner {
-  padding-top: 15px;
+  padding-top: 5px;
   font-size: 18px;
 }
 
-.middlePart {
+.middle-part {
   margin-left: 5px;
   margin-right: auto;
 }
 
-.realEstate {
+.real-estate {
   color: #009681;
-  border: solid #009681;
   font-weight: bolder;
-  padding-left: 2px;
-  padding-right: 2px;
-  height: fit-content;
-  width: fit-content;
-  line-height: 40px;
-  margin-right: 10px;
 }
 
-.statusProperty {
-  text-decoration: underline;
-  padding-right: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.status-property {
+  /* padding: 5px 15px 0px; */
+  cursor: pointer;
   font-size: 18px;
 }
 
-.detailsProperty {
-  height: 50px;
+.details-property {
   background-color: #f5f5f5;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
 }
 
-.detailsInfo {
+.details-info {
   display: flex;
 }
 
-.detailsImage {
+.details-image {
   height: 37px;
   width: 20px;
   padding-top: 13px;
@@ -97,17 +86,15 @@
   font-weight: bold;
 }
 
-.detailsHeading {
-  padding-top: 10px;
-  padding-bottom: 2px;
-  padding-left: 10px;
+.details-heading {
+  padding: 10px 0px 2px 10px;
 }
 
-.contactSizePrice {
+.contact-size-price {
   background-color: #f5f5f5;
-  padding-right: 50px;
-  padding-left: 50px;
-  margin-left: 15px;
+  width: 15%;
+  padding: 20px;
+  text-align: center;
   border-radius: 0px 15px 15px 0px;
   margin-right: 20px;
 }
@@ -115,81 +102,80 @@
 .price {
   font-size: 20px;
   font-weight: bold;
-  padding: 15px;
-  padding-bottom: 1px;
 }
 
-.pricePerSqft {
+.price-persqft {
   font-size: 12px;
-  padding: 15px;
-  padding-top: 1px;
 }
 
-.contactOwner {
-  padding-bottom: 10px;
-}
-
-.ownerDetails {
+.owner-details {
   background-color: #d82329;
   color: #ffffff;
   border-radius: 15px;
-  width: 120px;
-  padding-bottom: 10px;
+  margin: 5px;
+  padding: 0px 5px 5px;
   border-color: #d82329;
 }
 
-.getPhoneNo {
-  padding-bottom: 10px;
-}
-.phoneDetails {
+.phone-details {
   background-color: #ffffff;
   color: #d82329;
   border-radius: 15px;
-  width: 120px;
-  padding-bottom: 10px;
+  margin: 5px;
+  padding: 0px 5px 5px;
   border-color: #d82329;
 }
 
 .feedback {
-  text-decoration: underline;
-  margin: 1px;
-  margin-bottom: 10px;
+  cursor: pointer;
   font-size: 15px;
-  padding: 5p;
-  padding-left: 10px;
 }
 
 /* media queries */
 
-@media (max-width: 925px) {
+@media (max-width: 1024px) {
+  .owner {
+    padding: 5px;
+  }
+
+  .details-property {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: max-content;
+  }
+
+  .contact-size-price {
+    margin-left: 20px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 820px) {
   .image {
-    width: 100%;
-    height: auto;
+    width: 175px;
+    height: 175px;
   }
 
-  .detailsProperty {
-    height: 80px;
-  }
-
-  .contactSizePrice {
-    margin-right: 20px;
+  .contact-size-price {
+    padding: 10px;
+    width: 95%;
   }
 }
 
 @media (max-width: 750px) {
-  .inner {
-    display: block;
-  }
-
   .image {
     width: 100%;
     height: auto;
   }
 
-  .middlePart {
+  .inner {
+    display: block;
+  }
+
+  .middle-part {
     padding-top: 300px;
   }
-  .detailsProperty {
+  .details-property {
     margin-right: 20px;
   }
 }
@@ -200,31 +186,33 @@
     height: auto;
   }
 
-  .middlePart {
-    padding-top: 80px;
-  }
-
-  .detailsProperty {
-    width: 95%;
-    height: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .contactSizePrice {
+  .inner {
     width: 90%;
+  }
+
+  .middle-part {
+    padding-top: 80px;
+    padding-right: 8px;
+  }
+
+  .details-property {
+    height: max-content;
+    width: 95%;
+  }
+
+  .contact-size-price {
+    height: max-content;
+    width: 90%;
+    margin-left: 5px;
   }
 }
 
 @media (max-width: 360px) {
-  .outer {
-    width: 100%;
-  }
   .inner {
     display: block;
   }
 
-  .middlePart {
+  .middle-part {
     padding-top: 70px;
   }
 
@@ -233,7 +221,7 @@
     height: auto;
   }
 
-  .detailsProperty {
+  .details-property {
     display: block;
     width: 90%;
     height: 200px;

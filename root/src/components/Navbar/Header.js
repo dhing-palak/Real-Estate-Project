@@ -14,7 +14,6 @@ const Navbar = () => {
   //Accessing Global data from Context
 
   const { setPropertyData, isLoggedin } = useContext(AppContext);
-  
 
   const cityDetails = async (city) => {
     const res = await propertydetails(city);
@@ -41,11 +40,16 @@ const Navbar = () => {
       >
         <div className="nav-container">
           <Link data-testid="nav-logo" to="/" className="nav-logo">
-            <img src={realestate} alt="logo"/>&nbsp;Real-Estate
+            <img src={realestate} alt="logo" />
+            &nbsp;Real-Estate
           </Link>
           <span className="nav-span">
             <div>
-              <select className="form-select" aria-label="Default select example" onChange={handleChange}>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                onChange={handleChange}
+              >
                 {cities.map((city, index) => {
                   return (
                     <option key={index} value={city}>
@@ -133,9 +137,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      
-        
-      
+
       <div className="subheader">
         <div className="sub-dropdown">
           <button className="sub-dropbtn">
@@ -179,7 +181,7 @@ const Navbar = () => {
             ></i>
           </button>
           <div className="sub-dropdowncontent">
-             &nbsp;For Owner
+            &nbsp;For Owner
             <Link to="/about">Sell Properties</Link>
             <Link to="/user/profile">My Dashboard</Link>
             &nbsp;For Agents & Builder
