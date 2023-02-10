@@ -1,11 +1,11 @@
-.username{
+.username {
   padding: 60px;
   padding-bottom: 20px;
   text-align: center;
 }
 
-@media (max-width: 480px){
-  .username{
+@media (max-width: 480px) {
+  .username {
     padding: 100px 60px 20px 60px;
   }
 }

@@ -143,9 +143,8 @@ const Postproperty = () => {
                     <span className="postproperty-offer-bold">5</span> Responses
                   </div>
                   <div className="postproperty-offer-listitems">
-                    Access to{" "}
-                    <span className="postproperty-offer-bold">15 Lac</span> Buyers
-                    &amp; Tenants
+                    Access to <span className="postproperty-offer-bold">15 Lac</span>{" "}
+                    Buyers &amp; Tenants
                   </div>
                 </div>
               </div>
