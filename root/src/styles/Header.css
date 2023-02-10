@@ -41,7 +41,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: rgba(0, 0, 0, 0.3);
+
   }
   
   .nav-logo {
@@ -72,6 +72,9 @@
 	margin-right: 28rem;
 	padding-bottom: 0.8em;
 	
+  }
+  .form-select{
+	padding: 0.200rem 1rem 0.200rem 0.50rem;
   }
   
   
@@ -113,6 +116,7 @@
   .nav-item:hover:after {
 	width: 100%;
 	background: white;
+	
   }
   
   .nav-item.active {
@@ -123,6 +127,7 @@
   .nav-icon {
 	display: none;
 	padding-bottom: -2em;
+	
   }
   
   @media screen and (max-width: 1024px) {
@@ -136,6 +141,7 @@
 	  left: -110%;
 	  opacity: 1;
 	  transition: all 0.5s ease;
+	  
 	}
   
 	.nav-menu.active {
@@ -146,15 +152,18 @@
 	  z-index: 1;
 	}
 	.nav-item .active {
-	  color: #ffdd40;
+	  color: white;
 	  border: none;
+	  
 	}
+	
 	.nav-links {
 	  padding: 1.5rem;
 	  width: 100%;
 	  display: table;
+	  border-bottom: 2px solid white;
 	}
-  
+	
 	.nav-icon {
 	  display: block;
 	  position: absolute;
@@ -163,15 +172,26 @@
 	  transform: translate(-100%, 60%);
 	  font-size: 1.4rem;
 	  cursor: pointer;
-	  color: #ffdd40;
+	  color: white;
 	}
 	.nav-span {
 	  display: flex;
 	  list-style: none;
 	  text-align: center;
-	  
 	  padding-bottom: 0.8rem;
 	}
+	.form-select{
+		padding: 0.150rem 1rem 0.200rem 0.80rem;
+	}
+	.nav-item:after {
+		content: "";
+		display: block;
+		height: 1px;
+		width: 0;
+		background: transparent;
+		transition: none
+	  }
+	
 	
   }
   @media screen and (max-width: 820px) {
@@ -181,7 +201,7 @@
 	  margin-left: 20px;
 	  cursor: pointer;
 	  text-decoration: none;
-	  font-size: 1.4rem;
+	  font-size: 1.5rem;
 	  flex-grow: 1;
 	  justify-content: center;
 	  padding-bottom: 0.5em;
@@ -194,16 +214,27 @@
 	  transform: translate(-100%, 60%);
 	  font-size: 1.4rem;
 	  cursor: pointer;
-	  color: #ffdd40;
+	  color: white;
 	}
 	.nav-span {
 	  display: flex;
 	  list-style: none;
 	  text-align: center;
-	  margin-right: 20rem;
-	  
+	  margin-right: 22rem;
 	  padding-bottom: 0.8rem;
 	}
+	.form-select{
+		padding: 0.200rem 0.8rem 0.250rem 0.50rem;
+	  }
+	  .nav-item:after {
+		content: "";
+		display: block;
+		height: 1px;
+		width: 0;
+		background: transparent;
+		transition: none
+	  }
+	
   }
   @media screen and (max-width: 540px) {
 	  .nav-logo {
@@ -225,7 +256,7 @@
 		transform: translate(-100%, 60%);
 		font-size: 1.3rem;
 		cursor: pointer;
-		color: #ffdd40;
+		color: white;
 	  }
 	  .nav-span {
 		display: flex;
@@ -234,14 +265,18 @@
 		margin-right: 15rem;
 		padding-bottom: 0.8rem;
 	  }
+	  .form-select{
+		padding: 0.150rem 0.5rem 0.200rem 0.50rem;
+	}
+
 	}
   @media screen and (max-width: 420px) {
 	.nav-span {
 	  display: flex;
 	  list-style: none;
 	  text-align: center;
-	  margin-right: 6rem;
-	  padding-bottom: 0.8rem;
+	  margin-right: 8rem;
+	  padding-bottom: 0.7rem;
 	  
 	}
 	.nav-logo {
@@ -269,8 +304,12 @@
 	  .nav-links:hover {
 		color: white;
 	  }
+	  .nav-links {
+		padding: 0.5rem;
+		border-bottom: 2px solid white;
+		
+	  }
 
-	
 	.nav-icon {
 	  display: block;
 	  position: absolute;
@@ -279,12 +318,13 @@
 	  transform: translate(-100%, 60%);
 	  font-size: 1.2rem;
 	  cursor: pointer;
-	  color: #ffdd40;
+	  color: white;
 	  justify-content: center;
 	}
 	.form-select{
 		font-size: small;
 		box-sizing: border-box;
+		padding: 0.150rem 0.6rem 0.200rem 0.80rem;
 	}
 	
   }
@@ -318,14 +358,14 @@
   .subheader {
 	padding: 0.5rem calc((100vw - 1000px) / 3);
   }
-  .dropdown1 {
+  .sub-dropdown {
 	float: left;
 	overflow: hidden;
 	width: max-content;
   }
   
   /* Dropdown button */
-  .dropdown1 .dropbtn1 {
+  .sub-dropdown .sub-dropbtn {
 	font-size: 16px;
 	border: none;
 	outline: none;
@@ -336,7 +376,7 @@
 	font-family: inherit; /* Important for vertical align on mobile phones */
 	margin: 0; /* Important for vertical align on mobile phones */
   }
-  .dropdown-content1 {
+  .sub-dropdowncontent {
 	display: none;
 	position: absolute;
 	background-color: #f9f9f9;
@@ -344,7 +384,7 @@
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
   }
-  .dropdown-content1 a {
+  .sub-dropdowncontent a {
 	float: none;
 	color: black;
 	padding: 12px 16px;
@@ -354,11 +394,11 @@
   }
   
   /* Add a grey background color to dropdown links on hover */
-  .dropdown-content1 a:hover {
+  .sub-dropdowncontent a:hover {
 	background-color: #ddd;
   }
   
   /* Show the dropdown menu on hover */
-  .dropdown1:hover .dropdown-content1 {
+  .sub-dropdown:hover .sub-dropdowncontent {
 	display: block;
   }

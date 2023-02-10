@@ -8,7 +8,7 @@ import "font-awesome/css/font-awesome.min.css";
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
 import { cities } from "../../common/common";
-import realestate from "../../images/realestate.jpg";
+import realestate from "../../images/realestate.png";
 
 const Navbar = () => {
   //Accessing Global data from Context
@@ -137,8 +137,8 @@ const Navbar = () => {
         
       
       <div className="subheader">
-        <div className="dropdown1">
-          <button className="dropbtn1">
+        <div className="sub-dropdown">
+          <button className="sub-dropbtn">
             {" "}
             Buy{" "}
             <i
@@ -146,15 +146,15 @@ const Navbar = () => {
               style={{ color: "#d8282a", fontWeight: "bold" }}
             ></i>
           </button>
-          <div className="dropdown-content1">
+          <div className="sub-dropdowncontent">
             <Link to="/about">Ready to Move</Link>
             <Link to="/about">Budget Homes</Link>
             <Link to="/about">Premium Homes</Link>
             <Link to="/about">Newly Launched</Link>
           </div>
         </div>
-        <div className="dropdown1">
-          <button className="dropbtn1">
+        <div className="sub-dropdown">
+          <button className="sub-dropbtn">
             {" "}
             Rent{" "}
             <i
@@ -162,15 +162,15 @@ const Navbar = () => {
               style={{ color: "#d8282a", fontWeight: "bold" }}
             ></i>
           </button>
-          <div className="dropdown-content1">
+          <div className="sub-dropdowncontent">
             <Link to="/about">Owner Properties</Link>
             <Link to="/about">Verified Properties</Link>
             <Link to="/about">Furnished Homes</Link>
             <Link to="/about">Immediately Homes</Link>
           </div>
         </div>
-        <div className="dropdown1">
-          <button className="dropbtn1">
+        <div className="sub-dropdown">
+          <button className="sub-dropbtn">
             {" "}
             Sell{" "}
             <i
@@ -178,7 +178,7 @@ const Navbar = () => {
               style={{ color: "#d8282a", fontWeight: "bold" }}
             ></i>
           </button>
-          <div className="dropdown-content1">
+          <div className="sub-dropdowncontent">
              &nbsp;For Owner
             <Link to="/about">Sell Properties</Link>
             <Link to="/user/profile">My Dashboard</Link>
@@ -187,8 +187,8 @@ const Navbar = () => {
             <Link to="/user/profile">My Dashboard</Link>
           </div>
         </div>
-        <div className="dropdown1">
-          <button className="dropbtn1">
+        <div className="sub-dropdown">
+          <button className="sub-dropbtn">
             {" "}
             Help{" "}
             <i
@@ -196,7 +196,7 @@ const Navbar = () => {
               style={{ color: "#d8282a", fontWeight: "bold" }}
             ></i>
           </button>
-          <div className="dropdown-content1">
+          <div className="sub-dropdowncontent">
             <Link to="/helpcenter">Help Center</Link>
             <Link to="/privacypolicy">Sales Enquiry</Link>
           </div>

@@ -5,6 +5,7 @@
   background: #f7f7f7;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 .postproperty_left_container {
