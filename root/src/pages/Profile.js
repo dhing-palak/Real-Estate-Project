@@ -37,57 +37,57 @@ const Profile = () => {
 
   return (
     <>
-      <div className="profile_webpage">
-        <div className="profile_container">
-          <div className="profile_left">
-            <div className="profile_left_body">
-              <figure className="profile_image_block">
+      <div className="profile-webpage">
+        <div className="profile-container">
+          <div className="profile-left">
+            <div className="profile-left-body">
+              <figure className="profile-image-block">
                 <image
-                  className="profile_image"
+                  className="profile-image"
                   src="https://bootdey.com/img/Content/avatar/avatar7.png"
                   alt="profile-image"
                 />
               </figure>
-              <div className="profile_left_data">
+              <div className="profile-left-data">
                 <h4>{userData.name}</h4>
                 <p>{userData.person}</p>
               </div>
             </div>
           </div>
-          <div className="profile_right">
-            <div className="profile_right_body">
-              <div className="profile_row">
-                <div className="profile_name">
+          <div className="profile-right">
+            <div className="profile-right-body">
+              <div className="profile-row">
+                <div className="profile-name">
                   <h4>Full Name</h4>
                 </div>
-                <div className="profile_data">{userData.name}</div>
+                <div className="profile-data">{userData.name}</div>
               </div>
               <hr />
             </div>
-            <div className="profile_right_body">
-              <div className="profile_row">
-                <div className="profile_name">
+            <div className="profile-right-body">
+              <div className="profile-row">
+                <div className="profile-name">
                   <h4>I am</h4>
                 </div>
-                <div className="profile_data">{userData.person}</div>
+                <div className="profile-data">{userData.person}</div>
               </div>
               <hr />
             </div>
-            <div className="profile_right_body">
-              <div className="profile_row">
-                <div className="profile_name">
+            <div className="profile-right-body">
+              <div className="profile-row">
+                <div className="profile-name">
                   <h4>Email</h4>
                 </div>
-                <div className="profile_data">{userData.email}</div>
+                <div className="profile-data">{userData.email}</div>
               </div>
               <hr />
             </div>
-            <div className="profile_right_body">
-              <div className="profile_row">
-                <div className="profile_name">
+            <div className="profile-right-body">
+              <div className="profile-row">
+                <div className="profile-name">
                   <h4>Phone</h4>
                 </div>
-                <div className="profile_data">{userData.phone}</div>
+                <div className="profile-data">{userData.phone}</div>
               </div>
               <hr />
             </div>
