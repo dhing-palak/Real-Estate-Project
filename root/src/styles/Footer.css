@@ -30,12 +30,14 @@
   color: #0b0b0b;
   font-weight: bold;
   margin-bottom: 16px;
+  margin-left: 8px;
 }
 .footer-main-content {
   width: 100%;
   font-size: 16px;
   line-height: 24px;
   color: #303030;
+  margin-left: 8px;
 }
 .footer-main-social-links {
   width: 100%;
@@ -108,7 +110,6 @@
   color: #060606;
   font-size: 16px;
   line-height: 48px;
- 
 }
 .footer li:hover {
   color: red;
@@ -176,6 +177,12 @@
     line-height: 40px;
     padding-top: 0%;
     text-align: center;
+  }
+  .footer__main__content {
+    margin-left: 8px;
+  }
+  .footer__main__title {
+    margin-left: 8px;
   }
 }
 @media screen and (max-width: 540px) {
