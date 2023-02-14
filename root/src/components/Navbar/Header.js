@@ -181,10 +181,10 @@ const Navbar = () => {
             ></i>
           </button>
           <div className="sub-dropdowncontent">
-            &nbsp;For Owner
+            &nbsp; <b>For Owner</b>
             <Link to="/about">Sell Properties</Link>
             <Link to="/user/profile">My Dashboard</Link>
-            &nbsp;For Agents & Builder
+            &nbsp; <b>For Agents & Builder</b>&nbsp;
             <Link to="/about">Sales Enquiry</Link>
             <Link to="/user/profile">My Dashboard</Link>
           </div>
