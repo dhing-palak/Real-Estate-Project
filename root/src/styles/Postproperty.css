@@ -1,21 +1,97 @@
+.postproperty_left {
+  width: 32%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  background-color: #f2f2f2;
+  transition: all 0.5s ease;
+}
+
+.postproperty_left_data {
+  width: 100%;
+  height: 100%;
+  background: url("../images/login bg2.jpg") no-repeat 0 0;
+  background-size: cover;
+  background-color: rgb(147, 136, 136);
+  padding: 49px 50px 50px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.postproperty_left_heading {
+  display: block;
+  font-weight: 400;
+  font-size: 25px;
+  font-family: sans-serif;
+  line-height: 33px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.postproperty-webpage ul {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.postproperty-webpage li {
+  width: 100%;
+  height: auto;
+  list-style: square;
+  margin: 0;
+  padding: 10px 0 10px 19px;
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 19px;
+  position: relative;
+}
+.postproperty_right {
+  width: 68%;
+  min-height: 700px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  background: url("../images/login bg1.png") repeat 25px top #f2f2f2;
+  background-attachment: fixed;
+  transition: all 0.5s ease;
+}
+
 .postproperty-webpage {
   width: 100%;
   min-height: 700px;
-  height: auto;
-  background: #f7f7f7;
+  height: 2150px;
   position: relative;
   overflow: hidden;
   z-index: 0;
+  /* background: url("../images/login bg1.png") repeat 25px top #f2f2f2;
+  background-attachment: fixed;
+  transition: all 0.5s ease; */
 }
 
 .postproperty-left-container {
-  width: 700px;
+  /* width: 700px;
   height: 100%;
   position: relative;
   z-index: 0;
   background-color: #ffffff;
   padding: 0;
   left: 0;
+  margin: auto;
+  margin-top: 10px;
+  margin-left:500px; */
+  width: 525px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  margin: 30px auto 0;
+  padding: 0;
+  border-radius: 7px;
+  border: 1px solid #d7d7d7;
+  box-sizing: border-box;
 }
 
 .postproperty-container {
