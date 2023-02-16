@@ -74,7 +74,7 @@ const Footer = () => {
                 </Link>
               </div>
               <h2 className="footer-main-title">New Projects in India</h2>
-              <div className="">
+              <div className="footer-main-right-content-1">
                 <Link to="/" className="footer-main-right-link">
                   {" "}
                   Property in Noida |
