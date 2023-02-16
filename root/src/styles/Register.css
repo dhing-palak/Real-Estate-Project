@@ -1,17 +1,17 @@
-.register_main_header {
+.register-main-header {
   height: 50px;
   background-color: #d8232a;
   box-shadow: 0 1px 6px 0 rgb(0 0 0 / 5%);
 }
 
-.register_header_container {
+.register-header-container {
   width: 100%;
   height: 50px;
   margin: auto;
   background-color: #d8232a;
 }
 
-.register_header_logo {
+.register-header-logo {
   width: 160px;
   height: 40px;
   padding: 5px 10px 5px 10px;
@@ -22,9 +22,9 @@
   margin: 5px 0;
 }
 
-.register_webpage {
+.register-webpage {
   width: 100%;
-  min-height: 700px;
+  min-height: 750px;
   height: auto;
   background: #f2f2f2;
   position: relative;
@@ -32,7 +32,7 @@
   z-index: 0;
 }
 
-.register_left {
+.register-left {
   width: 32%;
   height: 100%;
   position: absolute;
@@ -42,9 +42,9 @@
   transition: all 0.5s ease;
 }
 
-.register_left_data {
+.register-left-data {
   width: 100%;
-  min-height: 700px;
+  min-height: 729px;
   height: auto;
   background: url("../images/login bg2.jpg") no-repeat 0 0;
   background-size: cover;
@@ -54,7 +54,7 @@
   box-sizing: border-box;
 }
 
-.register_left_heading {
+.register-left-heading {
   display: block;
   font-weight: 400;
   font-size: 25px;
@@ -64,14 +64,14 @@
   margin-bottom: 20px;
 }
 
-.register_webpage ul {
+.register-webpage ul {
   width: 100%;
   height: auto;
   margin: 0;
   padding: 0;
 }
 
-.register_webpage li {
+.register-webpage li {
   width: 100%;
   height: auto;
   list-style: square;
@@ -84,7 +84,7 @@
   position: relative;
 }
 
-.register_right {
+.register-right {
   width: 68%;
   min-height: 700px;
   height: 100%;
@@ -96,9 +96,9 @@
   transition: all 0.5s ease;
 }
 
-.register_right_register {
+.register-right-register {
   width: 405px;
-  height: 625px;
+  height: 703px;
   position: relative;
   z-index: 2;
   background-color: #fff;
@@ -109,14 +109,34 @@
   box-sizing: border-box;
 }
 
-.register_container {
+.register-container {
   padding: 11px 30px 30px;
   margin: 0;
   height: 500px;
   box-sizing: border-box;
 }
 
-.register_heading {
+.register-message-block {
+  margin-bottom: 15px;
+}
+.register-message-data {
+  width: 345px;
+  height: 60px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  padding: 17px 0 0 24px;
+}
+.register-message-display {
+  font-size: 14px;
+  color: #303030;
+  line-height: 18px;
+  font-weight: 700;
+  padding-bottom: 13px;
+  color: #d8232a;
+}
+
+.register-heading {
   font-size: 16px;
   font-family: sans-serif;
   color: #303030;
@@ -126,7 +146,7 @@
   padding-bottom: 24px;
 }
 
-.register_wrapper {
+.register-wrapper {
   padding-bottom: 240px;
   position: relative;
 }
@@ -142,7 +162,7 @@
   padding: 5px;
 }
 
-.register_person_details .register_person_title {
+.register-person-details .register-person-title {
   font-size: 14px;
   margin: 2px;
   color: #969292;
@@ -150,7 +170,7 @@
   font-family: sans-serif;
 }
 
-.register_personN {
+.register-personN {
   margin: 2px;
   color: #7b7676;
   font-size: 16px;
@@ -158,32 +178,32 @@
   font-family: sans-serif;
 }
 
-.register_category {
+.register-category {
   display: flex;
   width: 100%;
   margin: 14px 0;
   justify-content: space-between;
 }
 
-.register_category label {
+.register-category label {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.register_category label .dot {
+.register-category label .dot {
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 5px;
   background: #d9d9d9;
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
 
-#dot-1:checked ~ .register_category label .one,
-#dot-2:checked ~ .register_category label .two,
-#dot-3:checked ~ .register_category label .three {
+#dot-1:checked ~ .register-category label .one,
+#dot-2:checked ~ .register-category label .two,
+#dot-3:checked ~ .register-category label .three {
   background: #9b59b6;
   border-color: #d9d9d9;
 }
@@ -207,7 +227,7 @@ form input[type="radio"] {
 
 .register-category {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .register-error-data {
@@ -254,7 +274,7 @@ form input[type="radio"] {
   cursor: pointer;
 }
 
-.register_footer {
+.register-footer {
   margin: 0;
   padding: 0;
   border: 0;
@@ -265,7 +285,7 @@ form input[type="radio"] {
   height: 113px;
 }
 
-.register_inner_footer {
+.register-inner-footer {
   text-align: center;
 
   font-size: 20px;
@@ -275,7 +295,7 @@ form input[type="radio"] {
   padding: 20px 0 0;
 }
 
-.register_footer_links {
+.register-footer-links {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -286,7 +306,7 @@ form input[type="radio"] {
   line-height: 22px;
 }
 
-.register_footer_links span {
+.register-footer-links span {
   font-size: 13px;
   color: hsla(0, 0%, 100%, 0.8);
   margin: 0 6px;
@@ -296,68 +316,76 @@ form input[type="radio"] {
 /* media queries */
 
 @media (max-width: 750px) {
-  .register_webpage {
+  .register-webpage {
     min-height: 600px;
   }
 
-  .register_left {
+  .register-left {
     width: 45%;
   }
 
-  .register_left_data {
+  .register-left-data {
     padding: 20px;
   }
 
-  .register_right {
+  .register-right {
     width: 55%;
     background: #fff;
     min-height: 600px;
     overflow-y: auto;
   }
 
-  .register_container {
+  .register-container {
     padding: 10;
   }
 
-  .register_wrapper {
+  .register-wrapper {
     width: 95%;
   }
 
-  .register_signup {
+  .register-signup {
     bottom: -20px;
   }
 
-  .register_main_header,
-  .register_footer {
+  .register-main-header,
+  .register-footer {
     display: none;
   }
 }
 
 @media (max-width: 480px) {
-  .register_webpage {
-    min-height: 550px;
+  .register-webpage {
+    min-height: 798px;
   }
 
-  .register_left {
+  .register-left {
     display: none;
   }
 
-  .register_right {
+  .register-right {
     width: 100%;
   }
 
-  .register_right_register {
-    height: 550px;
-    width: 390px;
+  .register-right-register {
+    height: 703px;
+    width: 347px;
   }
 
-  .register_signup {
+  .register-signup {
     background: none;
+  }
+
+  .register-wrapper {
+    padding-bottom: 67px;
+  }
+
+  .register-message-data {
+    width: 280px;
   }
 }
 
 @media (max-width: 360px) {
-  .register_right {
+  .register-right {
     width: 100%;
   }
 }
