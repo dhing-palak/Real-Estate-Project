@@ -109,7 +109,7 @@ const Postproperty = () => {
         window.alert(data.error);
         console.log("Invalid Property");
       } else {
-        window.alert(" Successfully Added Property");
+        // window.alert(" Successfully Added Property");
         console.log(" Successfully Added Property");
         navigate("/Postproperty");
       }
@@ -119,10 +119,9 @@ const Postproperty = () => {
   return (
     <>
       <div className="postproperty-webpage" data-testid="postpropertypage">
-
-        <div className="postproperty_left">
-          <div className="postproperty_left_data">
-            <h3 className="postproperty_left_heading">
+        <div className="postproperty-left">
+          <div className="postproperty-left-data">
+            <h3 className="postproperty-left-heading">
               Things you Can Do with <br />
               Real Estate Account
             </h3>
@@ -140,8 +139,8 @@ const Postproperty = () => {
           </div>
         </div>
 
-        <div className="postproperty_right">
-          <div className="postproperty-left-container">
+        <div className="postproperty-right">
+          <div className="postproperty-right-container">
             <div className="postproperty-container">
               <div className="postproperty-heading">
                 <span>
@@ -152,21 +151,22 @@ const Postproperty = () => {
               <div className="postproperty-offer-block">
                 <div className="postproperty-offer-data">
                   <div className="postproperty-offer-heading">
-                  You are posting this property for{" "}
+                    You are posting this property for{" "}
                     <span className="postproperty-offer-free">FREE!</span>
                   </div>
                   <div className="postproperty-offer-list">
                     <div className="postproperty-offer-listitems">
                       <span className="postproperty-offer-bold">Free</span>{" "}
-                    Professional Photoshoot
+                      Professional Photoshoot
                     </div>
                     <div className="postproperty-offer-listitems">
-                    Get Contact Details of upto{" "}
+                      Get Contact Details of upto{" "}
                       <span className="postproperty-offer-bold">5</span> Responses
                     </div>
                     <div className="postproperty-offer-listitems">
-                    Access to <span className="postproperty-offer-bold">15 Lac</span>{" "}
-                    Buyers &amp; Tenants
+                      Access to{" "}
+                      <span className="postproperty-offer-bold">15 Lac</span> Buyers
+                      &amp; Tenants
                     </div>
                   </div>
                 </div>
@@ -176,20 +176,20 @@ const Postproperty = () => {
                   <div className="postproperty-message-data">
                     <div className="postproperty-message-display">
                       {formErrors.iam ||
-                    formErrors.username ||
-                    formErrors.email ||
-                    formErrors.phone ||
-                    formErrors.city ||
-                    formErrors.locality ||
-                    formErrors.rooms ||
-                    formErrors.propertytype ||
-                    formErrors.area ||
-                    formErrors.floors ||
-                    formErrors.price ||
-                    formErrors.ratepersqft ||
-                    formErrors.status ||
-                    formErrors.description ||
-                    formErrors.propertyfor
+                      formErrors.username ||
+                      formErrors.email ||
+                      formErrors.phone ||
+                      formErrors.city ||
+                      formErrors.locality ||
+                      formErrors.rooms ||
+                      formErrors.propertytype ||
+                      formErrors.area ||
+                      formErrors.floors ||
+                      formErrors.price ||
+                      formErrors.ratepersqft ||
+                      formErrors.status ||
+                      formErrors.description ||
+                      formErrors.propertyfor
                         ? "Please fill the details mention below: "
                         : "Your Property details added Sucesssfully"}
                     </div>
@@ -336,13 +336,15 @@ const Postproperty = () => {
                     <select className="citydropdown" onChange={handleChange}>
                       {/* <option key="property.city" /> {""}  */}
                       <option key="property.city" disabled selected hidden>
-                      Select City
+                        Select City
                       </option>
                       {city.map((allcities) => {
                         return <option key={allcities}>{allcities}</option>;
                       })}
                     </select>
-                    <span className="postproperty-error-data">{formErrors.city}</span>
+                    <span className="postproperty-error-data">
+                      {formErrors.city}
+                    </span>
                   </div>
 
                   <PropertyInput
@@ -471,21 +473,21 @@ const Postproperty = () => {
                       value="postproperty"
                       onClick={PostData}
                     >
-                    Add Property
+                      Add Property
                     </button>
                   </div>
                   <div className="postproperty-heading">
                     <span>
                       <h3 className="highlight">
-                      Looking to Sell or Rent your Flat?{" "}
+                        Looking to Sell or Rent your Flat?{" "}
                       </h3>
                       <p>
                         {" "}
-                      Do you want to Sell your flat or put your house on rent?
-                      RealEstate has the right solution for you.Your advertisement
-                      will be viewed by millions of buyers and tenants in India.
-                      RealEstate provides you the best classified for your
-                      requirement.
+                        Do you want to Sell your flat or put your house on rent?
+                        RealEstate has the right solution for you.Your advertisement
+                        will be viewed by millions of buyers and tenants in India.
+                        RealEstate provides you the best classified for your
+                        requirement.
                       </p>
                     </span>
                   </div>
