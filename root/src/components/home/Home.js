@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import "../../styles/Home.css";
+import "../../styles/Home.scss";
 import { AppContext } from "../../state/StateContext";
 import { profile } from "../../api/api";
 import Property from "../row/Property";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/Postproperty.css";
+import "../../styles/Postproperty.scss";
 import { postproperty } from "../../api/api";
 import validate from "../../validation/validate";
 import { city } from "../../common/common";

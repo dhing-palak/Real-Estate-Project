@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Postproperty.css";
+import "../../styles/Postproperty.scss";
 
 export function PropertyInput(props) {
   return (
