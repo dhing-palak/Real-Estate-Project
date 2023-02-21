@@ -1,5 +1,6 @@
 const validate = (values) => {
   const errors = {};
+  const nameregex = /^[A-Z]{1}[a-z]{2,30}\s*/;
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   const phoneno = /^[0-9]{10}\s*$/;
   const singlenumber = /^[0-9]{1}\s*$/;
@@ -11,6 +12,9 @@ const validate = (values) => {
   }
   if (!values.name) {
     errors.username = "Username is required!";
+  } else if (!nameregex.test(values.name)) {
+    errors.username =
+      "Name should be in letters only and first letter of name should be in capital!";
   }
   if (!values.phone) {
     errors.phone = "Phone number is required!";
