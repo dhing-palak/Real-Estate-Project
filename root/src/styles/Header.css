@@ -93,15 +93,15 @@ body {
   color: white;
 }
 .nav-links2 {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  height: 100%;
-  border-bottom: 3px solid transparent;
-}
-.nav-links2:hover {
-  color: white;
-}
+	color: #fff;
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	height: 100%;
+	border-bottom: 3px solid transparent;
+  }
+  .nav-links2:hover {
+	color: white;
+  }
 .fa-code {
   margin-left: 1rem;
 }
@@ -170,6 +170,7 @@ body {
     padding: 1.5rem;
     width: 100%;
     display: table;
+    
   }
 
   .nav-icon {
@@ -322,6 +323,7 @@ body {
   }
   .nav-links2 {
     padding: 0.5rem;
+    
   }
   .nav-item:after {
     content: "";

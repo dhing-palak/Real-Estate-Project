@@ -7,6 +7,7 @@ import { register } from "../../api/api";
 
 const Register = () => {
   const navigate = useNavigate();
+  const [showdiv, setshowdiv] = useState(false);
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -18,20 +19,52 @@ const Register = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  console.log(showdiv);
 
-  let name, value;
+  
   const handleInput = (e) => {
-    name = e.target.name;
-    value = e.target.value;
-
+    const name = e.target.name;
+    const value = e.target.value;
+  
+    let errors = { ...formErrors };
+    let phoneno, regex;
+    
+    switch (name) {
+    case "name":
+      errors.name = value.length === 0 ? "Username is required!" : "";
+      break;
+    case "phone":
+      phoneno = /^[0-9]{10}\s*$/;
+      errors.phone = value.length === 0 ? "Phone number is required!" : phoneno.test(value) ? "" : "Phone number must be in 10 digits!";
+      break;
+    case "email":
+      regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+      errors.email = value.length === 0 ? "Email is required!" : regex.test(value) ? "" : "This is not a valid email format!";
+      break;
+    case "password":
+      errors.password = value.length < 6 ? "Password must be more than 6 characters!" : value.length > 12 ? "Password cannot exceed more than 12 characters!" : "";
+      break;
+    case "cpassword":
+      errors.cpassword = value !== user.password ? "Passwords do not match!" : "";
+      break;
+    default:
+      break;
+    }
+  
     setUser({ ...user, [name]: value });
+    setFormErrors(errors);
   };
+ 
+  
+  
+  
+  
 
   const PostData = async (e) => {
     e.preventDefault();
     setFormErrors(validate(user));
     setIsSubmit(true);
-
+    setshowdiv(true);
     const { name, phone, person, email, password, cpassword } = user;
 
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -41,7 +74,7 @@ const Register = () => {
       const data = await res.json();
 
       if (res.status === 422 || !data) {
-        window.alert(data.error);
+        // window.alert(data.error);
         console.log("Invalid Registration");
       } else {
         window.alert("Registration Successful");
@@ -56,7 +89,7 @@ const Register = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const phoneno = /^[0-9]{10}\s*$/;
     if (!values.name) {
-      errors.username = "Username is required!";
+      errors.name = "Username is required!";
     }
     if (!values.phone) {
       errors.phone = "Phone number is required!";
@@ -89,10 +122,10 @@ const Register = () => {
           <div className="register_header_logo">Real Estate</div>
         </div>
       </header> */}
-      <div className="register_webpage" data-testid="registrationpage">
-        <div className="register_left">
-          <div className="register_left_data">
-            <h3 className="register_left_heading">
+      <div className="register-webpage" data-testid="registrationpage">
+        <div className="register-left">
+          <div className="register-left-data">
+            <h3 className="register-left-heading">
               Things you Can Do with <br />
               Real Estate Account
             </h3>
@@ -109,13 +142,32 @@ const Register = () => {
             </ul>
           </div>
         </div>
-        <div className="register_right">
-          <div className="register_right_register">
-            <div className="register_container">
-              <div className="register_heading">Sign Up</div>
-              <div className="register_wrapper">
+
+        <div className="register-right">
+          <div className="register-right-register">
+            <div className="register-container">
+              {showdiv ? (
+                <div className="register-message-block">
+                  <div className="register-message-data">
+                    <div className="register-message-display">
+                      {formErrors.name ||
+                      formErrors.phone ||
+                      formErrors.person ||
+                      formErrors.email ||
+                      formErrors.password ||
+                      formErrors.cpassword
+                        ? "Please fill the details mention below: "
+                        : "Registration Sucesssful"}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div></div>
+              )}
+              <div className="register-heading">Sign Up</div>
+              <div className="register-wrapper">
                 <form className="register-form-wrapper">
-                  <div className="register_person_details">
+                  <div className="register-person-details">
                     <input
                       type="radio"
                       name="person"
@@ -137,19 +189,19 @@ const Register = () => {
                       id="dot-3"
                       onChange={handleInput}
                     />
-                    <span className="register_person_title">I am</span>
-                    <div className="register_category">
+                    <span className="register-person-title">I am</span>
+                    <div className="register-category">
                       <label htmlFor="dot-1">
                         <span className="dot one"></span>
-                        <span className="register_personN">Buyer/Owner</span>
+                        <span className="register-personN">Buyer/Owner</span>
                       </label>
                       <label htmlFor="dot-2">
                         <span className="dot two"></span>
-                        <span className="register_personN">Agent</span>
+                        <span className="register-personN">Agent</span>
                       </label>
                       <label htmlFor="dot-3">
                         <span className="dot three"></span>
-                        <span className="register_personN">Builder</span>
+                        <span className="register-personN">Builder</span>
                       </label>
                     </div>
                   </div>

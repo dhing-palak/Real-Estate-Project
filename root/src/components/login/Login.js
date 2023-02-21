@@ -15,11 +15,28 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [errors, setErrors] = useState({});
 
-  let name, value;
+  
   const handleChange = (e) => {
-    name = e.target.name;
-    value = e.target.value;
+    const { name, value } = e.target;
+    // validate input
+    if (name === "email") {
+      // check if email is valid
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValid = emailRegex.test(value);
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: isValid ? null : "Please enter a valid email address",
+      }));
+    } else if (name === "password") {
+      // check if password is at least 6 characters long
+      const isValid = value.length >= 6;
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: isValid ? null : "Password must be at least 6 characters long",
+      }));
+    }
     setUser({ ...user, [name]: value });
   };
 
@@ -83,6 +100,7 @@ const Login = () => {
                       value={user.email}
                       onChange={handleChange}
                     ></input>
+                    {errors.email && <div className="error-message">{errors.email}</div>}
                   </div>
                   <div className="login-input-password">
                     <input
@@ -94,6 +112,7 @@ const Login = () => {
                       value={user.password}
                       onChange={handleChange}
                     ></input>
+                    {errors.password && <div className="error-message">{errors.password}</div>}
                   </div>
                   <div className="login-submit-button" data-testid="buttondiv">
                     <button
