@@ -8,7 +8,6 @@ $background-color_4: #ffffff;
 $border-color_1: #d82329;
 $width: 100%;
 
-/* media queries */
 .outer {
 	width: $width;
 	max-height: 100%;
@@ -33,7 +32,7 @@ $width: 100%;
 	padding-right: 15px;
 }
 .image {
-	width: 300px;
+	width: 247px;
 	border-radius: 10px;
 }
 .owner {
@@ -43,6 +42,7 @@ $width: 100%;
 .middle-part {
 	margin-left: 5px;
 	margin-right: auto;
+	width: 550px;
 }
 .real-estate {
 	color: $color_1;
@@ -88,6 +88,7 @@ $width: 100%;
 	background-color: $background-color_1;
 	width: 15%;
 	padding: 20px;
+	padding-bottom: 0px;
 	text-align: center;
 	border-radius: 0px 15px 15px 0px;
 	margin-right: 20px;
@@ -126,11 +127,12 @@ $width: 100%;
 	.details-property {
 		padding-left: 10px;
 		padding-right: 10px;
-		width: max-content;
+		// width: max-content;
 	}
 	.contact-size-price {
-		margin-left: 20px;
-		width: 50%;
+		margin-left: 93px;
+		width: 20%;
+		margin-right: 23px;
 	}
 }
 @media (max-width: 820px) {
@@ -138,9 +140,14 @@ $width: 100%;
 		width: 175px;
 		height: 175px;
 	}
+	.middle-part{
+		width: 684px;
+	}
 	.contact-size-price {
 		padding: 10px;
-		width: 95%;
+		width: 37%;
+		margin-left: 20px;
+		margin-right: 29px;
 	}
 }
 @media (max-width: 750px) {
@@ -169,6 +176,7 @@ $width: 100%;
 	.middle-part {
 		padding-top: 70px;
 		padding-right: 8px;
+		width: 310px;
 	}
 	.details-property {
 		height: max-content;
