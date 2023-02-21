@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Helpcenter.css";
+import "../styles/Helpcenter.scss";
 
 function Helpcenter() {
   return (

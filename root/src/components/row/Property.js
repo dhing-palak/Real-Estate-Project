@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import "../../styles/Property.css";
+import "../../styles/Property.scss";
 import image from "../../images/Property1.jpg";
 import superAreaImage from "../../images/superarea.jpg";
 import statusImage from "../../images/status.jpg";

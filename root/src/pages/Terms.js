@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Terms.css";
+import "../styles/Terms.scss";
 
 function Terms() {
   return (

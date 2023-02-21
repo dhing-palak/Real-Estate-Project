@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { profile } from "../api/api";
 import { AppContext } from "../state/StateContext";
-import "../styles/Profile.css";
+import "../styles/Profile.scss";
 
 const Profile = () => {
   const navigate = useNavigate();

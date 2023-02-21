@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../state/StateContext";
-import "../../styles/SearchProperty.css";
+import "../../styles/SearchProperty.scss";
 import { city } from "../../common/common";
 import { searchProperty } from "../../api/api";
 

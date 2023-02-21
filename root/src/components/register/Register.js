@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/Register.css";
+import "../../styles/Register.scss";
 import { register } from "../../api/api";
 
 const Register = () => {
@@ -43,7 +43,7 @@ const Register = () => {
       const data = await res.json();
 
       if (res.status === 422 || !data) {
-        // window.alert(data.error);
+        window.alert(data.error);
         console.log("Invalid Registration");
       } else {
         window.alert("Registration Successful");
