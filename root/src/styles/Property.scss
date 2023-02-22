@@ -18,7 +18,7 @@ $width: 100%;
 }
 .inner {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-	width: 96%;
+	width: $width;
 	padding: 20px;
 	padding-right: 0.25px;
 	background-color: $background-color_2;
@@ -122,7 +122,7 @@ $width: 100%;
 }
 @media (max-width: 1024px) {
 	.inner{
-		width: 90%;
+		width: 96%;
 	}
 	.owner {
 		padding: 5px;
@@ -179,7 +179,7 @@ $width: 100%;
 	.middle-part {
 		padding-top: 70px;
 		padding-right: 8px;
-		width: 310px;
+		width: 330px;
 	}
 	.details-property {
 		height: max-content;
