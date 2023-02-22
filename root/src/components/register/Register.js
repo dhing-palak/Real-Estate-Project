@@ -2,12 +2,13 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import validator from "validator";
 import "../../styles/Register.css";
 import { register } from "../../api/api";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [showdiv, setshowdiv] = useState(false);
+  const [showdiv, setShowdiv] = useState(false);
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -19,101 +20,89 @@ const Register = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  console.log(showdiv);
-
-  
-  const handleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-  
-    let errors = { ...formErrors };
-    let phoneno, regex;
-    
-    switch (name) {
-    case "name":
-      errors.name = value.length === 0 ? "Username is required!" : "";
-      break;
-    case "phone":
-      phoneno = /^[0-9]{10}\s*$/;
-      errors.phone = value.length === 0 ? "Phone number is required!" : phoneno.test(value) ? "" : "Phone number must be in 10 digits!";
-      break;
-    case "email":
-      regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-      errors.email = value.length === 0 ? "Email is required!" : regex.test(value) ? "" : "This is not a valid email format!";
-      break;
-    case "password":
-      errors.password = value.length < 6 ? "Password must be more than 6 characters!" : value.length > 12 ? "Password cannot exceed more than 12 characters!" : "";
-      break;
-    case "cpassword":
-      errors.cpassword = value !== user.password ? "Passwords do not match!" : "";
-      break;
-    default:
-      break;
-    }
-  
-    setUser({ ...user, [name]: value });
-    setFormErrors(errors);
-  };
- 
-  
-  
-  
-  
-
-  const PostData = async (e) => {
-    e.preventDefault();
-    setFormErrors(validate(user));
-    setIsSubmit(true);
-    setshowdiv(true);
-    const { name, phone, person, email, password, cpassword } = user;
-
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      //calling register api
-      const res = await register(name, phone, email, person, password, cpassword);
-
-      const data = await res.json();
-
-      if (res.status === 422 || !data) {
-        // window.alert(data.error);
-        console.log("Invalid Registration");
-      } else {
-        window.alert("Registration Successful");
-        console.log("Registraton Successful");
-        navigate("/user/login");
-      }
-    }
-  };
 
   const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    const phoneno = /^[0-9]{10}\s*$/;
-    if (!values.name) {
-      errors.name = "Username is required!";
+    let errors = {};
+
+    if (!values.name.trim()) {
+      errors.name = "Name is required";
     }
-    if (!values.phone) {
-      errors.phone = "Phone number is required!";
-    } else if (!phoneno.test(values.phone)) {
-      errors.phone = "Phone number must be in 10 digits!";
+
+    if (!values.phone.trim()) {
+      errors.phone = "Phone is required";
+    } else if (!/^[0-9]+$/.test(values.phone)) {
+      errors.phone = "Invalid phone number";
+    }else if (values.phone.length !== 10) {
+      errors.phone = "Phone number should be 10 digits";
     }
+
+    if (!values.person) {
+      errors.person = "Please select your role";
+    }
+
     if (!values.email) {
-      errors.email = "Email is required!";
-    } else if (!regex.test(values.email)) {
-      errors.email = "This is not a valid email format!";
+      errors.email = "Email is required";
+    } else if (!validator.isEmail(values.email)) {
+      errors.email = "Invalid email address";
     }
+
     if (!values.password) {
-      errors.password = "Password is required!";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be more than 4 characters!";
-    } else if (values.password.length > 10) {
-      errors.password = "Password cannot exceed more than 10 characters!";
+      errors.password = "Password is required";
+    } else if (values.password.length < 6) {
+      errors.password = "Password must be at least 6 characters";
     }
+
     if (!values.cpassword) {
-      errors.cpassword = "Confirm Password is required!";
+      errors.cpassword = "Please confirm your password";
+    } else if (values.cpassword !== values.password) {
+      errors.cpassword = "Passwords do not match";
     }
 
     return errors;
   };
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setUser((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const errors = validate({ ...user, [name]: value });
+    setFormErrors((prevState) => ({ ...prevState, [name]: errors[name] }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const errors = validate(user);
+    setFormErrors(errors);
+    setIsSubmit(true);
+    setShowdiv(true);
+
+    try {
+      const { name, phone, person, email, password, cpassword } = user;
+
+      if (Object.keys(errors).length === 0 && isSubmit) {
+        // calling register api
+        const res = await register(name, phone, email, person, password, cpassword);
+        const data = await res.json();
+
+        if (res.status === 422 || !data) {
+        // window.alert(data.error);
+          console.log("Invalid Registration");
+        } else {
+          window.alert("Registration Successful");
+          console.log("Registration Successful");
+          navigate("/user/login");
+        }
+      }
+    }catch (error) {
+      console.log("Error occurred during registration:", error);
+    }
+  };
+
+  
+
 
   return (
     <>
@@ -214,9 +203,10 @@ const Register = () => {
                       placeholder="Name"
                       value={user.name}
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     ></input>
                     <span className="register-error-data">
-                      {formErrors.username}
+                      {formErrors.name}
                     </span>
                   </div>
                   <div className="register-input-phone">
@@ -228,6 +218,7 @@ const Register = () => {
                       placeholder="Phone"
                       value={user.phone}
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     ></input>
                     <span className="register-error-data">{formErrors.phone}</span>
                   </div>
@@ -241,6 +232,7 @@ const Register = () => {
                       placeholder="Email"
                       value={user.email}
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     ></input>
                     <span className="register-error-data">{formErrors.email}</span>
                   </div>
@@ -254,6 +246,7 @@ const Register = () => {
                       placeholder="Password"
                       value={user.password}
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     ></input>
                     <span className="register-error-data">
                       {formErrors.password}
@@ -269,6 +262,7 @@ const Register = () => {
                       placeholder="Confirm Password"
                       value={user.cpassword}
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     ></input>
                     <span className="register-error-data">
                       {formErrors.cpassword}
@@ -281,7 +275,7 @@ const Register = () => {
                       name="signup"
                       id="signup"
                       value="register"
-                      onClick={PostData}
+                      onClick={handleSubmit}
                     >
                       Sign Up
                     </button>
@@ -312,5 +306,6 @@ const Register = () => {
     </>
   );
 };
+
 
 export default Register;

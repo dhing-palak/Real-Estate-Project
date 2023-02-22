@@ -17,7 +17,6 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     // validate input
@@ -100,7 +99,9 @@ const Login = () => {
                       value={user.email}
                       onChange={handleChange}
                     ></input>
-                    {errors.email && <div className="error-message">{errors.email}</div>}
+                    {errors.email && (
+                      <div className="error-message">{errors.email}</div>
+                    )}
                   </div>
                   <div className="login-input-password">
                     <input
@@ -112,7 +113,9 @@ const Login = () => {
                       value={user.password}
                       onChange={handleChange}
                     ></input>
-                    {errors.password && <div className="error-message">{errors.password}</div>}
+                    {errors.password && (
+                      <div className="error-message">{errors.password}</div>
+                    )}
                   </div>
                   <div className="login-submit-button" data-testid="buttondiv">
                     <button
