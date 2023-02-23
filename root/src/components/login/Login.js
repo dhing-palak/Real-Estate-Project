@@ -10,45 +10,104 @@ const Login = () => {
   const { setisLoggedin } = useContext(AppContext);
 
   const navigate = useNavigate();
-  // const [showdiv, setshowdiv] = useState(false);
-
+  const [showdiv, setShowdiv] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [errors, setErrors] = useState({});
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
-  let name, value;
   const handleChange = (e) => {
-    name = e.target.name;
-    value = e.target.value;
-    setUser({ ...user, [name]: value });
+    setUser({ ...user, [e.target.name]: e.target.value });
+    validateInput({ [e.target.name]: e.target.value });
+  };
+
+  const validateInput = (newState) => {
+    let isValid = true;
+    const errors = {};
+
+    const { email, password } = { ...user, ...newState };
+
+    if (!email.includes("@") || email.length < 3) {
+      errors.email = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    if (!password) {
+      errors.password = "Password is required.";
+      isValid = false;
+    } else if (password.length < 6) {
+      errors.password = "Password must be at least 6 characters long.";
+      isValid = false;
+    }
+
+    setErrors(errors);
+    return isValid;
   };
 
   const loginUser = async (e) => {
     e.preventDefault();
+    console.log("showdiv:", showdiv);
+
+    if (!validateInput()) {
+      setErrors({
+        email: "Please enter a valid email address.",
+        password: "Password must be at least 6 characters long.",
+      });
+      setShowdiv(true);
+      setTimeout(() => {
+        setShowdiv(false);
+      }, 2000);
+      return;
+    }
 
     const { email, password } = user;
 
-    //calling login api
-    const res = await login(email, password);
+    if (!password) {
+      setErrors({ password: "Please enter a password." });
+      setShowdiv(true);
+      setTimeout(() => {
+        setShowdiv(false);
+      }, 2000);
+      return;
+    }
 
-    const data = res.json();
-    if (res.status === 400 || !data) {
-      window.alert("invalid credientials");
-    } else {
-      setisLoggedin(true);
-      window.alert("Login Successful");
-      navigate("/");
+    try {
+      const res = await login(email, password);
+      const data = await res.json();
+      if (res.status === 200 && data.error) {
+        setErrors({ email: data.error });
+        setShowdiv(true);
+        setTimeout(() => {
+          setShowdiv(false);
+        }, 2000);
+      } else if (res.status === 400 || !data || data.success === false) {
+        setErrorMessage("Invalid email or password.");
+        setShowdiv(true);
+        setTimeout(() => {
+          setShowdiv(false);
+        }, 2000);
+      } else {
+        setisLoggedin(true);
+        navigate("/");
+        setShowdiv(true);
+        setErrorMessage("Login successful.");
+        setTimeout(() => {
+          setShowdiv(false);
+        }, 2000);
+      }
+    } catch (error) {
+      setErrorMessage("An error occurred. Please try again later.");
+      setShowdiv(true);
+      setTimeout(() => {
+        setShowdiv(false);
+      }, 2000);
     }
   };
 
   return (
     <>
-      {/* <header className="login-main-header">
-        <div className="login-header-container">
-          <div className="login-header-logo">Real Estate</div>
-        </div>
-      </header> */}
       <div className="login-webpage" data-testid="loginpage">
         <div className="login-left">
           <div className="login-left-data">
@@ -72,6 +131,15 @@ const Login = () => {
         <div className="login-right">
           <div className="login-right-login">
             <div className="login-container">
+              {showdiv && (
+                <div className="register-message-block">
+                  <div className="register-message-data">
+                    <div className="register-message-display">
+                      {errorMessage || "Login successful."}
+                    </div>
+                  </div>
+                </div>
+              )}
               <div className="login-heading">Login</div>
               <div className="login-wrapper">
                 <form className="login-form-wrapper" method="POST" id="login-form">
@@ -85,6 +153,9 @@ const Login = () => {
                       value={user.email}
                       onChange={handleChange}
                     ></input>
+                    {errors.email && (
+                      <div className="error-message">{errors.email}</div>
+                    )}
                   </div>
                   <div className="login-input-password">
                     <input
@@ -96,6 +167,9 @@ const Login = () => {
                       value={user.password}
                       onChange={handleChange}
                     ></input>
+                    {errors.password && (
+                      <div className="error-message">{errors.password}</div>
+                    )}
                   </div>
                   <div className="login-submit-button" data-testid="buttondiv">
                     <button
@@ -145,14 +219,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      {/* <footer className="login-footer">
-        <div className="login-inner-footer">Real Estate</div>
-        <div className="login-footer-links">
-          <span>About</span>
-          <span>Terms and Conditions</span>
-          <span>Privacy</span>
-        </div>
-      </footer> */}
     </>
   );
 };
