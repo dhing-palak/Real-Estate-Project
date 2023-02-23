@@ -41,7 +41,15 @@ const Postproperty = () => {
     name = e.target.name;
     value = e.target.value;
 
-    setProperty({ ...property, [name]: value });
+    setProperty((prevState) => ({ ...prevState, [name]: value }));
+    // setProperty({ ...property, [name]: value });
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const errors = validate({ ...property, [name]: value });
+    setFormErrors((prevState) => ({ ...prevState, [name]: errors[name] }));
+    // setFormErrors ({...property, [name]: errors[name] });
   };
   // function handleImage(e) {
   //   const img = {
@@ -58,9 +66,10 @@ const Postproperty = () => {
 
   const PostData = async (e) => {
     console.log(property);
-
     e.preventDefault();
-    setFormErrors(validate(property));
+    // setFormErrors(validate(property));
+    const errors = validate(property);
+    setFormErrors(errors);
     setIsSubmit(true);
     setshowdiv(true);
     const {
@@ -102,7 +111,7 @@ const Postproperty = () => {
       // image,
     );
 
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
+    if (Object.keys(errors).length === 0 && isSubmit) {
       const data = await res.json();
 
       if (res.status === 422 || !data) {
@@ -176,7 +185,7 @@ const Postproperty = () => {
                   <div className="postproperty-message-data">
                     <div className="postproperty-message-display">
                       {formErrors.iam ||
-                      formErrors.username ||
+                      formErrors.name ||
                       formErrors.email ||
                       formErrors.phone ||
                       formErrors.city ||
@@ -213,6 +222,7 @@ const Postproperty = () => {
                           value="owner"
                           id="dot-1"
                           onChange={handleInput}
+                          onBlur={handleBlur}
                         />
                         <input
                           type="radio"
@@ -220,6 +230,7 @@ const Postproperty = () => {
                           value="agent"
                           id="dot-2"
                           onChange={handleInput}
+                          onBlur={handleBlur}
                         />
                         <input
                           type="radio"
@@ -227,6 +238,7 @@ const Postproperty = () => {
                           value="builder"
                           id="dot-3"
                           onChange={handleInput}
+                          onBlur={handleBlur}
                         />
 
                         <div className="postproperty-category">
@@ -258,8 +270,9 @@ const Postproperty = () => {
                     placeholder="Enter your Name"
                     value={property.name}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
-                    formErrors={formErrors.username}
+                    formErrors={formErrors.name}
                   />
 
                   <PropertyInput
@@ -270,6 +283,7 @@ const Postproperty = () => {
                     placeholder="Enter your email-id"
                     value={property.email}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.email}
                   />
@@ -282,6 +296,7 @@ const Postproperty = () => {
                     placeholder="Enter your phone Number"
                     value={property.phone}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.phone}
                   />
@@ -296,6 +311,7 @@ const Postproperty = () => {
                           value="sale"
                           id="dot-4"
                           onChange={handleInput}
+                          onBlur={handleBlur}
                         />
                         <input
                           type="radio"
@@ -303,6 +319,7 @@ const Postproperty = () => {
                           value="rent"
                           id="dot-5"
                           onChange={handleInput}
+                          onBlur={handleBlur}
                         />
                         <input
                           type="radio"
@@ -310,6 +327,7 @@ const Postproperty = () => {
                           value="hostel"
                           id="dot-6"
                           onChange={handleInput}
+                          onBlur={handleBlur}
                         />
                         <div className="postproperty-category">
                           <label htmlFor="dot-4">
@@ -333,7 +351,11 @@ const Postproperty = () => {
                   </div>
 
                   <div className="postproperty-input-city">
-                    <select className="citydropdown" onChange={handleChange}>
+                    <select
+                      className="citydropdown"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    >
                       {/* <option key="property.city" /> {""}  */}
                       <option key="property.city" disabled selected hidden>
                         Select City
@@ -355,6 +377,7 @@ const Postproperty = () => {
                     placeholder="Enter your locality"
                     value={property.locality}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.locality}
                   />
@@ -367,6 +390,7 @@ const Postproperty = () => {
                     placeholder="Enter the number of BHK Rooms"
                     value={property.rooms}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.rooms}
                   />
@@ -379,6 +403,7 @@ const Postproperty = () => {
                     placeholder="Enter your type of property"
                     value={property.propertytype}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.propertytype}
                   />
@@ -391,6 +416,7 @@ const Postproperty = () => {
                     placeholder="Enter the area in Sqft"
                     value={property.area}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.area}
                   />
@@ -403,6 +429,7 @@ const Postproperty = () => {
                     placeholder="Enter number of floors"
                     value={property.floors}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.floors}
                   />
@@ -415,6 +442,7 @@ const Postproperty = () => {
                     placeholder="Enter the price"
                     value={property.price}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.price}
                   />
@@ -427,6 +455,7 @@ const Postproperty = () => {
                     placeholder="Enter rate per sqft"
                     value={property.ratepersqft}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.ratepersqft}
                   />
@@ -439,6 +468,7 @@ const Postproperty = () => {
                     placeholder="Enter status"
                     value={property.status}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.status}
                   />
@@ -451,6 +481,7 @@ const Postproperty = () => {
                     placeholder="Enter description"
                     value={property.description}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.description}
                   />
