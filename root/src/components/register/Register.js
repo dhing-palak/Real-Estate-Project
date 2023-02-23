@@ -29,11 +29,12 @@ const Register = () => {
 
     if (!values.name.trim()) {
       errors.name = "Name is required";
-    }else if (!/[A-Z][a-z]*(\s[A-Z][a-z]*)*/.test(values.name)) {
-      errors.name ="Name should be in alphabets only and first letter of name should be in capital!";
-    }else if(values.name.length < 3){
+    } else if (!/[A-Z][a-z]*(\s[A-Z][a-z]*)*/.test(values.name)) {
+      errors.name =
+        "Name should be in alphabets only and first letter of name should be in capital!";
+    } else if (values.name.length < 3) {
       errors.name = "Name should be atleast 3 letters";
-    }else if(values.name.length > 20){
+    } else if (values.name.length > 20) {
       errors.name = "Name should be less than 20 letters";
     }
 
@@ -41,7 +42,7 @@ const Register = () => {
       errors.phone = "Phone is required";
     } else if (!/^[0-9]+$/.test(values.phone)) {
       errors.phone = "Invalid phone number";
-    }else if (values.phone.length !== 10) {
+    } else if (values.phone.length !== 10) {
       errors.phone = "Phone number should be 10 digits";
     }
 
@@ -97,7 +98,7 @@ const Register = () => {
         const data = await res.json();
 
         if (res.status === 422 || !data) {
-        // window.alert(data.error);
+          // window.alert(data.error);
           console.log("Invalid Registration");
         } else {
           window.alert("Registration Successful");
@@ -105,13 +106,10 @@ const Register = () => {
           navigate("/user/login");
         }
       }
-    }catch (error) {
+    } catch (error) {
       console.log("Error occurred during registration:", error);
     }
   };
-
-  
-
 
   return (
     <>
@@ -205,10 +203,8 @@ const Register = () => {
                         <span className="register-personN">Builder</span>
                       </label>
                     </div>
-                    
-                    <span className="register-error-data">
-                      {formErrors.person}
-                    </span>
+
+                    <span className="register-error-data">{formErrors.person}</span>
                   </div>
                   <div className="register-input-name">
                     <input
@@ -221,9 +217,7 @@ const Register = () => {
                       onChange={handleInput}
                       onBlur={handleBlur}
                     ></input>
-                    <span className="register-error-data">
-                      {formErrors.name}
-                    </span>
+                    <span className="register-error-data">{formErrors.name}</span>
                   </div>
                   <div className="register-input-phone">
                     <input
@@ -322,6 +316,5 @@ const Register = () => {
     </>
   );
 };
-
 
 export default Register;

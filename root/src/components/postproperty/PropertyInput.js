@@ -12,6 +12,7 @@ export function PropertyInput(props) {
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.onChange}
+        onBlur= {props.onBlur}
       ></input>
       <span className="asterisk-input"></span>
       <span className="postproperty-error-data">{props.formErrors}</span>
