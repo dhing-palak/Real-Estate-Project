@@ -2,8 +2,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import validator from "validator";
-import "../../styles/Register.css";
+// import validator from "validator";
+import "../../styles/Register.scss";
 import { register } from "../../api/api";
 
 const Register = () => {
@@ -23,16 +23,26 @@ const Register = () => {
 
   const validate = (values) => {
     let errors = {};
+    // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    // const phoneno = /^[0-9]{10}\s*$/;
+    // const nameregex = /^[A-Z]{1}[a-z]\s*/;
 
     if (!values.name.trim()) {
       errors.name = "Name is required";
+    } else if (!/[A-Z][a-z](\s[A-Z][a-z])*/.test(values.name)) {
+      errors.name =
+        "Name should be in alphabets only and first letter of name should be in capital!";
+    } else if (values.name.length < 3) {
+      errors.name = "Name should be atleast 3 letters";
+    } else if (values.name.length > 20) {
+      errors.name = "Name should be less than 20 letters";
     }
 
     if (!values.phone.trim()) {
       errors.phone = "Phone is required";
     } else if (!/^[0-9]+$/.test(values.phone)) {
       errors.phone = "Invalid phone number";
-    }else if (values.phone.length !== 10) {
+    } else if (values.phone.length !== 10) {
       errors.phone = "Phone number should be 10 digits";
     }
 
@@ -42,7 +52,7 @@ const Register = () => {
 
     if (!values.email) {
       errors.email = "Email is required";
-    } else if (!validator.isEmail(values.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(values.email)) {
       errors.email = "Invalid email address";
     }
 
@@ -88,21 +98,18 @@ const Register = () => {
         const data = await res.json();
 
         if (res.status === 422 || !data) {
-        // window.alert(data.error);
+          // window.alert(data.error);
           console.log("Invalid Registration");
         } else {
-          window.alert("Registration Successful");
+          // window.alert("Registration Successful");
           console.log("Registration Successful");
           navigate("/user/login");
         }
       }
-    }catch (error) {
+    } catch (error) {
       console.log("Error occurred during registration:", error);
     }
   };
-
-  
-
 
   return (
     <>
@@ -163,6 +170,7 @@ const Register = () => {
                       value="buyer/owner"
                       id="dot-1"
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     />
                     <input
                       type="radio"
@@ -170,6 +178,7 @@ const Register = () => {
                       value="agent"
                       id="dot-2"
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     />
                     <input
                       type="radio"
@@ -177,6 +186,7 @@ const Register = () => {
                       value="builder"
                       id="dot-3"
                       onChange={handleInput}
+                      onBlur={handleBlur}
                     />
                     <span className="register-person-title">I am</span>
                     <div className="register-category">
@@ -193,6 +203,8 @@ const Register = () => {
                         <span className="register-personN">Builder</span>
                       </label>
                     </div>
+
+                    <span className="register-error-data">{formErrors.person}</span>
                   </div>
                   <div className="register-input-name">
                     <input
@@ -205,9 +217,7 @@ const Register = () => {
                       onChange={handleInput}
                       onBlur={handleBlur}
                     ></input>
-                    <span className="register-error-data">
-                      {formErrors.name}
-                    </span>
+                    <span className="register-error-data">{formErrors.name}</span>
                   </div>
                   <div className="register-input-phone">
                     <input
@@ -295,17 +305,8 @@ const Register = () => {
           </div>
         </div>
       </div>
-      {/* <footer className="register_footer">
-        <div className="register_inner_footer">Real Estate</div>
-        <div className="register_footer_links">
-          <span>About</span>
-          <span>Terms and Conditions</span>
-          <span>Privacy</span>
-        </div>
-      </footer> */}
     </>
   );
 };
-
 
 export default Register;
