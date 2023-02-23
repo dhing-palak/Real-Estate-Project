@@ -10,7 +10,7 @@ const Login = () => {
   const { setisLoggedin } = useContext(AppContext);
 
   const navigate = useNavigate();
-  // const [showdiv, setshowdiv] = useState(false);
+  const [showdiv, setshowdiv] = useState(false);
 
   const [user, setUser] = useState({
     email: "",
@@ -26,7 +26,7 @@ const Login = () => {
 
   const loginUser = async (e) => {
     e.preventDefault();
-    // setshowdiv(true);
+    setshowdiv(true);
 
     const { email, password } = user;
 
@@ -73,20 +73,19 @@ const Login = () => {
         <div className="login-right">
           <div className="login-right-login">
             <div className="login-container">
-              {/* {showdiv ? (
+              {showdiv ? (
                 <div className="register-message-block">
                   <div className="register-message-data">
                     <div className="register-message-display">
-                      {user.email === email && user.password === password
+                      {user.email == value.email && user.password == value.password
                         ? "Login Successful"
                         : "Invalid Credentials"}
-              
                     </div>
                   </div>
                 </div>
               ) : (
                 <div></div>
-              )} */}
+              )}
               <div className="login-heading">Login</div>
               <div className="login-wrapper">
                 <form className="login-form-wrapper" method="POST" id="login-form">
