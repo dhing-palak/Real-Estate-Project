@@ -28,7 +28,7 @@ const Register = () => {
 
     if (!values.name.trim()) {
       errors.name = "Name is required";
-    } else if (!/[A-Z][a-z]*(\s[A-Z][a-z]*)*/.test(values.name)) {
+    } else if (!/[A-Z][a-z](\s[A-Z][a-z])*/.test(values.name)) {
       errors.name =
         "Name should be in alphabets only and first letter of name should be in capital!";
     } else if (values.name.length < 3) {
@@ -100,7 +100,7 @@ const Register = () => {
           // window.alert(data.error);
           console.log("Invalid Registration");
         } else {
-          window.alert("Registration Successful");
+          // window.alert("Registration Successful");
           console.log("Registration Successful");
           navigate("/user/login");
         }
@@ -304,14 +304,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-      {/* <footer className="register_footer">
-        <div className="register_inner_footer">Real Estate</div>
-        <div className="register_footer_links">
-          <span>About</span>
-          <span>Terms and Conditions</span>
-          <span>Privacy</span>
-        </div>
-      </footer> */}
     </>
   );
 };
