@@ -351,7 +351,11 @@ const Postproperty = () => {
                   </div>
 
                   <div className="postproperty-input-city">
-                    <select className="citydropdown" onChange={handleChange}  onBlur={handleBlur}>
+                    <select
+                      className="citydropdown"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    >
                       {/* <option key="property.city" /> {""}  */}
                       <option key="property.city" disabled selected hidden>
                         Select City

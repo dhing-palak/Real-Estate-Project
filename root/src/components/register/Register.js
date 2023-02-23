@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import validator from "validator";
 import "../../styles/Register.scss";
 import { register } from "../../api/api";
 
