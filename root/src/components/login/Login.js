@@ -29,19 +29,34 @@ const Login = () => {
 
     const { email, password } = { ...user, ...newState };
 
-    if (!email.includes("@") || email.length < 3) {
-      errors.email = "Please enter a valid email address.";
+    if (!email) {
+      errors.email = "Email is required";
+      // setErrorMessage("Please fill the details mention below")
       isValid = false;
     }
+    else if (!email.includes("@") || email.length < 3) {
+      errors.email = "Please enter a valid email address.";
+      // setErrorMessage("Please fill the details mention below")
+      isValid = false;
+    }
+    // if (!email) {
+    //   errors.email = "Email is required";
+    //   isValid = false;
+    // } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(newState.email)) {
+    //   errors.email = "Invalid email address";
+    //   isValid = false;
+    // }
 
     if (!password) {
       errors.password = "Password is required.";
+      // setErrorMessage("Please fill the details mention below")
       isValid = false;
     } else if (password.length < 6) {
       errors.password = "Password must be at least 6 characters long.";
+      // setErrorMessage("Please fill the details mention below")
       isValid = false;
     }
-
+    setErrorMessage("Please fill the details mention below");
     setErrors(errors);
     return isValid;
   };
@@ -51,13 +66,14 @@ const Login = () => {
     console.log("showdiv:", showdiv);
 
     if (!validateInput()) {
-      setErrors({
-        email: "Please enter a valid email address.",
-        password: "Password must be at least 6 characters long.",
-      });
+      // setErrors({
+      //   email: "Email is required.",
+      //   password: "Password is required.",
+      // });
+      setErrorMessage("Please fill the details mention below")
       setShowdiv(true);
       setTimeout(() => {
-        setShowdiv(false);
+        setShowdiv(true);
       }, 2000);
       return;
     }
@@ -66,35 +82,40 @@ const Login = () => {
 
     if (!password) {
       setErrors({ password: "Please enter a password." });
+      setErrorMessage("invalid email or password")
       setShowdiv(true);
       setTimeout(() => {
         setShowdiv(false);
       }, 2000);
       return;
     }
-
     try {
       const res = await login(email, password);
+        
       const data = await res.json();
-      if (res.status === 200 && data.error) {
-        setErrors({ email: data.error });
-        setShowdiv(true);
-        setTimeout(() => {
-          setShowdiv(false);
-        }, 2000);
-      } else if (res.status === 400 || !data || data.success === false) {
-        setErrorMessage("Invalid email or password.");
-        setShowdiv(true);
-        setTimeout(() => {
-          setShowdiv(false);
-        }, 2000);
-      } else {
+      console.log(data)
+      // if (res.status === 200 && data.error) {
+      //   setErrors({ email: data.error});
+      //   setShowdiv(true);
+      //   setTimeout(() => {
+      //     setShowdiv(false);
+      //   }, 2000);
+      console.log(password)
+      if (res.status === 200 && !data.error ) {
         setisLoggedin(true);
-        navigate("/");
+        // navigate("/user/login");
         setShowdiv(true);
         setErrorMessage("Login successful.");
         setTimeout(() => {
           setShowdiv(false);
+          navigate("/");
+        }, 2000);
+      }
+      else {
+        setErrorMessage("Invalid email or password.");
+        setShowdiv(true);
+        setTimeout(() => {
+          setShowdiv(true);
         }, 2000);
       }
     } catch (error) {
@@ -104,6 +125,43 @@ const Login = () => {
         setShowdiv(false);
       }, 2000);
     }
+
+   
+
+    // try {
+    //   const res = await login(email, password);
+      
+    //   // const data = await res.json();
+    //   // if (res.status === 200 && data.error) {
+    //   //   setErrors({ email: data.error});
+    //   //   setShowdiv(true);
+    //   //   setTimeout(() => {
+    //   //     setShowdiv(false);
+    //   //   }, 2000);
+    //   console.log(password)
+    //   if (res.status === 400 || !password ) {
+    //     setErrorMessage("Invalid email or password.");
+    //     setShowdiv(true);
+    //     setTimeout(() => {
+    //       setShowdiv(true);
+    //     }, 2000);
+    //   } else {
+    //     console.log(errorMessage)
+    //     setisLoggedin(true);
+    //     navigate("/");
+    //     setShowdiv(true);
+    //     setErrorMessage("Login successful.");
+    //     setTimeout(() => {
+    //       setShowdiv(false);
+    //     }, 2000);
+    //   }
+    // } catch (error) {
+    //   setErrorMessage("An error occurred. Please try again later.");
+    //   setShowdiv(true);
+    //   setTimeout(() => {
+    //     setShowdiv(false);
+    //   }, 2000);
+    // }
   };
 
   return (
@@ -132,9 +190,9 @@ const Login = () => {
           <div className="login-right-login">
             <div className="login-container">
               {showdiv && (
-                <div className="register-message-block">
-                  <div className="register-message-data">
-                    <div className="register-message-display">
+                <div className="login-message-block">
+                  <div className="login-message-data">
+                    <div className="login-message-display">
                       {errorMessage || "Login successful."}
                     </div>
                   </div>

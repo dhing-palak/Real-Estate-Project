@@ -18,7 +18,6 @@ const Register = () => {
   });
 
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
 
   const validate = (values) => {
     let errors = {};
@@ -85,28 +84,25 @@ const Register = () => {
     e.preventDefault();
     const errors = validate(user);
     setFormErrors(errors);
-    setIsSubmit(true);
     setShowdiv(true);
 
-    try {
-      const { name, phone, person, email, password, cpassword } = user;
+    const { name, phone, person, email, password, cpassword } = user;
+    const res = await register(name, phone, email, person, password, cpassword);
 
-      if (Object.keys(errors).length === 0 && isSubmit) {
-        // calling register api
-        const res = await register(name, phone, email, person, password, cpassword);
-        const data = await res.json();
+    if (Object.keys(errors).length === 0) {
+      // calling register api
+      // const res = await register(name, phone, email, person, password, cpassword);
+      const data = await res.json();
 
-        if (res.status === 422 || !data) {
-          // window.alert(data.error);
-          console.log("Invalid Registration");
-        } else {
-          // window.alert("Registration Successful");
-          console.log("Registration Successful");
-          navigate("/user/login");
-        }
+      if (res.status === 422 || !data) {
+        // window.alert(data.error);
+        setShowdiv("Data already exist");
+        console.log("Invalid Registration");
+      } else {
+        // window.alert("Registration Successful");
+        console.log("Registration Successful");
+        navigate("/user/login");
       }
-    } catch (error) {
-      console.log("Error occurred during registration:", error);
     }
   };
 

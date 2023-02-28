@@ -257,6 +257,13 @@ $font-size: 16px;
 	font-weight: bold;
 	cursor: pointer;
 }
+.error-message{
+	display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #d8282a;
+    font-size: 10px;
+}
 .login-footer {
 	margin: 0;
 	padding: 0;
@@ -291,6 +298,25 @@ $font-size: 16px;
 		position: relative;
 	}
 }
+.login-message-block {
+	margin-bottom: 15px;
+}
+.login-message-data {
+	width: 345px;
+	height: 60px;
+	margin-top: 10px;
+	border-radius: 4px;
+	background-color: $background-color_6;
+	padding: 17px 0 0 24px;
+}
+.login-message-display {
+	font-size: 14px;
+	color: $color_4;
+	line-height: 18px;
+	font-weight: 700;
+	padding-bottom: 13px;
+	color: $color_7;
+}
 @media (max-width: 750px) {
 	.login-webpage {
 		min-height: 600px;
@@ -305,7 +331,7 @@ $font-size: 16px;
 		width: 55%;
 		background: #fff;
 		min-height: 600px;
-		overflow-y: auto;
+		// overflow-y: auto;
 	}
 	.login-container {
 		padding: 10;
@@ -334,10 +360,14 @@ $font-size: 16px;
 		width: $width;
 	}
 	.login-right-login {
-		height: 480px;
+		height: 538px;
+		width: 98%;
 	}
 	.login-signup {
 		background: none;
+	}
+	.login-message-data {
+		width: auto;
 	}
 }
 @media (max-width: 360px) {

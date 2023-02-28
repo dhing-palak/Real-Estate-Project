@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Postproperty.scss";
 import { postproperty } from "../../api/api";
@@ -72,6 +72,9 @@ const Postproperty = () => {
     setFormErrors(errors);
     setIsSubmit(true);
     setshowdiv(true);
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
     const {
       iam,
       name,
@@ -90,6 +93,7 @@ const Postproperty = () => {
       description,
       // image,
     } = property;
+    
 
     //calling postproperty api
     const res = await postproperty(
@@ -120,7 +124,12 @@ const Postproperty = () => {
       } else {
         // window.alert(" Successfully Added Property");
         console.log(" Successfully Added Property");
-        navigate("/Postproperty");
+        setshowdiv(true);
+        setTimeout(() => {
+          setshowdiv(false);
+          navigate("/");
+        }, 2000);
+        // navigate("/Postproperty");
       }
     }
   };
