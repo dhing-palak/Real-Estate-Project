@@ -25,11 +25,9 @@ const Postproperty = () => {
     ratepersqft: "",
     status: "",
     description: "",
-    // image: { preview: "", data: "" },
   });
 
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
   console.log(showdiv);
 
   city.map((e) => {
@@ -42,7 +40,6 @@ const Postproperty = () => {
     value = e.target.value;
 
     setProperty((prevState) => ({ ...prevState, [name]: value }));
-    // setProperty({ ...property, [name]: value });
   };
 
   const handleBlur = (e) => {
@@ -61,7 +58,6 @@ const Postproperty = () => {
     e.preventDefault();
     const errors = validate(property);
     setFormErrors(errors);
-    setIsSubmit(true);
     setshowdiv(true);
 
     const {
@@ -101,14 +97,12 @@ const Postproperty = () => {
       description,
     );
 
-    if (Object.keys(errors).length === 0 && isSubmit) {
+    if (Object.keys(errors).length === 0) {
       const data = await res.json();
 
       if (res.status === 422 || !data) {
-        // window.alert(data.error);
         console.log("Invalid Property");
       } else {
-        // window.alert(" Successfully Added Property");
         console.log(" Successfully Added Property");
         setshowdiv(true);
         setTimeout(() => {

@@ -94,11 +94,8 @@ const Register = () => {
       const data = await res.json();
 
       if (res.status === 422 || !data) {
-        // window.alert(data.error);
-        setShowdiv("Data already exist");
         console.log("Invalid Registration");
       } else {
-        // window.alert("Registration Successful");
         console.log("Registration Successful");
         navigate("/user/login");
       }
