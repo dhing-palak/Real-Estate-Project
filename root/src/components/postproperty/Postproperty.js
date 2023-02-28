@@ -73,8 +73,8 @@ const Postproperty = () => {
     setIsSubmit(true);
     setshowdiv(true);
     useEffect(() => {
-      window.scrollTo(0, 0)
-    }, [])
+      window.scrollTo(0, 0);
+    }, []);
     const {
       iam,
       name,
@@ -93,7 +93,6 @@ const Postproperty = () => {
       description,
       // image,
     } = property;
-    
 
     //calling postproperty api
     const res = await postproperty(

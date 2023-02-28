@@ -33,8 +33,7 @@ const Login = () => {
       errors.email = "Email is required";
       // setErrorMessage("Please fill the details mention below")
       isValid = false;
-    }
-    else if (!email.includes("@") || email.length < 3) {
+    } else if (!email.includes("@") || email.length < 3) {
       errors.email = "Please enter a valid email address.";
       // setErrorMessage("Please fill the details mention below")
       isValid = false;
@@ -70,7 +69,7 @@ const Login = () => {
       //   email: "Email is required.",
       //   password: "Password is required.",
       // });
-      setErrorMessage("Please fill the details mention below")
+      setErrorMessage("Please fill the details mention below");
       setShowdiv(true);
       setTimeout(() => {
         setShowdiv(true);
@@ -82,7 +81,7 @@ const Login = () => {
 
     if (!password) {
       setErrors({ password: "Please enter a password." });
-      setErrorMessage("invalid email or password")
+      setErrorMessage("invalid email or password");
       setShowdiv(true);
       setTimeout(() => {
         setShowdiv(false);
@@ -91,17 +90,17 @@ const Login = () => {
     }
     try {
       const res = await login(email, password);
-        
+
       const data = await res.json();
-      console.log(data)
+      console.log(data);
       // if (res.status === 200 && data.error) {
       //   setErrors({ email: data.error});
       //   setShowdiv(true);
       //   setTimeout(() => {
       //     setShowdiv(false);
       //   }, 2000);
-      console.log(password)
-      if (res.status === 200 && !data.error ) {
+      console.log(password);
+      if (res.status === 200 && !data.error) {
         setisLoggedin(true);
         // navigate("/user/login");
         setShowdiv(true);
@@ -110,8 +109,7 @@ const Login = () => {
           setShowdiv(false);
           navigate("/");
         }, 2000);
-      }
-      else {
+      } else {
         setErrorMessage("Invalid email or password.");
         setShowdiv(true);
         setTimeout(() => {
@@ -126,11 +124,9 @@ const Login = () => {
       }, 2000);
     }
 
-   
-
     // try {
     //   const res = await login(email, password);
-      
+
     //   // const data = await res.json();
     //   // if (res.status === 200 && data.error) {
     //   //   setErrors({ email: data.error});
