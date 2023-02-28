@@ -49,15 +49,7 @@ const Postproperty = () => {
     const { name, value } = e.target;
     const errors = validate({ ...property, [name]: value });
     setFormErrors((prevState) => ({ ...prevState, [name]: errors[name] }));
-    // setFormErrors ({...property, [name]: errors[name] });
   };
-  // function handleImage(e) {
-  //   const img = {
-  //     preview: URL.createObjectURL(e.target.files[0]),
-  //     data: e.target.files[0],
-  //   };
-  //   setProperty({...property, image: img})
-  // }
   const handleChange = (event) => {
     if (event.target.value) {
       setProperty({ ...property, city: event.target.value });
@@ -67,11 +59,11 @@ const Postproperty = () => {
   const PostData = async (e) => {
     console.log(property);
     e.preventDefault();
-    // setFormErrors(validate(property));
     const errors = validate(property);
     setFormErrors(errors);
     setIsSubmit(true);
     setshowdiv(true);
+
     const {
       iam,
       name,
@@ -88,7 +80,6 @@ const Postproperty = () => {
       ratepersqft,
       status,
       description,
-      // image,
     } = property;
 
     //calling postproperty api
@@ -108,19 +99,22 @@ const Postproperty = () => {
       ratepersqft,
       status,
       description,
-      // image,
     );
 
     if (Object.keys(errors).length === 0 && isSubmit) {
       const data = await res.json();
 
       if (res.status === 422 || !data) {
-        window.alert(data.error);
+        // window.alert(data.error);
         console.log("Invalid Property");
       } else {
         // window.alert(" Successfully Added Property");
         console.log(" Successfully Added Property");
-        navigate("/Postproperty");
+        setshowdiv(true);
+        setTimeout(() => {
+          setshowdiv(false);
+          navigate("/");
+        }, 2000);
       }
     }
   };
@@ -356,7 +350,6 @@ const Postproperty = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     >
-                      {/* <option key="property.city" /> {""}  */}
                       <option key="property.city" disabled selected hidden>
                         Select City
                       </option>
@@ -485,16 +478,6 @@ const Postproperty = () => {
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.description}
                   />
-
-                  {/* <div> */}
-                  {/* <input
-                    type="file"
-                    name="myImage"
-                    accept=".jpg, .png, .jpeg"
-                    onChange={handleImage}
-                  /> */}
-                  {/* <input type="file" name="file" onChange={handleImage}></input>
-                </div> */}
 
                   <div className="postproperty-submit-button">
                     <button

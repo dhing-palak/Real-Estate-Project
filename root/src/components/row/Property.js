@@ -26,10 +26,10 @@ const Property = () => {
   }, []);
 
   return (
-    <div className="outer">
+    <div className="property-outer">
       {propertyData.map((detail, id) => {
         return (
-          <div key={id} className="inner">
+          <div key={id} className="property-inner">
             <div className="pic-owner">
               <img className="image" src={image} alt="Palace" />
               <p className="owner">Owner: {detail.name}</p>
@@ -90,7 +90,7 @@ const Property = () => {
 
             <div className="contact-size-price">
               <div className="price">₹ {detail.price}</div>
-              <div className="price-per-sqft">₹ {detail.ratepersqft} per sqft</div>
+              <div className="price-persqft">₹ {detail.ratepersqft} per sqft</div>
               <div className="contact-owner">
                 <button className="owner-details">Contact Owner</button>
               </div>
@@ -99,7 +99,6 @@ const Property = () => {
               </div>
               <div>
                 <p className="feedback"> Share Feedback</p>
-                {/* <a href="">Share Feedback</a> */}
               </div>
             </div>
           </div>
