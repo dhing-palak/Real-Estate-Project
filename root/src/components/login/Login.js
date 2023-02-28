@@ -31,7 +31,6 @@ const Login = () => {
 
     if (!email) {
       errors.email = "Email is required";
-      // setErrorMessage("Please fill the details mention below")
       isValid = false;
     } else if (!email.includes("@") || email.length < 3) {
       errors.email = "Please enter a valid email address.";
@@ -102,7 +101,6 @@ const Login = () => {
       console.log(password);
       if (res.status === 200 && !data.error) {
         setisLoggedin(true);
-        // navigate("/user/login");
         setShowdiv(true);
         setErrorMessage("Login successful.");
         setTimeout(() => {

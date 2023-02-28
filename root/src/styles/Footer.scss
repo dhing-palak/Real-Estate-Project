@@ -113,13 +113,6 @@ $height: 32px;
 		background-position: -199px -52px;
 	}
 }
-.footer__main__social-links {
-	.fa-facebook-f {
-		width: $width_1;
-		height: $height;
-		background-position: -59px -52px;
-	}
-}
 .footer-main-right {
 	width: 46%;
 }
@@ -195,12 +188,6 @@ $height: 32px;
 		line-height: 40px;
 		padding-top: 0%;
 		text-align: center;
-	}
-	.footer__main__content {
-		margin-left: 8px;
-	}
-	.footer__main__title {
-		margin-left: 8px;
 	}
 }
 @media screen and (max-width: 540px) {

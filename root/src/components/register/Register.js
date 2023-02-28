@@ -8,6 +8,7 @@ import { register } from "../../api/api";
 const Register = () => {
   const navigate = useNavigate();
   const [showdiv, setShowdiv] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState("");
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -90,16 +91,11 @@ const Register = () => {
     const res = await register(name, phone, email, person, password, cpassword);
 
     if (Object.keys(errors).length === 0) {
-      // calling register api
-      // const res = await register(name, phone, email, person, password, cpassword);
       const data = await res.json();
 
       if (res.status === 422 || !data) {
-        // window.alert(data.error);
-        setShowdiv("Data already exist");
         console.log("Invalid Registration");
       } else {
-        // window.alert("Registration Successful");
         console.log("Registration Successful");
         navigate("/user/login");
       }
@@ -108,11 +104,6 @@ const Register = () => {
 
   return (
     <>
-      {/* <header className="register_main_header">
-        <div className="register_header_container">
-          <div className="register_header_logo">Real Estate</div>
-        </div>
-      </header> */}
       <div className="register-webpage" data-testid="registrationpage">
         <div className="register-left">
           <div className="register-left-data">
