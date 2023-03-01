@@ -1,12 +1,4 @@
-$color_1: #d8232a;
-$color_2: #ffffff;
-$background-color_1: $color_2;
-$background-color_2: #d82329;
-$border-color_1: #d82329;
-$border: $color_2;
-$padding-top: 10px;
-$padding-left: 5px;
-$padding-right: 78px;
+@import "../styles/Variable.scss";
 
 .search-outer {
 	width: 70%;
@@ -14,7 +6,7 @@ $padding-right: 78px;
 	border-radius: 40px;
 	padding: 5px;
 	margin-left: 15%;
-	background-color: $background-color_1;
+	background-color: $background-color-8;
 	border-style: solid;
 	border-width: thin;
 	justify-content: space-between;
@@ -31,12 +23,12 @@ $padding-right: 78px;
 }
 
 .fonticon.fa {
-	color: $color_1;
+	color: $color-2;
 	padding-left: 10px;
 	transform: scale(1.1);
 }
 .searchicon.fa {
-	color: $color_2;
+	color: $color-1;
 	height: 10px;
 	width: 10px;
 	margin-top: 8px;
@@ -45,28 +37,28 @@ $padding-right: 78px;
 	transform: scale(1.1);
 }
 .search {
-	background-color: $background-color_2;
-	color: $color_2;
+	background-color: $background-color-11;
+	color: $color-1;
 	border-radius: 40px;
 	padding: 10px 36px 10px 50px;
 	margin-left: -31px;
-	border-color: $border-color_1;
+	border-color: $border-color-2;
 	font-weight: 600;
 }
 .drpdwn1 {
 	padding-right: $padding-right;
-	padding-left: $padding-left;
+	padding-left: $padding;
 	border: $border;
 }
 .drpdwn2 {
 	padding-right: $padding-right;
-	padding-left: $padding-left;
+	padding-left: $padding;
 	border: $border;
 }
 .drpdwn3 {
 	border: $border;
 	padding-right: 68px;
-	padding-left: $padding-left;
+	padding-left: $padding;
 }
 .search-button {
 	margin-left: -41px;
