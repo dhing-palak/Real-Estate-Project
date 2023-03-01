@@ -1,11 +1,10 @@
-$color_1: #009681;
+
 $color_2: #ffffff;
 $color_3: #d82329;
 $background-color_1: #f5f5f5;
-$background-color_2: white;
-$background-color_3: #d82329;
-$background-color_4: #ffffff;
-$border-color_1: #d82329;
+$background-color_2: $color_2;
+$background-color_3: $color_3;
+$border-color_1: $color_3;
 $width: 100%;
 
 .property-outer {
@@ -45,7 +44,7 @@ $width: 100%;
 	width: 550px;
 }
 .real-estate {
-	color: $color_1;
+	color: #009681;
 	font-weight: bolder;
 }
 .status-property {
@@ -111,7 +110,7 @@ $width: 100%;
 	border-color: $border-color_1;
 }
 .phone-details {
-	background-color: $background-color_4;
+	background-color: $background-color_2;
 	color: $color_3;
 	border-radius: 15px;
 	margin: 5px;
