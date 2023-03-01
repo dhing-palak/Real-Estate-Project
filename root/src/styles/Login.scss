@@ -1,22 +1,34 @@
-$color_1: white;
-$color_2: #fff;
-$color_3: hsla(0, 0%, 100%, 0.6);
-$color_4: #303030;
-$color_5: #969292;
-$color_6: #909090;
-$color_7: #d8282a;
-$color_8: hsla(0, 0%, 100%, 0.4);
-$color_9: hsla(0, 0%, 100%, 0.8);
-$font-family_1: sans-serif;
-$font-family_2: Open_Sans, Open Sans, Helvetica, Arial, sans-serif;
-$background-color_1: #d8232a;
-$background-color_2: #f2f2f2;
-$background-color_3: rgb(147, 136, 136);
-$background-color_4: #fff;
-$background-color_5: #d8282a;
-$background-color_6: #f7f7f7;
+// $color_1: #ffffff;
+// $color_3: #ffffff99;
+// $color_4: #303030;
+// $color_5: #e2e2e2;
+// $color_6: #909090;
+// $color_7: #d8282a;
+// $font-family_1: sans-serif;
+// $background-color_1: $color_7;
+// $background-color_2: #f2f2f2;
+// $background-color_3: #938888;
+// $background-color_4: $color_1;
+// $background-color_6: #f7f7f7;
+// $width: 100%;
+// $font-size: 16px;
+
+@import "../styles/Variable.scss";
+
+$color-1: #ffffff;
+$color-6: #ffffff99; 
+$color-3: #303030; 
+$color-8: #e2e2e2; 
+$color-9: #909090; 
+$color-2: #d8232a; 
+$font-family: sans-serif;
+$background-color_1: $color-2;
+$background-color-2: #f2f2f2;
+$background-color-3: #938888;
+$background-color-4: $color-1;
+$background-color-6: #f7f7f7;
 $width: 100%;
-$font-size: 16px;
+$font-size-1: 16px; 
 
 .login-webpage {
 	width: $width;
@@ -38,9 +50,9 @@ $font-size: 16px;
 		list-style: square;
 		margin: 0;
 		padding: 10px 0 10px 19px;
-		color: $color_3;
+		color: $color-6;
 		font-size: 14px;
-		font-family: $font-family_1;
+		font-family: $font-family;
 		line-height: 19px;
 		position: relative;
 	}
@@ -69,9 +81,9 @@ $font-size: 16px;
 	display: block;
 	font-weight: 400;
 	font-size: 25px;
-	font-family: $font-family_1;
+	font-family: $font-family;
 	line-height: 33px;
-	color: $color_2;
+	color: $color_1;
 	margin-bottom: 20px;
 }
 .login-right {
@@ -90,7 +102,7 @@ $font-size: 16px;
 	height: auto;
 	position: relative;
 	z-index: 2;
-	background-color: $background-color_4;
+	background-color: $background-color-4;
 	margin: 30px auto 0;
 	padding: 0;
 	border-radius: 7px;
@@ -105,8 +117,8 @@ $font-size: 16px;
 }
 .login-heading {
 	font-size: 16px;
-	font-family: $font-family_1;
-	color: $color_4;
+	font-family: $font-family;
+	color: $color-3;
 	font-weight: 600;
 	padding-top: 11px;
 	min-height: 37px;
@@ -117,13 +129,13 @@ $font-size: 16px;
 	position: relative;
 }
 .login-input-email {
-	color: $color_5;
-	font-size: $font-size;
+	color: $color-8;
+	font-size: $font-size-1;
 	padding-bottom: 10px;
 }
 .login-input-password {
-	color: $color_5;
-	font-size: $font-size;
+	color: $color-8;
+	font-size: $font-size-1;
 	padding-bottom: 10px;
 }
 .login-input {
@@ -140,12 +152,12 @@ $font-size: 16px;
 }
 .login-form-submit {
 	display: flex;
-	font-size: $font-size;
+	font-size: $font-size-1;
 	font-weight: bold;
 	padding: 10px;
 	width: $width;
 	justify-content: center;
-	background-color: $background-color_5;
+	background-color: $background-color_1;
 	color: $color_1;
 	margin: auto;
 	outline: none;
@@ -161,13 +173,13 @@ $font-size: 16px;
 	padding-top: 10px;
 	text-align: right;
 	font-size: 15px;
-	color: $color_6;
+	color: $color-9;
 }
 .login-using {
 	padding-top: 10px;
 	text-align: center;
 	font-size: 14px;
-	color: $color_6;
+	color: $color-9;
 }
 .login-with-social {
 	position: relative;
@@ -180,7 +192,7 @@ $font-size: 16px;
 	span {
 		padding: 2px;
 		margin-bottom: 15px;
-		font-family: $font-family_1;
+		font-family: $font-family;
 	}
 	img {
 		padding-top: 7px;
@@ -193,7 +205,7 @@ $font-size: 16px;
 	span {
 		padding: 2px;
 		margin-bottom: 15px;
-		font-family: $font-family_1;
+		font-family: $font-family;
 	}
 	img {
 		padding-top: 7px;
@@ -227,11 +239,11 @@ $font-size: 16px;
 	align-items: center;
 	justify-content: center;
 	font-size: 15px;
-	font-family: $font-family_1;
+	font-family: $font-family;
 }
 .login-signup-btn {
 	padding: 5px;
-	color: $color_7;
+	color: $color-2;
 	font-weight: bold;
 	cursor: pointer;
 }
@@ -256,11 +268,11 @@ $font-size: 16px;
 }
 .login-message-display {
 	font-size: 14px;
-	color: $color_4;
+	color: $color-3;
 	line-height: 18px;
 	font-weight: 700;
 	padding-bottom: 13px;
-	color: $color_7;
+	color: $color-2;
 }
 @media (max-width: 750px) {
 	.login-webpage {
