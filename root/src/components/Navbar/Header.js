@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Header.css";
+import "../../styles/Header.scss";
 import "font-awesome/css/font-awesome.min.css";
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
@@ -89,7 +89,7 @@ const Navbar = () => {
                   <Link
                     to="/postproperty"
                     activeclassname="active"
-                    className="nav-links"
+                    className="nav-links2"
                     onClick={click ? handleClick : null}
                     data-testid="nav-post"
                   >
@@ -123,7 +123,7 @@ const Navbar = () => {
                   <Link
                     to="/user/logout"
                     activeclassname="active"
-                    className="nav-links"
+                    className="nav-links2"
                     onClick={click ? handleClick : null}
                   >
                     Logout
@@ -181,10 +181,10 @@ const Navbar = () => {
             ></i>
           </button>
           <div className="sub-dropdowncontent">
-            &nbsp;For Owner
+            &nbsp; <b>For Owner</b>
             <Link to="/about">Sell Properties</Link>
             <Link to="/user/profile">My Dashboard</Link>
-            &nbsp;For Agents & Builder
+            &nbsp; <b>For Agents & Builder</b>&nbsp;
             <Link to="/about">Sales Enquiry</Link>
             <Link to="/user/profile">My Dashboard</Link>
           </div>

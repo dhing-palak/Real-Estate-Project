@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Terms.css";
+import "../styles/Terms.scss";
 
 function Terms() {
   return (
@@ -34,7 +34,7 @@ function Terms() {
               Company provides a number of internet-based services through its
               platform and shall include:{" "}
             </p>
-            <ul className="terms_list_content">
+            <ul className="terms-list-content">
               <li>
                 Posting User profile or listing for the purpose of sale/rental of
                 property, and related property services etc.

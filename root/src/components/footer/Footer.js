@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Footer.css";
+import "../../styles/Footer.scss";
 
 const Footer = () => {
   return (
@@ -74,7 +74,7 @@ const Footer = () => {
                 </Link>
               </div>
               <h2 className="footer-main-title">New Projects in India</h2>
-              <div className="">
+              <div className="footer-main-right-content-1">
                 <Link to="/" className="footer-main-right-link">
                   {" "}
                   Property in Noida |
