@@ -15,21 +15,6 @@
 
 @import "../styles/Variable.scss";
 
-$color-1: #ffffff;
-$color-6: #ffffff99; 
-$color-3: #303030; 
-$color-8: #e2e2e2; 
-$color-9: #909090; 
-$color-2: #d8232a; 
-$font-family: sans-serif;
-$background-color_1: $color-2;
-$background-color-2: #f2f2f2;
-$background-color-3: #938888;
-$background-color-4: $color-1;
-$background-color-6: #f7f7f7;
-$width: 100%;
-$font-size-1: 16px; 
-
 .login-webpage {
 	width: $width;
 	min-height: 700px;
@@ -157,7 +142,7 @@ $font-size-1: 16px;
 	padding: 10px;
 	width: $width;
 	justify-content: center;
-	background-color: $background-color_1;
+	background-color: $background-color-1;
 	color: $color_1;
 	margin: auto;
 	outline: none;
