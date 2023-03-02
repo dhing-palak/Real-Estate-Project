@@ -1,27 +1,11 @@
-// $color-1: #ffffff;
-// $color-2: #212529;
-// $background-color-1: $color-1;
-// $background-color-2: #d8282a;
-// $background-color-4: #f9f9f9;
-// $background-color-5: #dddddd;
-// $width: 100%
-
 @import "../styles/Variable.scss";
-
-$color-1: #ffffff;
-$color-5: #212529; 
-$background-color-1: $color-1;
-$background-color-2: $color-2;
-$background-color-4: #f9f9f9;
-$background-color-5: #dddddd;
-$width: 100%;
 
 * {
 	margin: 0;
 	padding: 0;
 }
 body {
-	background-color: $background-color-1;
+	background-color: $background-color-8;
 }
 .pages {
 	color: $color-1;
@@ -30,7 +14,7 @@ body {
 	margin-top: 10%;
 }
 .navbar {
-	background-color: $background-color-2;
+	background-color: $background-color-7;
 	height: 60px;
 	display: flex;
 	justify-content: center;

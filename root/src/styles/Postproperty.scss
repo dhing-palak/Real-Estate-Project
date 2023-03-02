@@ -1,44 +1,4 @@
-// $color_1: #ffffff;
-// $color_2: #ffffff99;
-// $color_3: #303030;
-// $color_4: #606060;
-// $color_5: #d8232a;
-// $color_6: #969292;
-// $color_7: #7b7676;
-// $font-family_1: sans-serif;
-// $background-color_1: #f2f2f2;
-// $background-color_2: #938888;
-// $background-color_3: $color_1;
-// $background-color_4: #f7f7f7;
-// $background-color_6: $color_5;
-// $border-color_1: #d9d9d9;
-// $width: 100%;
-// $font-size: 14px;
-// $font-size_1: 16px;
-// $margin: 2px;
-// $padding: 5px;
-
 @import "../styles/Variable.scss";
-
-$color-1: #ffffff;
-$color-6: #ffffff99; // COLOR-2
-$color-3: #303030;
-$color-10: #606060; // COLOR-4
-$color-2: #d8232a; // COLOR-5
-$color-4: #969292; // COLOR-6
-$color-11: #7b7676; // COLOR-7
-$font-family: sans-serif;
-$background-color-1: $background-color-2; // bg-1
-$background-color-2: $background-color-3; // bg-2
-$background-color-3: $color-1;
-$background-color-4: $background-color-6;
-$background-color-5: $color-2;
-$border-color-1: #d9d9d9;
-$width: 100%;
-$font-size-2: 14px; // FS
-$font-size-1: 16px;
-$margin: 2px;
-$padding: 5px;
 
 .postproperty-left {
 	width: 32%;
@@ -46,7 +6,7 @@ $padding: 5px;
 	position: absolute;
 	left: 0;
 	z-index: 0;
-	background-color: $background-color-1;
+	background-color: $background-color-2;
 	transition: all 0.5s ease;
 }
 .postproperty-left-data {
@@ -54,7 +14,7 @@ $padding: 5px;
 	height: 100%;
 	background: url("../images/login bg2.jpg") no-repeat 0 0;
 	background-size: cover;
-	background-color: $background-color-2;
+	background-color: $background-color-3;
 	padding: 49px 50px 50px;
 	position: relative;
 	box-sizing: border-box;
@@ -113,7 +73,7 @@ $padding: 5px;
 	height: 2100px;
 	position: relative;
 	z-index: 2;
-	background-color: $background-color-3;
+	background-color: $background-color-8;
 	margin: 30px auto 0;
 	padding: 0;
 	border-radius: 7px;
@@ -129,7 +89,7 @@ $padding: 5px;
 .postproperty-heading {
 	font-size: 25px;
 	font-family: $font-family;
-	color: $color-3;
+	color: $color_3;
 	font-weight: 700;
 	padding-top: 11px;
 	min-height: 37px;
@@ -155,12 +115,12 @@ $padding: 5px;
 	width: 550px;
 	height: 135px;
 	border-radius: 4px;
-	background-color: $background-color-4;
+	background-color: $background-color-6;
 	padding: 17px 0 0 24px;
 }
 .postproperty-offer-heading {
 	font-size: $font-size-2;
-	color: $color-3;
+	color: $color_3;
 	line-height: 18px;
 	font-weight: 700;
 	padding-bottom: 13px;
@@ -172,12 +132,12 @@ $padding: 5px;
 	width: 550px;
 	height: 60px;
 	border-radius: 4px;
-	background-color: $background-color-4;
+	background-color: $background-color-6;
 	padding: 17px 0 0 24px;
 }
 .postproperty-message-display {
 	font-size: $font-size-2;
-	color: $color-3;
+	color: $color_3;
 	line-height: 18px;
 	font-weight: 700;
 	padding-bottom: 13px;
@@ -447,12 +407,7 @@ form {
 	font-size: $font-size-1;
 	padding: $padding;
 }
-.postproperty-input-image {
-	margin: $margin;
-	color: $color-4;
-	font-size: $font-size-1;
-	padding: $padding;
-}
+
 .postproperty-input {
 	height: 20px;
 	font-size: 13px;
@@ -488,8 +443,8 @@ form {
 	padding: 10px;
 	width: 40%;
 	justify-content: center;
-	background-color: $background-color-5;
-	color: $color-1;
+	background-color: $background-color-7;
+	color: $color_1;
 	margin: auto;
 	outline: none;
 	border: none;
@@ -547,6 +502,9 @@ form {
 	}
 }
 @media (max-width: 480px) {
+	.postproperty-webpage{
+		height: 2125px;
+	}
 	.postproperty-left {
 		display: none;
 	}
@@ -555,6 +513,7 @@ form {
 	}
 	.postproperty-right-container {
 		width: $width;
+		height: 2070px
 	}
 	.postproperty-container {
 		width: 390px;

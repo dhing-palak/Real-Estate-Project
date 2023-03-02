@@ -34,14 +34,24 @@ const Login = () => {
       isValid = false;
     } else if (!email.includes("@") || email.length < 3) {
       errors.email = "Please enter a valid email address.";
+      // setErrorMessage("Please fill the details mention below")
       isValid = false;
     }
+    // if (!email) {
+    //   errors.email = "Email is required";
+    //   isValid = false;
+    // } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(newState.email)) {
+    //   errors.email = "Invalid email address";
+    //   isValid = false;
+    // }
 
     if (!password) {
       errors.password = "Password is required.";
+      // setErrorMessage("Please fill the details mention below")
       isValid = false;
     } else if (password.length < 6) {
       errors.password = "Password must be at least 6 characters long.";
+      // setErrorMessage("Please fill the details mention below")
       isValid = false;
     }
     setErrorMessage("Please fill the details mention below");
@@ -111,6 +121,41 @@ const Login = () => {
         setShowdiv(false);
       }, 2000);
     }
+
+    // try {
+    //   const res = await login(email, password);
+
+    //   // const data = await res.json();
+    //   // if (res.status === 200 && data.error) {
+    //   //   setErrors({ email: data.error});
+    //   //   setShowdiv(true);
+    //   //   setTimeout(() => {
+    //   //     setShowdiv(false);
+    //   //   }, 2000);
+    //   console.log(password)
+    //   if (res.status === 400 || !password ) {
+    //     setErrorMessage("Invalid email or password.");
+    //     setShowdiv(true);
+    //     setTimeout(() => {
+    //       setShowdiv(true);
+    //     }, 2000);
+    //   } else {
+    //     console.log(errorMessage)
+    //     setisLoggedin(true);
+    //     navigate("/");
+    //     setShowdiv(true);
+    //     setErrorMessage("Login successful.");
+    //     setTimeout(() => {
+    //       setShowdiv(false);
+    //     }, 2000);
+    //   }
+    // } catch (error) {
+    //   setErrorMessage("An error occurred. Please try again later.");
+    //   setShowdiv(true);
+    //   setTimeout(() => {
+    //     setShowdiv(false);
+    //   }, 2000);
+    // }
   };
 
   return (
