@@ -32,18 +32,10 @@ const Login = () => {
     if (!email) {
       errors.email = "Email is required";
       isValid = false;
-    } else if (!email.includes("@") || email.length < 3) {
-      errors.email = "Please enter a valid email address.";
-      // setErrorMessage("Please fill the details mention below")
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
+      errors.email = "Invalid email address";
       isValid = false;
     }
-    // if (!email) {
-    //   errors.email = "Email is required";
-    //   isValid = false;
-    // } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(newState.email)) {
-    //   errors.email = "Invalid email address";
-    //   isValid = false;
-    // }
 
     if (!password) {
       errors.password = "Password is required.";
