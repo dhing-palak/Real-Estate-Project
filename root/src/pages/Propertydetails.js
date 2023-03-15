@@ -100,26 +100,26 @@ function Propertydetails() {
             </div>
             <div className="propertydetails-why-proj">
               <ul className="propertydetails-why-proj-list">
-                {/* <li className="propertydetails-why-proj-list--item">Malad 2 km | 15 min</li>
-                <li className="propertydetails-why-proj-list--item">
+                {/* <li className="propertydetails-why-proj-list-item">Malad 2 km | 15 min</li>
+                <li className="propertydetails-why-proj-list-item">
                   Goregaon 4 km | 20 min
                 </li> */}
-                <li className="propertydetails-why-proj-list--item">
+                <li className="propertydetails-why-proj-list-item">
                   Western Express... 2 km | 15 min
                 </li>
-                <li className="propertydetails-why-proj-list--item">
+                <li className="propertydetails-why-proj-list-item">
                   Lifeline Multis... 2 km | 15 minView More
                 </li>
-                {/* <li className="propertydetails-why-proj-list--item">
+                {/* <li className="propertydetails-why-proj-list-item">
                   Malad West 3 km | 15 min
                 </li>
-                <li className="propertydetails-why-proj-list--item">
+                <li className="propertydetails-why-proj-list-item">
                   Goregaon West 4 km | 20 minView More
                 </li> */}
-                <li className="propertydetails-why-proj-list--item">
+                <li className="propertydetails-why-proj-list-item">
                   Located off Western Express Highway&nbsp;
                 </li>
-                <li className="propertydetails-why-proj-list--item">
+                <li className="propertydetails-why-proj-list-item">
                   Premium lifestyle amenities
                 </li>
               </ul>
