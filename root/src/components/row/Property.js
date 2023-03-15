@@ -6,6 +6,7 @@ import statusImage from "../../images/status.jpg";
 import floorImage from "../../images/floor.jpg";
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
+import { Link } from "react-router-dom";
 
 const Property = () => {
   //Accessing Global data from Context
@@ -29,7 +30,12 @@ const Property = () => {
     <div className="property-outer">
       {propertyData.map((detail, id) => {
         return (
-          <div key={id} className="property-inner">
+          <Link
+            to="/propertydetails"
+            state={{ data: detail }}
+            key={id}
+            className="property-inner"
+          >          
             <div className="pic-owner">
               <img className="image" src={image} alt="Palace" />
               <p className="owner">Owner: {detail.name}</p>
@@ -101,7 +107,7 @@ const Property = () => {
                 <p className="feedback"> Share Feedback</p>
               </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>
