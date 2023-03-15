@@ -1,36 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
+import { usercontact } from "../../api/api";
 import "../../styles/Modal.scss";
 
 const Modal = ({ isOpen, handleClose }) => {
-  const handleSubmit = (event) => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const searchParams = new URLSearchParams(formData);
-    const homepageURL = `http://localhost:3000/?${searchParams.toString()}`;
-    window.location.href = homepageURL;
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+
+    try {
+      const res = await usercontact(name, email, phone);
+      const data = await res.json();
+      console.log(data.message);
+      // set submitted to true to render thank you message
+      setSubmitted(true);
+      // redirect to the homepage
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
+    } catch (error) {
+      console.error(error);
+      // handle error
+    }
   };
 
   return (
     <div className={`modal ${isOpen ? "show" : ""}`}>
       <div className="modal-content">
-        <button className="close" onClick={handleClose} onKeyDown={handleClose}>
-          &times;
-        </button>
-        <form className="modal-form" onSubmit={handleSubmit}>
-          <div className="modal-form-field">
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" required/>
+        <div className="content">
+          <h4>Know best offer on this Project</h4>
+          <button className="close" onClick={handleClose} onKeyDown={handleClose}>
+            &times;
+          </button>
+        </div>
+        {/* conditionally render thank you message */}
+        {submitted ? (
+          <div className="thankyou-message">
+            <p>Thank you for contacting us!</p>
+            <p>We will reach you soon.</p>
           </div>
-          <div className="modal-form-field">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
-          </div>
-          <div className="modal-form-field">
-            <label htmlFor="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required pattern="^\d{10}$"/>
-          </div>
-          <button className="modal-form-button" type="submit">Submit</button>
-        </form>
+        ) : (
+          <form className="modal-form" onSubmit={handleSubmit}>
+            <div className="modal-form-field">
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div className="modal-form-field">
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+            </div>
+            <div className="modal-form-field">
+              <label htmlFor="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" required pattern="^\d{10}$" />
+            </div>
+            <button className="modal-form-button" type="submit">
+              Submit
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );
