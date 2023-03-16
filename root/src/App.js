@@ -35,7 +35,6 @@ const App = () => {
             <Route path="/user/logout" element={<Logout />}></Route>
             <Route path="/propertydetails" element={<Propertydetails />}></Route>
             <Route path="*" element={<PageNotFound />} />
-            
           </Routes>
           <div className="footer">
             <Footer />

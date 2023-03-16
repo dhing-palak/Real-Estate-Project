@@ -4,16 +4,14 @@ import image from "../images/Property1.jpg";
 import superAreaImage from "../images/superarea.jpg";
 import statusImage from "../images/status.jpg";
 import floorImage from "../images/floor.jpg";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Propertydetails() {
-  const location = useLocation()
-  const data = location.state.data
-  return ( 
+  const location = useLocation();
+  const data = location.state.data;
+  return (
     <>
-
       <div className="property-outer">
-      
         <div className="property-inner">
           <div className="pic-owner">
             <img className="image" src={image} alt="Palace" />
@@ -58,11 +56,7 @@ function Propertydetails() {
 
               <div className="details-info">
                 <span>
-                  <img
-                    className="details-image"
-                    src={floorImage}
-                    alt="floorimage"
-                  />
+                  <img className="details-image" src={floorImage} alt="floorimage" />
                 </span>
                 <span className="details-heading">
                   <p className="text">FLOOR</p>
@@ -87,7 +81,6 @@ function Propertydetails() {
             </div>
           </div>
         </div>
-       
       </div>
 
       <div className="propertydetails-webpage">
@@ -133,9 +126,12 @@ function Propertydetails() {
             <div className="propertydetails-more-dtl">
               <ul className="propertydetails-more-dtl-list">
                 <li className="propertydetails-more-dtl-list--item">
-                  <div className="propertydetails-more-dtl-list--label">Price Breakup</div>
+                  <div className="propertydetails-more-dtl-list--label">
+                    Price Breakup
+                  </div>
                   <div className="propertydetails-more-dtl-list--value">
-                    <span className="rupees">₹</span>{data.price}
+                    <span className="rupees">₹</span>
+                    {data.price}
                   </div>
                 </li>
                 <li className="propertydetails-more-dtl-list--item">
@@ -145,18 +141,28 @@ function Propertydetails() {
                   </div>
                 </li>
                 <li className="propertydetails-more-dtl-list--item">
-                  <div className="propertydetails-more-dtl-list--label">Furnishing</div>
-                  <div className="propertydetails-more-dtl-list--value">Furnished</div>
+                  <div className="propertydetails-more-dtl-list--label">
+                    Furnishing
+                  </div>
+                  <div className="propertydetails-more-dtl-list--value">
+                    Furnished
+                  </div>
                 </li>
                 <li className="propertydetails-more-dtl-list--item">
-                  <div className="propertydetails-more-dtl-list--label">Loan Offered</div>
+                  <div className="propertydetails-more-dtl-list--label">
+                    Loan Offered
+                  </div>
                   <div className="propertydetails-more-dtl-list--value">
                     Estimated EMI:&nbsp;<span className="rupees">₹</span>82,846
                   </div>
                 </li>
                 <li className="propertydetails-more-dtl-list--item">
-                  <div className="propertydetails-more-dtl-list--label">Overlooking</div>
-                  <div className="propertydetails-more-dtl-list--value">Main Road</div>
+                  <div className="propertydetails-more-dtl-list--label">
+                    Overlooking
+                  </div>
+                  <div className="propertydetails-more-dtl-list--value">
+                    Main Road
+                  </div>
                 </li>
                 <li className="propertydetails-more-dtl-list--item">
                   <div className="propertydetails-more-dtl-list--label">
@@ -167,7 +173,9 @@ function Propertydetails() {
                   </div>
                 </li>
                 <li className="propertydetails-more-dtl-list--item">
-                  <div className="propertydetails-more-dtl-list--label">Description</div>
+                  <div className="propertydetails-more-dtl-list--label">
+                    Description
+                  </div>
                   <div className="propertydetails-more-dtl-list--value">
                     {data.description}
                   </div>
@@ -179,13 +187,13 @@ function Propertydetails() {
                 </span>
                 <span className="propertydetails-more-dtl-description--content full show">
                   <p>
-                    This is a premium residential apartment which
-                    surprises you with a plethora of world-class amenities such as
-                    power backup, lifts, rainwater harvesting, swimming pool,
-                    gymnasium, reserved parking, intercom facility, waste disposal,
-                    premium branded fittings, CCTV surveillance, flower gardens,
-                    indoor games room, kids play area, fire fighting equipment, 24
-                    hours borewell & Corporation water supply, and a security guard.
+                    This is a premium residential apartment which surprises you with
+                    a plethora of world-class amenities such as power backup, lifts,
+                    rainwater harvesting, swimming pool, gymnasium, reserved parking,
+                    intercom facility, waste disposal, premium branded fittings, CCTV
+                    surveillance, flower gardens, indoor games room, kids play area,
+                    fire fighting equipment, 24 hours borewell & Corporation water
+                    supply, and a security guard.
                   </p>
                 </span>
               </div>
@@ -198,46 +206,88 @@ function Propertydetails() {
             </div>
             <div className="propertydetails-amenities">
               <ul className="propertydetails-amenities-list">
-                <li className="propertydetails-amenities-list--item" data-icon="12201">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12201"
+                >
                   Power Back Up
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12202">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12202"
+                >
                   Lift
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12203">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12203"
+                >
                   Rain Water Harvesting
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12205">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12205"
+                >
                   Swimming Pool
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12206">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12206"
+                >
                   Gymnasium
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12208">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12208"
+                >
                   Reserved Parking
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12217">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12217"
+                >
                   Intercom Facility
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12219">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12219"
+                >
                   Waste Disposal
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12540">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12540"
+                >
                   Premium branded fittings
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="12547">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="12547"
+                >
                   CCTV Camera
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="1404115">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="1404115"
+                >
                   Flower Gardens
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="1404117">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="1404117"
+                >
                   Indoor Games Room
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="1404121">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="1404121"
+                >
                   Kids Play Area
                 </li>
-                <li className="propertydetails-amenities-list--item" data-icon="1404143">
+                <li
+                  className="propertydetails-amenities-list--item"
+                  data-icon="1404143"
+                >
                   Fire Fighting Equipment
                 </li>
               </ul>

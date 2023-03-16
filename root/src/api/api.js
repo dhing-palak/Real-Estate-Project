@@ -78,6 +78,22 @@ export const postproperty = async (
   });
   return res;
 };
+//UserContact api
+
+export const usercontact = async (name, email, phone) => {
+  const res = await fetch("/usercontact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      phone,
+    }),
+  });
+  return res;
+};
 
 //Profile api
 export const profile = async () => {

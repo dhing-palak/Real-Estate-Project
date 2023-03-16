@@ -18,11 +18,7 @@
 	justify-content: flex-start;
 	border-radius: 20px;
 	margin: 20px;
-	color: $color-12;
-	text-decoration: none;
-}
-.property-inner:hover{
-	color: $color-12;
+	
 }
 .pic-owner {
 	height: 200px;
@@ -40,6 +36,11 @@
 	margin-left: 5px;
 	margin-right: auto;
 	width: 550px;
+	color: $color-12;
+	text-decoration: none;
+}
+.middle-part:hover{
+	color: $color-12;
 }
 .real-estate {
 	color: #009681;
