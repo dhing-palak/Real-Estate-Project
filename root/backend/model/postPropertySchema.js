@@ -61,6 +61,10 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  amenitiesData:{
+    type: Object,
+    required:true,
+  }
   // image: {
   //   data: Buffer,
   //   contentType: String,

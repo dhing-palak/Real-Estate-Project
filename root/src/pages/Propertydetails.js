@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Propertydetails.scss";
+import "../styles/Property.scss";
 import image from "../images/Property1.jpg";
 import superAreaImage from "../images/superarea.jpg";
 import statusImage from "../images/status.jpg";
@@ -9,6 +10,15 @@ import { useLocation } from "react-router-dom";
 function Propertydetails() {
   const location = useLocation();
   const data = location.state.data;
+  const [amenities, setamenities] = useState([]);
+  useEffect(() => {
+    const datat = Object.keys(data.amenitiesData).map((key) => [
+      Number(key),
+      data.amenitiesData[key],
+    ]);
+    setamenities(datat);
+  }, [data.amenitiesData]);
+
   return (
     <>
       <div className="property-outer">
@@ -206,90 +216,18 @@ function Propertydetails() {
             </div>
             <div className="propertydetails-amenities">
               <ul className="propertydetails-amenities-list">
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12201"
-                >
-                  Power Back Up
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12202"
-                >
-                  Lift
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12203"
-                >
-                  Rain Water Harvesting
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12205"
-                >
-                  Swimming Pool
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12206"
-                >
-                  Gymnasium
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12208"
-                >
-                  Reserved Parking
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12217"
-                >
-                  Intercom Facility
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12219"
-                >
-                  Waste Disposal
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12540"
-                >
-                  Premium branded fittings
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="12547"
-                >
-                  CCTV Camera
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="1404115"
-                >
-                  Flower Gardens
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="1404117"
-                >
-                  Indoor Games Room
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="1404121"
-                >
-                  Kids Play Area
-                </li>
-                <li
-                  className="propertydetails-amenities-list--item"
-                  data-icon="1404143"
-                >
-                  Fire Fighting Equipment
-                </li>
+                {amenities.map((i) => {
+                  return (
+                    <li
+                      key={i}
+                      className="propertydetails-amenities-list--item"
+                      data-icon="12201"
+                    >
+                      {i[1].value}
+                    </li>
+                  );
+                })}
+               
               </ul>
             </div>
           </section>
