@@ -1,14 +1,34 @@
-import React from "react";
+import React ,{useState } from "react";
 import "../styles/Propertydetails.scss";
 import image from "../images/Property1.jpg";
 import superAreaImage from "../images/superarea.jpg";
 import statusImage from "../images/status.jpg";
 import floorImage from "../images/floor.jpg";
+import Modal from "../components/modal/Modal";
 import { useLocation } from "react-router-dom";
 
 function Propertydetails() {
   const location = useLocation();
   const data = location.state.data;
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [phoneModalOpen, setPhoneModalOpen] = useState(false);
+
+  const handleOpenContactModal = () => {
+    setContactModalOpen(true);
+  };
+
+  const handleCloseContactModal = () => {
+    setContactModalOpen(false);
+  };
+
+  const handleOpenPhoneModal = () => {
+    setPhoneModalOpen(true);
+  };
+
+  const handleClosePhoneModal = () => {
+    setPhoneModalOpen(false);
+  };
+
   return (
     <>
       <div className="property-outer">
@@ -71,10 +91,19 @@ function Propertydetails() {
             <div className="price">₹ {data.price}</div>
             <div className="price-persqft">₹ {data.ratepersqft} per sqft</div>
             <div className="contact-owner">
-              <button className="owner-details">Contact Owner</button>
+              <button className="owner-details" onClick={handleOpenContactModal}>
+                  Contact Owner
+              </button>
+              <Modal
+                isOpen={contactModalOpen}
+                handleClose={handleCloseContactModal}
+              />
             </div>
             <div className="get-phoneno">
-              <button className="phone-details">Get Phone No.</button>
+              <button className="phone-details" onClick={handleOpenPhoneModal}>
+                Get Phone No.
+              </button>
+              <Modal isOpen={phoneModalOpen} handleClose={handleClosePhoneModal} />
             </div>
             <div>
               <p className="feedback"> Share Feedback</p>

@@ -156,7 +156,6 @@ export const searchProperty = async (city, propertytype, price) => {
   );
   return res;
 };
-
 //Get City Name
 export const request = async () => {
   try {
