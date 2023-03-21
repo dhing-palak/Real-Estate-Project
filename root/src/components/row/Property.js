@@ -63,7 +63,8 @@ const Property = () => {
             <Link
               to="/propertydetails"
               state={{ data: detail }}
-              className="middle-part">
+              className="middle-part"
+            >
               <div className="real-estate">
                 <h6>ONLY ON REALESTATE</h6>
               </div>

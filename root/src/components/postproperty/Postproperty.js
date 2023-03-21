@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Postproperty.scss";
 import { postproperty } from "../../api/api";
@@ -49,14 +49,13 @@ const Postproperty = () => {
       ...state,
       [item.id]: state[item.id] ? null : { id: item.id, value: item.value },
     }));
-   
   };
   useEffect(() => {
     // for (var key in peopleInfo) {
     //   console.log(peopleInfo[key]);
     //   setProperty((prevState) => ({ ...prevState, [amenities]: peopleInfo[key] }));
     // }
-    setProperty({...property,amenitiesData: peopleInfo})
+    setProperty({ ...property, amenitiesData: peopleInfo });
   }, [peopleInfo]);
   // const handleAmenities = (peopleInfo) => {
   //   setProperty((prevState) => ({ ...prevState, [amenities]: peopleInfo }));
@@ -221,7 +220,7 @@ const Postproperty = () => {
                       formErrors.ratepersqft ||
                       formErrors.status ||
                       formErrors.description ||
-                      formErrors.propertyfor||
+                      formErrors.propertyfor ||
                       formErrors.amenitiesData
                         ? "Please fill the details mention below: "
                         : "Your Property details added Sucesssfully"}
@@ -536,7 +535,6 @@ const Postproperty = () => {
                           })}{" "}
                         </tr>{" "}
                       </table>{" "}
-                     
                     </div>
                     <span className="postproperty-error-data">
                       {formErrors.amenitiesData}

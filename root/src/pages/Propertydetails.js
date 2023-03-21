@@ -227,7 +227,6 @@ function Propertydetails() {
                     </li>
                   );
                 })}
-               
               </ul>
             </div>
           </section>

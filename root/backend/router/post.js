@@ -43,7 +43,7 @@ router.post("/property", async (req, res) => {
     !price ||
     !ratepersqft ||
     !status ||
-    !description||
+    !description ||
     !amenitiesData
     // !image
   ) {
