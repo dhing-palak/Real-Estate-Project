@@ -508,9 +508,9 @@ const Postproperty = () => {
                     formErrors={formErrors.description}
                   />
 
-                  <div className="checkbox">
+                  <div className="amenities-checkbox">
                     Select your amenties:
-                    <div>
+                    <div className="amenities-options">
                       {" "}
                       <table>
                         {" "}
