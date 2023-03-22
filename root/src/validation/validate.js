@@ -91,6 +91,9 @@ const validate = (values) => {
   if (!values.description) {
     errors.description = "Description is required!";
   }
+  if (!values.amenitiesData) {
+    errors.amenitiesData = "Amenities is required!";
+  }
 
   return errors;
 };
