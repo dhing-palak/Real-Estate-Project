@@ -249,7 +249,7 @@ function Propertydetails() {
                     <li
                       key={i}
                       className="propertydetails-amenities-list--item"
-                      data-icon="12201"
+                      
                     >
                       {i[1].value}
                     </li>
