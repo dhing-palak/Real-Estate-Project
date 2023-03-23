@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import "../../styles/Property.scss";
 import image from "../../images/Property1.jpg";
 import superAreaImage from "../../images/superarea.jpg";
@@ -6,10 +6,30 @@ import statusImage from "../../images/status.jpg";
 import floorImage from "../../images/floor.jpg";
 import { propertydetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
+import Modal from "../modal/Modal";
+import { Link } from "react-router-dom";
 
 const Property = () => {
   //Accessing Global data from Context
   const { propertyData, setPropertyData } = useContext(AppContext);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [phoneModalOpen, setPhoneModalOpen] = useState(false);
+
+  const handleOpenContactModal = () => {
+    setContactModalOpen(true);
+  };
+
+  const handleCloseContactModal = () => {
+    setContactModalOpen(false);
+  };
+
+  const handleOpenPhoneModal = () => {
+    setPhoneModalOpen(true);
+  };
+
+  const handleClosePhoneModal = () => {
+    setPhoneModalOpen(false);
+  };
 
   const getPropertyData = async () => {
     try {
@@ -29,13 +49,22 @@ const Property = () => {
     <div className="property-outer">
       {propertyData.map((detail, id) => {
         return (
-          <div key={id} className="property-inner">
+          <div
+            // to="/propertydetails"
+            // state={{ data: detail }}
+            key={id}
+            className="property-inner"
+          >
             <div className="pic-owner">
               <img className="image" src={image} alt="Palace" />
               <p className="owner">Owner: {detail.name}</p>
             </div>
 
-            <div className="middle-part">
+            <Link
+              to="/propertydetails"
+              state={{ data: detail }}
+              className="middle-part"
+            >
               <div className="real-estate">
                 <h6>ONLY ON REALESTATE</h6>
               </div>
@@ -86,16 +115,25 @@ const Property = () => {
                 </div>
               </div>
               <div className="description">{detail.description}</div>
-            </div>
+            </Link>
 
             <div className="contact-size-price">
               <div className="price">₹ {detail.price}</div>
               <div className="price-persqft">₹ {detail.ratepersqft} per sqft</div>
               <div className="contact-owner">
-                <button className="owner-details">Contact Owner</button>
+                <button className="owner-details" onClick={handleOpenContactModal}>
+                  Contact Owner
+                </button>
+                <Modal
+                  isOpen={contactModalOpen}
+                  handleClose={handleCloseContactModal}
+                />
               </div>
               <div className="get-phoneno">
-                <button className="phone-details">Get Phone No.</button>
+                <button className="phone-details" onClick={handleOpenPhoneModal}>
+                  Get Phone No.
+                </button>
+                <Modal isOpen={phoneModalOpen} handleClose={handleClosePhoneModal} />
               </div>
               <div>
                 <p className="feedback"> Share Feedback</p>

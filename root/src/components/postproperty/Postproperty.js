@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Postproperty.scss";
 import { postproperty } from "../../api/api";
@@ -9,7 +9,8 @@ import PropertyInput from "../postproperty/PropertyInput";
 const Postproperty = () => {
   const navigate = useNavigate();
   const [showdiv, setshowdiv] = useState(false);
-  const [property, setProperty] = useState({
+  const [peopleInfo, setPeopleInfo] = useState({});
+  let [property, setProperty] = useState({
     iam: "",
     name: "",
     email: "",
@@ -25,10 +26,36 @@ const Postproperty = () => {
     ratepersqft: "",
     status: "",
     description: "",
+    amenitiesData: {},
   });
 
   const [formErrors, setFormErrors] = useState({});
   console.log(showdiv);
+
+  const amenities = [
+    { id: 1, value: "Swimming Pool" },
+    { id: 2, value: "Power Back Up" },
+    { id: 3, value: "Lift" },
+    { id: 4, value: "Gymnasium" },
+    { id: 5, value: "Rain Water Harvesting" },
+    { id: 6, value: "Reserved Parking" },
+    { id: 7, value: "Intercom Facility" },
+    { id: 8, value: "Waste Disposal" },
+    { id: 9, value: "CCTV Camera" },
+    { id: 10, value: "Flower Gardens" },
+  ];
+  const toggleHandler = (item) => () => {
+    setPeopleInfo((state) => ({
+      ...state,
+      [item.id]: state[item.id] ? null : { id: item.id, value: item.value },
+    }));
+  };
+  useEffect(() => {
+  
+    setProperty({ ...property, amenitiesData: peopleInfo });
+  }, [peopleInfo]);
+ 
+  console.log("piru", property);
 
   city.map((e) => {
     console.log(e);
@@ -76,6 +103,7 @@ const Postproperty = () => {
       ratepersqft,
       status,
       description,
+      amenitiesData,
     } = property;
 
     //calling postproperty api
@@ -95,6 +123,7 @@ const Postproperty = () => {
       ratepersqft,
       status,
       description,
+      amenitiesData,
     );
 
     if (Object.keys(errors).length === 0) {
@@ -186,7 +215,8 @@ const Postproperty = () => {
                       formErrors.ratepersqft ||
                       formErrors.status ||
                       formErrors.description ||
-                      formErrors.propertyfor
+                      formErrors.propertyfor ||
+                      formErrors.amenitiesData
                         ? "Please fill the details mention below: "
                         : "Your Property details added Sucesssfully"}
                     </div>
@@ -472,6 +502,39 @@ const Postproperty = () => {
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.description}
                   />
+
+                  <div className="amenities-checkbox">
+                    Select your amenties:
+                    <div className="amenities-options">
+                      {" "}
+                      <table>
+                        {" "}
+                        <tr>
+                          {" "}
+                          {amenities.map((item) => {
+                            return (
+                              <div
+                                key={item.id}
+                                style={{ display: "flex", width: "150px" }}
+                              >
+                                {" "}
+                                <input
+                                  onChange={toggleHandler(item)}
+                                  checked={peopleInfo[item.id]}
+                                  style={{ margin: "3px" }}
+                                  type="checkbox"
+                                />{" "}
+                                <td style={{ margin: "3px" }}>{item.value}</td>
+                              </div>
+                            );
+                          })}{" "}
+                        </tr>{" "}
+                      </table>{" "}
+                    </div>
+                    <span className="postproperty-error-data">
+                      {formErrors.amenitiesData}
+                    </span>
+                  </div>
 
                   <div className="postproperty-submit-button">
                     <button
