@@ -51,15 +51,10 @@ const Postproperty = () => {
     }));
   };
   useEffect(() => {
-    // for (var key in peopleInfo) {
-    //   console.log(peopleInfo[key]);
-    //   setProperty((prevState) => ({ ...prevState, [amenities]: peopleInfo[key] }));
-    // }
+  
     setProperty({ ...property, amenitiesData: peopleInfo });
   }, [peopleInfo]);
-  // const handleAmenities = (peopleInfo) => {
-  //   setProperty((prevState) => ({ ...prevState, [amenities]: peopleInfo }));
-  // };
+ 
   console.log("piru", property);
 
   city.map((e) => {
