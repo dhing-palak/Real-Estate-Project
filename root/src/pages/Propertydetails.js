@@ -246,11 +246,7 @@ function Propertydetails() {
               <ul className="propertydetails-amenities-list">
                 {amenities.map((i) => {
                   return (
-                    <li
-                      key={i}
-                      className="propertydetails-amenities-list--item"
-                      
-                    >
+                    <li key={i} className="propertydetails-amenities-list--item">
                       {i[1].value}
                     </li>
                   );
