@@ -50,7 +50,7 @@ export const postproperty = async (
   ratepersqft,
   status,
   description,
-  image,
+  amenitiesData,
 ) => {
   const res = await fetch("/post/property", {
     method: "POST",
@@ -73,7 +73,23 @@ export const postproperty = async (
       ratepersqft,
       status,
       description,
-      image,
+      amenitiesData,
+    }),
+  });
+  return res;
+};
+//UserContact api
+
+export const usercontact = async (name, email, phone) => {
+  const res = await fetch("/usercontact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      phone,
     }),
   });
   return res;
@@ -140,7 +156,6 @@ export const searchProperty = async (city, propertytype, price) => {
   );
   return res;
 };
-
 //Get City Name
 export const request = async () => {
   try {
