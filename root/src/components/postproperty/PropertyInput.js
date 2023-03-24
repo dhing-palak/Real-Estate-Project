@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Postproperty.css";
+import "../../styles/Postproperty.scss";
 
 export function PropertyInput(props) {
   return (
@@ -12,8 +12,9 @@ export function PropertyInput(props) {
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.onChange}
+        onBlur={props.onBlur}
       ></input>
-      <span className="asterisk_input"></span>
+      <span className="asterisk-input"></span>
       <span className="postproperty-error-data">{props.formErrors}</span>
     </div>
   );

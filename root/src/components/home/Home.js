@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import "../../styles/Home.css";
+import "../../styles/Home.scss";
 import { AppContext } from "../../state/StateContext";
 import { profile } from "../../api/api";
 import Property from "../row/Property";
@@ -32,10 +32,9 @@ const Home = () => {
 
   return (
     <>
-      <div>
-        <h5 className="userName">Hello {userData.name} welcome to Real Estate.</h5>
-      </div>
+      <h5 className="username">Hello {userData.name} Welcome to Real Estate.</h5>
       <SearchProperty />
+
       <Property />
     </>
   );
