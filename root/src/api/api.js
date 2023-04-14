@@ -40,12 +40,13 @@ export const postproperty = async (
   email,
   phone,
   propertyfor,
+  propertytype,
   city,
   locality,
   rooms,
-  propertytype,
-  area,
   floors,
+  furnished,
+  area,
   price,
   ratepersqft,
   status,
@@ -63,12 +64,13 @@ export const postproperty = async (
       email,
       phone,
       propertyfor,
+      propertytype,
       city,
       locality,
       rooms,
-      propertytype,
-      area,
       floors,
+      furnished,
+      area,
       price,
       ratepersqft,
       status,
@@ -132,6 +134,48 @@ export const propertydetails = async (cityname) => {
     },
     credentials: "include",
     params: cityname,
+  });
+  return res;
+};
+
+//Status Api
+export const statusdetails = async (value) => {
+  const res = await fetch(`/property/status/${value}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    params: value,
+  });
+  return res;
+};
+
+//getData Api
+export const getData = async () => {
+  const res = await fetch("/user/getdata", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return res;
+};
+
+//Feedback Api
+export const feedback = async (name, email, phone, message) => {
+  const res = await fetch("/user/feedback", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      phone,
+      message,
+    }),
   });
   return res;
 };

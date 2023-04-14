@@ -23,4 +23,24 @@ router.get("/details/:cityname", (req, res) => {
     });
   }
 });
+
+router.get("/status/:value", (req, res) => {
+  if (req.params.value != "Buy") {
+    Property.find({ status: req.params.value }, (err, data) => {
+      if (err) {
+        return res.status(500).send(err);
+      } else {
+        return res.status(200).send(data);
+      }
+    });
+  } else {
+    Property.find((err, data) => {
+      if (err) {
+        return res.status(500).send(err);
+      } else {
+        return res.status(200).send(data);
+      }
+    });
+  }
+});
 module.exports = router;

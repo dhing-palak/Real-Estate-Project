@@ -21,6 +21,10 @@ const postPropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  propertytype: {
+    type: String,
+    required: true,
+  },
   city: {
     type: String,
     required: true,
@@ -30,21 +34,23 @@ const postPropertySchema = new mongoose.Schema({
     required: true,
   },
   rooms: {
-    type: Number,
-    required: true,
-  },
-  propertytype: {
     type: String,
     required: true,
   },
+  floors: {
+    type: String,
+    required: true,
+  },
+  furnished: {
+    type: String,
+    required: true,
+  },
+
   area: {
     type: Number,
     required: true,
   },
-  floors: {
-    type: Number,
-    required: true,
-  },
+
   price: {
     type: String,
     required: true,

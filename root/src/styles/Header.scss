@@ -169,6 +169,13 @@ body {
 		}
 	}
 }
+
+.header-select {
+	border: none;
+	background-position: left 9.5rem center;
+	margin-top: 10px;
+	width: 180px;
+}
 @media screen and (max-width: 1024px) {
 	.nav-menu {
 		display: flex;

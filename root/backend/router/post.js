@@ -13,12 +13,13 @@ router.post("/property", async (req, res) => {
     email,
     phone,
     propertyfor,
+    propertytype,
     city,
     locality,
     rooms,
-    propertytype,
-    area,
     floors,
+    furnished,
+    area,
     price,
     ratepersqft,
     status,
@@ -40,6 +41,7 @@ router.post("/property", async (req, res) => {
     !propertytype ||
     !area ||
     !floors ||
+    !furnished ||
     !price ||
     !ratepersqft ||
     !status ||
@@ -63,6 +65,7 @@ router.post("/property", async (req, res) => {
       propertytype,
       area,
       floors,
+      furnished,
       price,
       ratepersqft,
       status,

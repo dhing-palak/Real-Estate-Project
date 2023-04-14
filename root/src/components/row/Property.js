@@ -70,8 +70,8 @@ const Property = () => {
               </div>
               <div className="status-property">
                 <h5>
-                  {detail.rooms} BHK Ready to Occupy {detail.propertytype} for sale{" "}
-                  {detail.city}
+                  {detail.rooms} BHK {detail.furnished} Ready to Occupy{" "}
+                  {detail.propertytype} for sale {detail.city}
                 </h5>
               </div>
               <div className="details-property">

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
@@ -80,6 +81,34 @@ router.get("/location", (req, res) => {
 
 //Profile route
 router.get("/profile", Authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+
+//Feedback route
+router.post("/feedback", Authenticate, async (req, res) => {
+  try {
+    const { name, email, phone, message } = req.body;
+
+    if (!name || !email || !phone || !message) {
+      console.log("error in contact form");
+      return res.json({ error: "Plz fill the contact form" });
+    }
+
+    const userContact = await User.findOne({ _id: req.userID });
+
+    if (userContact) {
+      const userMessage = await userContact.addMessage(name, email, phone, message);
+      await userContact.save();
+      res.status(201).json({ message: "User contact successfully" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.get("/getdata", Authenticate, (req, res) => {
+  // console.log("hello getData");
+  // console.log(req.rootUser);
   res.send(req.rootUser);
 });
 

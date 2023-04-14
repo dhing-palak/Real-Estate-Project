@@ -49,7 +49,7 @@
 	}
 	width: $width;
 	min-height: 700px;
-	height: 2450px;
+	height: 3000px;
 	position: relative;
 	overflow: hidden;
 	z-index: 0;
@@ -70,7 +70,7 @@
 }
 .postproperty-right-container {
 	width: 600px;
-	height: 2420px;
+	height: 2920px;
 	position: relative;
 	z-index: 2;
 	background-color: $background-color-8;
@@ -168,7 +168,7 @@
 }
 .postproperty-formElement {
 	float: left;
-	width: 315px;
+	width: 450px;
 	padding-bottom: 20px;
 	color: $color-3;
 	.postproperty-formLabel {
@@ -181,9 +181,9 @@
 	}
 	.postproperty-formValue {
 		position: relative;
-		float: left;
+		// float: left;
 		font-size: $font-size-2;
-		padding-left: 30px;
+		// padding-left: 30px;
 	}
 }
 .postproperty-input-iam {
@@ -208,7 +208,7 @@
 	margin: 14px 0;
 	justify-content: space-between;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	label {
 		display: flex;
 		align-items: center;
@@ -316,6 +316,216 @@
 			.postproperty-category {
 				label {
 					.six {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-7 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.seven {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-8 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.eight {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-9 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.nine {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-10 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.ten {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-11 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.eleven {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-12 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.twelve {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-13 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.thirdteen {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-14 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.fourteen {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-15 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.fifteen {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-16 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.sixteen {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-17 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.seventeen {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-18 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.eighteen {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-19 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.nineteen {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-20 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.twenty {
+						background: $color-2;
+						border-color: $border-color-1;
+					}
+				}
+			}
+		}
+	}
+}
+#dot-21 {
+	&:checked {
+		~ {
+			.postproperty-category {
+				label {
+					.twentyone {
 						background: $color-2;
 						border-color: $border-color-1;
 					}

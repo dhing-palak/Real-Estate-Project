@@ -14,6 +14,7 @@ import Logout from "./pages/Logout";
 import Navbar from "./components/Navbar/Header";
 import ContextProvider from "./state/StateContext";
 import Propertydetails from "./pages/Propertydetails";
+import Feedback from "./pages/Feedback";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/helpcenter" element={<Helpcenter />}></Route>
             <Route path="/postproperty" element={<Postproperty />}></Route>
             <Route path="/user/profile" element={<Profile />}></Route>
+            <Route path="/user/feedback" element={<Feedback />}></Route>
             <Route path="/user/logout" element={<Logout />}></Route>
             <Route path="/propertydetails" element={<Propertydetails />}></Route>
             <Route path="*" element={<PageNotFound />} />

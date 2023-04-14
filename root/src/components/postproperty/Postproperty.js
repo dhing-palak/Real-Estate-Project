@@ -16,12 +16,13 @@ const Postproperty = () => {
     email: "",
     phone: "",
     propertyfor: "",
+    propertytype: "",
     city: "",
     locality: "",
     rooms: "",
-    propertytype: "",
-    area: "",
     floors: "",
+    furnished: "",
+    area: "",
     price: "",
     ratepersqft: "",
     status: "",
@@ -92,12 +93,13 @@ const Postproperty = () => {
       email,
       phone,
       propertyfor,
+      propertytype,
       city,
       locality,
       rooms,
-      propertytype,
-      area,
       floors,
+      furnished,
+      area,
       price,
       ratepersqft,
       status,
@@ -112,12 +114,13 @@ const Postproperty = () => {
       email,
       phone,
       propertyfor,
+      propertytype,
       city,
       locality,
       rooms,
-      propertytype,
-      area,
       floors,
+      furnished,
+      area,
       price,
       ratepersqft,
       status,
@@ -317,6 +320,7 @@ const Postproperty = () => {
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.phone}
                   />
+                  <div className="sec-Heading">Property Details</div>
 
                   <div className="postproperty-formElement">
                     <div className="postproperty-formLabel">For</div>
@@ -367,6 +371,44 @@ const Postproperty = () => {
                     </div>
                   </div>
 
+                  <div className="postproperty-formElement">
+                    <div className="postproperty-formLabel">Property Type</div>
+                    <div className="postproperty-formValue">
+                      <div className="postproperty-input-propertyfor">
+                        <input
+                          type="radio"
+                          name="propertytype"
+                          value="flat"
+                          id="dot-7"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="propertytype"
+                          value="villa"
+                          id="dot-8"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+
+                        <div className="postproperty-category">
+                          <label htmlFor="dot-7">
+                            <span className="dot seven"></span>
+                            <span className="postproperty-propertyfor">Flat</span>
+                          </label>
+                          <label htmlFor="dot-8">
+                            <span className="dot eight"></span>
+                            <span className="postproperty-propertyfor">Villa</span>
+                          </label>
+                        </div>
+                        <span className="postproperty-error-data">
+                          {formErrors.propertyfor}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="postproperty-input-city">
                     <select
                       className="citydropdown"
@@ -397,8 +439,186 @@ const Postproperty = () => {
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.locality}
                   />
+                  <div className="sec-Heading">Property Features</div>
+                  <div className="postproperty-formElement">
+                    <div className="postproperty-formLabel">Number of Bed Rooms</div>
+                    <div className="postproperty-formValue">
+                      <div className="postproperty-input-propertyfor">
+                        <input
+                          type="radio"
+                          name="rooms"
+                          value="1"
+                          id="dot-9"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="rooms"
+                          value="2"
+                          id="dot-10"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="rooms"
+                          value="3"
+                          id="dot-11"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="rooms"
+                          value="4"
+                          id="dot-12"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <div className="postproperty-category">
+                          <label htmlFor="dot-9">
+                            <span className="dot nine"></span>
+                            <span className="postproperty-propertyfor">1</span>
+                          </label>
+                          <label htmlFor="dot-10">
+                            <span className="dot ten"></span>
+                            <span className="postproperty-propertyfor">2</span>
+                          </label>
+                          <label htmlFor="dot-11">
+                            <span className="dot eleven"></span>
+                            <span className="postproperty-propertyfor">3</span>
+                          </label>
+                          <label htmlFor="dot-12">
+                            <span className="dot twelve"></span>
+                            <span className="postproperty-propertyfor">4</span>
+                          </label>
+                        </div>
+                        <span className="postproperty-error-data">
+                          {formErrors.propertyfor}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
-                  <PropertyInput
+                  <div className="postproperty-formElement">
+                    <div className="postproperty-formLabel">Number of Floors</div>
+                    <div className="postproperty-formValue">
+                      <div className="postproperty-input-propertyfor">
+                        <input
+                          type="radio"
+                          name="floors"
+                          value="1"
+                          id="dot-13"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="floors"
+                          value="2"
+                          id="dot-14"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="floors"
+                          value="3"
+                          id="dot-15"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="floors"
+                          value="4"
+                          id="dot-16"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <div className="postproperty-category">
+                          <label htmlFor="dot-13">
+                            <span className="dot thirdteen"></span>
+                            <span className="postproperty-propertyfor">1</span>
+                          </label>
+                          <label htmlFor="dot-14">
+                            <span className="dot fourteen"></span>
+                            <span className="postproperty-propertyfor">2</span>
+                          </label>
+                          <label htmlFor="dot-15">
+                            <span className="dot fifteen"></span>
+                            <span className="postproperty-propertyfor">3</span>
+                          </label>
+                          <label htmlFor="dot-16">
+                            <span className="dot sixteen"></span>
+                            <span className="postproperty-propertyfor">4</span>
+                          </label>
+                        </div>
+                        <span className="postproperty-error-data">
+                          {formErrors.propertyfor}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="postproperty-formElement">
+                    <div className="postproperty-formLabel">Furnished Status</div>
+                    <div className="postproperty-formValue">
+                      <div className="postproperty-input-propertyfor">
+                        <input
+                          type="radio"
+                          name="furnished"
+                          value="furnished"
+                          id="dot-17"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="furnished"
+                          value="unfurnished"
+                          id="dot-18"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="furnished"
+                          value="semi furnished"
+                          id="dot-19"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+
+                        <div className="postproperty-category">
+                          <label htmlFor="dot-17">
+                            <span className="dot seventeen"></span>
+                            <span className="postproperty-propertyfor">
+                              Furnished
+                            </span>
+                          </label>
+                          <label htmlFor="dot-18">
+                            <span className="dot eighteen"></span>
+                            <span className="postproperty-propertyfor">
+                              Unfurnished
+                            </span>
+                          </label>
+                          <label htmlFor="dot-19">
+                            <span className="dot nineteen"></span>
+                            <span className="postproperty-propertyfor">
+                              Semi Furnished
+                            </span>
+                          </label>
+                        </div>
+                        <span className="postproperty-error-data">
+                          {formErrors.propertyfor}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* <PropertyInput
                     className="postproperty-input-rooms"
                     name="rooms"
                     type="text"
@@ -422,7 +642,9 @@ const Postproperty = () => {
                     onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.propertytype}
-                  />
+                  /> */}
+
+                  {/* <div className="sec-Heading">Area</div> */}
 
                   <PropertyInput
                     className="postproperty-input-area"
@@ -437,7 +659,7 @@ const Postproperty = () => {
                     formErrors={formErrors.area}
                   />
 
-                  <PropertyInput
+                  {/* <PropertyInput
                     className="postproperty-input-floors"
                     name="floors"
                     type="text"
@@ -448,7 +670,8 @@ const Postproperty = () => {
                     onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.floors}
-                  />
+                  /> */}
+                  <div className="sec-Heading">Price Details</div>
 
                   <PropertyInput
                     className="postproperty-input-price"
@@ -475,8 +698,8 @@ const Postproperty = () => {
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.ratepersqft}
                   />
-
-                  <PropertyInput
+                  <div className="sec-Heading">Property Availability Status</div>
+                  {/* <PropertyInput
                     className="postproperty-input-status"
                     name="status"
                     type="text"
@@ -487,7 +710,49 @@ const Postproperty = () => {
                     onBlur={handleBlur}
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.status}
-                  />
+                  /> */}
+
+                  <div className="postproperty-formElement">
+                    <div className="postproperty-formLabel">Availability Status</div>
+                    <div className="postproperty-formValue">
+                      <div className="postproperty-input-propertyfor">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Ready to move"
+                          id="dot-20"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Under Construction"
+                          id="dot-21"
+                          onChange={handleInput}
+                          onBlur={handleBlur}
+                        />
+
+                        <div className="postproperty-category">
+                          <label htmlFor="dot-20">
+                            <span className="dot twenty"></span>
+                            <span className="postproperty-propertyfor">
+                              Ready to move
+                            </span>
+                          </label>
+                          <label htmlFor="dot-21">
+                            <span className="dot twentyone"></span>
+                            <span className="postproperty-propertyfor">
+                              Under Construction
+                            </span>
+                          </label>
+                        </div>
+                        <span className="postproperty-error-data">
+                          {formErrors.propertyfor}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
                   <PropertyInput
                     className="postproperty-input-description"
@@ -501,7 +766,7 @@ const Postproperty = () => {
                     spanClassName="postproperty-error-data"
                     formErrors={formErrors.description}
                   />
-
+                  <div className="sec-Heading">Additional Amenities</div>
                   <div className="amenities-checkbox">
                     Select your amenties:
                     <div className="amenities-options">

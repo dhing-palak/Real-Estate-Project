@@ -2,10 +2,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from "react";
+import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import "../../styles/Header.scss";
 import "font-awesome/css/font-awesome.min.css";
-import { propertydetails } from "../../api/api";
+import { propertydetails, statusdetails } from "../../api/api";
 import { AppContext } from "../../state/StateContext";
 import { cities } from "../../common/common";
 import realestate from "../../images/realestate.png";
@@ -21,6 +22,19 @@ const Navbar = () => {
     setPropertyData(responseData);
   };
 
+  const statusDetails = async (status) => {
+    const res = await statusdetails(status);
+    const responseData = await res.json();
+    setPropertyData(responseData);
+  };
+
+  const navigate = useNavigate();
+  const handleNavigate = (event) => {
+    navigate(event.target.value);
+  };
+  const handleStatus = (event) => {
+    statusDetails(event.target.value);
+  };
   const handleChange = (event) => {
     cityDetails(event.target.value);
   };
@@ -140,7 +154,7 @@ const Navbar = () => {
 
       <div className="subheader">
         <div className="sub-dropdown">
-          <button className="sub-dropbtn">
+          {/* <button className="sub-dropbtn">
             {" "}
             Buy{" "}
             <i
@@ -149,13 +163,19 @@ const Navbar = () => {
             ></i>
           </button>
           <div className="sub-dropdowncontent">
-            <Link to="/about">Ready to Move</Link>
+            <Link onClick={handleChange}>Ready to Move</Link>
             <Link to="/about">Budget Homes</Link>
             <Link to="/about">Premium Homes</Link>
             <Link to="/about">Newly Launched</Link>
-          </div>
+
+          </div> */}
+          <select className="form-select header-select" onChange={handleStatus}>
+            <option value="Buy"> Buy</option>
+            <option value="Ready to move">Ready to move</option>
+            <option value="Under Construction">Under Construction</option>
+          </select>
         </div>
-        <div className="sub-dropdown">
+        {/* <div className="sub-dropdown">
           <button className="sub-dropbtn">
             {" "}
             Rent{" "}
@@ -170,9 +190,9 @@ const Navbar = () => {
             <Link to="/about">Furnished Homes</Link>
             <Link to="/about">Immediately Homes</Link>
           </div>
-        </div>
+        </div> */}
         <div className="sub-dropdown">
-          <button className="sub-dropbtn">
+          {/* <button className="sub-dropbtn">
             {" "}
             Sell{" "}
             <i
@@ -187,10 +207,15 @@ const Navbar = () => {
             &nbsp; <b>For Agents & Builder</b>&nbsp;
             <Link to="/about">Sales Enquiry</Link>
             <Link to="/user/profile">My Dashboard</Link>
-          </div>
+          </div> */}
+          <select className="form-select header-select" onChange={handleNavigate}>
+            <option value="/">Sell</option>
+            <option value="/postproperty">Sell Properties</option>
+            <option value="/user/profile">My Dashboard</option>
+          </select>
         </div>
         <div className="sub-dropdown">
-          <button className="sub-dropbtn">
+          {/* <button className="sub-dropbtn">
             {" "}
             Help{" "}
             <i
@@ -201,7 +226,23 @@ const Navbar = () => {
           <div className="sub-dropdowncontent">
             <Link to="/helpcenter">Help Center</Link>
             <Link to="/privacypolicy">Sales Enquiry</Link>
-          </div>
+          </div> */}
+          <select className="form-select header-select" onChange={handleNavigate}>
+            <option value="/">Help</option>
+            <option value="/helpcenter">Help Center</option>
+            <option value="/privacypolicy">Privacy Policy</option>
+            <option value="/terms">Terms & Conditions</option>
+            <option value="/user/feedback">Feedback</option>
+          </select>
+        </div>
+
+        <div className="sub-dropdown">
+          <select className="form-select header-select" onChange={handleStatus}>
+            <option value=""> Tools</option>
+            <option value="">EMI Calculator</option>
+            <option value="">Unit Convertor</option>
+            <option value="">Legal Advice</option>
+          </select>
         </div>
       </div>
     </>
