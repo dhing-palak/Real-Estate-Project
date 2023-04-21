@@ -3,6 +3,7 @@ import { AppContext } from "../state/StateContext";
 import { useNavigate } from "react-router-dom";
 import { getData, feedback } from "../api/api";
 import "../styles/Feedback.scss";
+import Contact from "./Contact";
 
 function Feedback() {
   const navigate = useNavigate();
@@ -216,6 +217,7 @@ function Feedback() {
           </div>
         </div>
       </div>
+      <Contact />
     </>
   );
 }

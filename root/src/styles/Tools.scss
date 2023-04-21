@@ -1,0 +1,20 @@
+@import "../styles/Variable.scss";
+
+.tools-container {
+	height: 350px;
+}
+.tools-heading {
+	color: $color_3;
+	font-size: 24px;
+	font-weight: 400;
+	font-family: $font-family;
+	padding: 25px;
+	line-height: 32px;
+}
+.tools-card-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+a {
+	text-decoration: none;
+}

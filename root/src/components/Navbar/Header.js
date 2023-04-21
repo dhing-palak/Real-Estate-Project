@@ -237,11 +237,11 @@ const Navbar = () => {
         </div>
 
         <div className="sub-dropdown">
-          <select className="form-select header-select" onChange={handleStatus}>
-            <option value=""> Tools</option>
-            <option value="">EMI Calculator</option>
-            <option value="">Unit Convertor</option>
-            <option value="">Legal Advice</option>
+          <select className="form-select header-select" onChange={handleNavigate}>
+            <option value="/"> Tools</option>
+            <option value="/tools/calculator">EMI Calculator</option>
+            <option value="/tools/convertor">Unit Convertor</option>
+            <option value="/tools/advice">Legal Advice</option>
           </select>
         </div>
       </div>

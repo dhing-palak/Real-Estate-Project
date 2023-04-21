@@ -15,6 +15,9 @@ import Navbar from "./components/Navbar/Header";
 import ContextProvider from "./state/StateContext";
 import Propertydetails from "./pages/Propertydetails";
 import Feedback from "./pages/Feedback";
+import Calculator from "./pages/Calculator";
+import Converter from "./pages/Converter";
+import Advice from "./pages/Advice";
 
 const App = () => {
   return (
@@ -36,6 +39,9 @@ const App = () => {
             <Route path="/user/feedback" element={<Feedback />}></Route>
             <Route path="/user/logout" element={<Logout />}></Route>
             <Route path="/propertydetails" element={<Propertydetails />}></Route>
+            <Route path="/tools/calculator" element={<Calculator />}></Route>
+            <Route path="/tools/convertor" element={<Converter />}></Route>
+            <Route path="/tools/advice" element={<Advice />}></Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
           <div className="footer">
