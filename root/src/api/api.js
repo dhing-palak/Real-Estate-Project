@@ -181,7 +181,7 @@ export const feedback = async (name, email, phone, message) => {
 };
 
 //Advice Api
-export const postadvice = async (name, email, phone, city, advice) => {
+export const postAdvice = async (name, email, phone, city, advice) => {
   const res = await fetch("/tools/legaladvice", {
     method: "POST",
     headers: {
