@@ -2,8 +2,11 @@ import React, { useEffect, useContext } from "react";
 import "../../styles/Home.scss";
 import { AppContext } from "../../state/StateContext";
 import { profile } from "../../api/api";
+
 import Property from "../row/Property";
 import SearchProperty from "../searchProperty/SearchProperty";
+import NewGallary from "../row/NewGallary";
+import GallaryInput from "../newgallary/GallaryInput";
 
 const Home = () => {
   //Accessing Global State from Context
@@ -36,6 +39,9 @@ const Home = () => {
       <SearchProperty />
 
       <Property />
+      {
+        //<GallaryInput />
+      }
     </>
   );
 };

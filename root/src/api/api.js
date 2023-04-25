@@ -136,6 +136,19 @@ export const propertydetails = async (cityname) => {
   return res;
 };
 
+//newgallary Api
+export const newgallary = async () => {
+  const res = await fetch("/getnewgallary/", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
+  return res;
+};
+
 // search Api
 export const searchProperty = async (city, propertytype, price) => {
   const res = await fetch(

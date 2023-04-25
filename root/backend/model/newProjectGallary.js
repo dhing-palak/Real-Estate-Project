@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const postPropertySchema = new mongoose.Schema({
+const newProjectGallarySchema = new mongoose.Schema({
   iam: {
     type: String,
     required: true,
@@ -65,13 +65,23 @@ const postPropertySchema = new mongoose.Schema({
     type: Object,
     required: true,
   },
-
-  // image: {
-  //   data: Buffer,
-  //   contentType: String,
-
-  // },
+  furnishedStatus: {
+    type: String,
+    required: true,
+  },
+  bathrooms: {
+    type: Number,
+    required: true,
+  },
+  transactionType: {
+    type: String,
+    required: true,
+  },
+  PropertyAvailability: {
+    type: String,
+    required: true,
+  },
 });
 
-const Property = new mongoose.model("postProperties", postPropertySchema);
-module.exports = Property;
+const gallary = new mongoose.model("newProjectGallary", newProjectGallarySchema);
+module.exports = gallary;
