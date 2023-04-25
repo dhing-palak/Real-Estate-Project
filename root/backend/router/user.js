@@ -118,4 +118,5 @@ router.get("/logout", (req, res) => {
   res.status(200).send("User logout");
 });
 
+
 module.exports = router;
