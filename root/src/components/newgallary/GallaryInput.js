@@ -20,7 +20,6 @@ const GallaryInput = () => {
     { id: 14, value: "Water Storage" },
     { id: 15, value: "Meditation Area" },
     { id: 16, value: "Earth quake resistant" },
-
   ];
   const toggleHandler = (item) => () => {
     setPeopleInfo((state) => ({
