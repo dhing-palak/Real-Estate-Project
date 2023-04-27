@@ -180,6 +180,24 @@ export const feedback = async (name, email, phone, message) => {
   return res;
 };
 
+//Advice Api
+export const postAdvice = async (name, email, phone, city, advice) => {
+  const res = await fetch("/tools/legaladvice", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      phone,
+      city,
+      advice,
+    }),
+  });
+  return res;
+};
+
 // search Api
 export const searchProperty = async (city, propertytype, price) => {
   const res = await fetch(

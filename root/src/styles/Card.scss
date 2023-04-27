@@ -1,0 +1,35 @@
+@import "../styles/Variable.scss";
+
+.card-container {
+	height: 230px;
+	width: 350px;
+	border: 1px solid #d7d7d7;
+	border-radius: 8px;
+	background-clip: padding-box;
+}
+.card-icon {
+	color: $color_2;
+	padding: 10px;
+}
+.card-title {
+	color: $color_3;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	padding: 10px;
+}
+.card-text {
+	color: $color_3;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 10px;
+	line-height: 24px;
+	padding-bottom: 16px;
+}
+.card-viewmore {
+	color: $color_1;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 10px;
+	line-height: 18px;
+}

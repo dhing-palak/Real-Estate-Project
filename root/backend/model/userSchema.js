@@ -51,6 +51,30 @@ const userSchema = new mongoose.Schema({
       },
     },
   ],
+  advices: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      email: {
+        type: String,
+        required: true,
+      },
+      phone: {
+        type: Number,
+        required: true,
+      },
+      city: {
+        type: String,
+        required: true,
+      },
+      advice: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
   tokens: [
     {
       token: {
@@ -93,5 +117,16 @@ userSchema.methods.addMessage = async function (name, email, phone, message) {
   }
 };
 
+
+//Storing the Advice
+userSchema.methods.addAdvice = async function (name, email, phone, city, advice) {
+  try {
+    this.advices = this.advices.concat({ name, email, phone, city, advice });
+    await this.save();
+    return this.advices;
+  } catch (error) {
+    console.log(error);
+  }
+};
 const User = new mongoose.model("Users", userSchema);
 module.exports = User;
