@@ -1,7 +1,7 @@
 
 # Real Estate Project
 
-Real Estate website is a clone of Magicbricks where a user can browse and see various properties available in that location. User can filter properties based on location and status.
+Real Estate website is where a user can browse and see various properties available in that location. User can filter properties based on location and status.
 
 User can Search a property based on City, Property Type and Price.
 
