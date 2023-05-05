@@ -49,12 +49,7 @@ const Property = () => {
     <div className="property-outer">
       {propertyData.map((detail, id) => {
         return (
-          <div
-            // to="/propertydetails"
-            // state={{ data: detail }}
-            key={id}
-            className="property-inner"
-          >
+          <div key={id} className="property-inner">
             <div className="pic-owner">
               <img className="image" src={image} alt="Palace" />
               <p className="owner">Owner: {detail.name}</p>

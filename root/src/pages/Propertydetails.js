@@ -141,12 +141,6 @@ function Propertydetails() {
                 <li className="propertydetails-why-proj-list-item">
                   Lifeline Multis... 2 km | 15 minView More
                 </li>
-                {/* <li className="propertydetails-why-proj-list-item">
-                  Malad West 3 km | 15 min
-                </li>
-                <li className="propertydetails-why-proj-list-item">
-                  Goregaon West 4 km | 20 minView More
-                </li> */}
                 <li className="propertydetails-why-proj-list-item">
                   Located off Western Express Highway&nbsp;
                 </li>

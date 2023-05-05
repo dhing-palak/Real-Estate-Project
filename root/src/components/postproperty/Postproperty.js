@@ -618,32 +618,6 @@ const Postproperty = () => {
                     </div>
                   </div>
 
-                  {/* <PropertyInput
-                    className="postproperty-input-rooms"
-                    name="rooms"
-                    type="text"
-                    id="rooms"
-                    placeholder="Enter the number of BHK Rooms"
-                    value={property.rooms}
-                    onChange={handleInput}
-                    onBlur={handleBlur}
-                    spanClassName="postproperty-error-data"
-                    formErrors={formErrors.rooms}
-                  />
-
-                  <PropertyInput
-                    className="postproperty-input-propertytype"
-                    name="propertytype"
-                    type="text"
-                    id="propertytype"
-                    placeholder="Enter your type of property"
-                    value={property.propertytype}
-                    onChange={handleInput}
-                    onBlur={handleBlur}
-                    spanClassName="postproperty-error-data"
-                    formErrors={formErrors.propertytype}
-                  /> */}
-
                   {/* <div className="sec-Heading">Area</div> */}
 
                   <PropertyInput
@@ -659,18 +633,6 @@ const Postproperty = () => {
                     formErrors={formErrors.area}
                   />
 
-                  {/* <PropertyInput
-                    className="postproperty-input-floors"
-                    name="floors"
-                    type="text"
-                    id="floors"
-                    placeholder="Enter number of floors"
-                    value={property.floors}
-                    onChange={handleInput}
-                    onBlur={handleBlur}
-                    spanClassName="postproperty-error-data"
-                    formErrors={formErrors.floors}
-                  /> */}
                   <div className="sec-Heading">Price Details</div>
 
                   <PropertyInput
@@ -699,18 +661,6 @@ const Postproperty = () => {
                     formErrors={formErrors.ratepersqft}
                   />
                   <div className="sec-Heading">Property Availability Status</div>
-                  {/* <PropertyInput
-                    className="postproperty-input-status"
-                    name="status"
-                    type="text"
-                    id="status"
-                    placeholder="Enter status"
-                    value={property.status}
-                    onChange={handleInput}
-                    onBlur={handleBlur}
-                    spanClassName="postproperty-error-data"
-                    formErrors={formErrors.status}
-                  /> */}
 
                   <div className="postproperty-formElement">
                     <div className="postproperty-formLabel">Availability Status</div>

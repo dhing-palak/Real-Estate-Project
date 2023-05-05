@@ -39,11 +39,11 @@ const Login = () => {
 
     if (!password) {
       errors.password = "Password is required.";
-      // setErrorMessage("Please fill the details mention below")
+
       isValid = false;
     } else if (password.length < 6) {
       errors.password = "Password must be at least 6 characters long.";
-      // setErrorMessage("Please fill the details mention below")
+
       isValid = false;
     }
     setErrorMessage("Please fill the details mention below");
@@ -56,10 +56,6 @@ const Login = () => {
     console.log("showdiv:", showdiv);
 
     if (!validateInput()) {
-      // setErrors({
-      //   email: "Email is required.",
-      //   password: "Password is required.",
-      // });
       setErrorMessage("Please fill the details mention below");
       setShowdiv(true);
       setTimeout(() => {
@@ -84,12 +80,7 @@ const Login = () => {
 
       const data = await res.json();
       console.log(data);
-      // if (res.status === 200 && data.error) {
-      //   setErrors({ email: data.error});
-      //   setShowdiv(true);
-      //   setTimeout(() => {
-      //     setShowdiv(false);
-      //   }, 2000);
+
       console.log(password);
       if (res.status === 200 && !data.error) {
         setisLoggedin(true);
@@ -113,41 +104,6 @@ const Login = () => {
         setShowdiv(false);
       }, 2000);
     }
-
-    // try {
-    //   const res = await login(email, password);
-
-    //   // const data = await res.json();
-    //   // if (res.status === 200 && data.error) {
-    //   //   setErrors({ email: data.error});
-    //   //   setShowdiv(true);
-    //   //   setTimeout(() => {
-    //   //     setShowdiv(false);
-    //   //   }, 2000);
-    //   console.log(password)
-    //   if (res.status === 400 || !password ) {
-    //     setErrorMessage("Invalid email or password.");
-    //     setShowdiv(true);
-    //     setTimeout(() => {
-    //       setShowdiv(true);
-    //     }, 2000);
-    //   } else {
-    //     console.log(errorMessage)
-    //     setisLoggedin(true);
-    //     navigate("/");
-    //     setShowdiv(true);
-    //     setErrorMessage("Login successful.");
-    //     setTimeout(() => {
-    //       setShowdiv(false);
-    //     }, 2000);
-    //   }
-    // } catch (error) {
-    //   setErrorMessage("An error occurred. Please try again later.");
-    //   setShowdiv(true);
-    //   setTimeout(() => {
-    //     setShowdiv(false);
-    //   }, 2000);
-    // }
   };
 
   return (

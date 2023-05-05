@@ -2,22 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Footer.scss";
 
-const Footer = () => {
+const Footer = ({ props }) => {
+  console.log(props.name);
   return (
     <>
       <footer className="footer" data-testid="footerpage">
         <section className="footer-main">
           <div className="fcontainer footer-main-section">
             <div className="footer-main-left">
-              <h2 className="footer-main-title">About Us </h2>
-              <div className="footer-main-content">
-                RealEstate is a full stack service provider for all real estate
-                needs, with 15+ services including home loans, pay rent, packers and
-                movers, legal assistance, property valuation, and expert advice. As
-                the largest platform for buyers and sellers of property to connect in
-                a transparent manner, RealEstate has an active base of over 10 lakh
-                property listings.
-              </div>
+              <h2 className="footer-main-title">{props.heading} </h2>
+              <div className="footer-main-content">{props.description}</div>
               <ul className="footer-main-social-links">
                 <li>
                   <a href="https://www.facebook.com">
@@ -55,41 +49,41 @@ const Footer = () => {
             </div>
 
             <div className="footer-main-right">
-              <h2 className="footer-main-title">Properties in India</h2>
+              <h2 className="footer-main-title">{props.subheading1}</h2>
               <div className="footer-main-right-content-1">
                 <Link to="/" className="footer-main-right-link">
-                  Property in New Delhi |
+                  {props.city1} |
                 </Link>
                 <Link to="/" className="footer-main-right-link">
                   {" "}
-                  Property in Mumbai |
+                  {props.city2} |
                 </Link>
                 <Link to="/" className="footer-main-right-link">
                   {" "}
-                  Property in Chennai |
+                  {props.city3} |
                 </Link>
                 <Link to="/" className="footer-main-right-link">
                   {" "}
-                  Property in Pune |
+                  {props.city4} |
                 </Link>
               </div>
-              <h2 className="footer-main-title">New Projects in India</h2>
+              <h2 className="footer-main-title">{props.subheading2}</h2>
               <div className="footer-main-right-content-1">
                 <Link to="/" className="footer-main-right-link">
                   {" "}
-                  Property in Noida |
+                  {props.city5} |
                 </Link>
                 <Link to="/" className="footer-main-right-link">
                   {" "}
-                  Property in Gurgaon |
+                  {props.city6} |
                 </Link>
                 <Link to="/" className="footer-main-right-link">
                   {" "}
-                  Property in Bangalore |
+                  {props.city7} |
                 </Link>
                 <Link to="/" className="footer-main-right-link">
                   {" "}
-                  Property in Ahmedabad |
+                  {props.city8} |
                 </Link>
               </div>
             </div>
@@ -118,9 +112,7 @@ const Footer = () => {
         </section>
 
         <section className="footer-copyright">
-          <div className="fcontainer">
-            Copyright @ 2022 Real Estate. All rights reserved.
-          </div>
+          <div className="fcontainer">{props.copyright}</div>
         </section>
       </footer>
     </>

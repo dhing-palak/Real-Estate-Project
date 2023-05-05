@@ -22,9 +22,6 @@ const Register = () => {
 
   const validate = (values) => {
     let errors = {};
-    // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    // const phoneno = /^[0-9]{10}\s*$/;
-    // const nameregex = /^[A-Z]{1}[a-z]\s*/;
 
     if (!values.name.trim()) {
       errors.name = "Name is required";

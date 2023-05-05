@@ -22,7 +22,13 @@ router.post("/legaladvice", Authenticate, async (req, res) => {
     const userContact = await User.findOne({ _id: req.userID });
 
     if (userContact) {
-      const userAdvice = await userContact.addAdvice(name, email, phone, city, advice);
+      const userAdvice = await userContact.addAdvice(
+        name,
+        email,
+        phone,
+        city,
+        advice,
+      );
       await userContact.save();
       res.status(201).json({ message: "User contact successfully" });
     }

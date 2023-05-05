@@ -117,7 +117,6 @@ userSchema.methods.addMessage = async function (name, email, phone, message) {
   }
 };
 
-
 //Storing the Advice
 userSchema.methods.addAdvice = async function (name, email, phone, city, advice) {
   try {

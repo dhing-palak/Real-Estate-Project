@@ -18,6 +18,7 @@ import Feedback from "./pages/Feedback";
 import Calculator from "./pages/Calculator";
 import Converter from "./pages/Converter";
 import Advice from "./pages/Advice";
+import { foot } from "./utils/util";
 
 const App = () => {
   return (
@@ -45,7 +46,7 @@ const App = () => {
             <Route path="*" element={<PageNotFound />} />
           </Routes>
           <div className="footer">
-            <Footer />
+            <Footer props={foot} />
           </div>
         </div>
       </ContextProvider>

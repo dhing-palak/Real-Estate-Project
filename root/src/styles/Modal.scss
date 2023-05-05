@@ -29,8 +29,6 @@
     margin-top: 0;
     font-size: 24px;
   }
-  
- 
 }
 
 /* Close Button */
@@ -42,7 +40,6 @@
   border: none;
   font-size: 30px;
   background-color: #fefefe;
-  
 
   &:hover,
   &:focus {
@@ -57,7 +54,6 @@
   display: flex;
   flex-direction: column;
   padding-top: 25px;
-  
 }
 
 .modal-form-field {
@@ -65,7 +61,6 @@
   flex-direction: column;
   margin-bottom: 25px;
 }
-
 
 .modal-form-field input {
   border: none;
@@ -88,13 +83,9 @@
   margin-top: 10px;
   cursor: pointer;
 }
-.modal-form-field-check{
+.modal-form-field-check {
   margin-right: auto;
-  
-  
 }
-
-
 
 .thankyou-message {
   text-align: center;
