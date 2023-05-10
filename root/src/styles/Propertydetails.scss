@@ -1,0 +1,129 @@
+.propertydetails-left {
+    height: auto;
+    display: block;
+    float: left;
+}
+.propertydetails-section {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 16px;
+    padding: 24px 32px 32px;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    background-clip: padding-box;
+}
+.propertydetails-section-title {
+    padding-bottom: 12px;
+}
+.propertydetails-section-title {
+    width: 100%;
+    height: auto;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.propertydetails-section-title-text {
+    color: #303030;
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 32px;
+    position: relative;
+}
+.propertydetails-why-proj {
+    width: 100%;
+    height: auto;
+}
+.propertydetails-why-proj-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.propertydetails-why-proj-list-item {
+    width: 100%;
+    color: #303030;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 0 0 8px 18px;
+    position: relative;
+}
+.propertydetails-webpage ul {
+    list-style:disc;
+    margin: 0;
+    padding: 0;
+}
+.propertydetails-more-dtl-list {
+    width: 100%;
+    height: auto;
+}
+.propertydetails-more-dtl-list--item {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-bottom: 28px;
+}
+.propertydetails-more-dtl-list--label {
+    width: 170px;
+    height: auto;
+    line-height: 20px;
+}
+.propertydetails-more-dtl-list--value {
+    width: calc(100% - 170px);
+    padding-left: 24px;
+    color: #303030;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+.rupees {
+    font-family: Arial;
+    margin-right: 2px;
+    font-weight: 400;
+    line-height: normal;
+}
+.propertydetails-more-dtl-description {
+    width: 100%;
+    padding-bottom: 24px;
+}
+.propertydetails-more-dtl-description--label {
+    color: #303030;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    padding-right: 4px;
+    display: inline;
+}
+.propertydetails-more-dtl-description--content.show {
+    display: inline;
+}
+.propertydetails-more-dtl-description--content {
+    color: #303030;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    display: inline;
+}
+.propertydetails-amenities {
+    width: 100%;
+    height: auto;
+}
+.propertydetails-amenities-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.propertydetails-amenities-list--item {
+    width: 33.33333%;
+    height: auto;
+    color: #303030;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 4px 12px 32px 42px;
+    position: relative;
+}
